@@ -1,0 +1,25 @@
+ <section class="landscaping-design">
+   <img src="{{ section.settings.landscape_design_1 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_1_alt }}">
+ </section>
+ 
+ {% schema %}
+    {
+      "name": "Landscaping Design",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Landscaping Design"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_design_1",
+          "label": "Landscaping Design Image 1"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_1_alt",
+          "label": "Landscaping Design Image 1 Alt Text"
+        }
+      ]
+    }
+  {% endschema %}

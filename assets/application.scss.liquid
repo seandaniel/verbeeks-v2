@@ -13,14 +13,15 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 {{ settings.font_body | font_face }};
 
 $primaryColor: #0e0e0e;
-$secondaryColor: #eaeaea;
+$secondaryColor: #f4f4f4;
 $tertiaryColor: #a9c53e;
+$quaternaryColor: #fff;
 
 // default styles
 body {
   font-family: {{settings.font_heading.family}};
   color: $primaryColor;
-  background: $secondaryColor;
+  background-color: $quaternaryColor;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -74,6 +75,9 @@ button {
   margin: 0 auto;
 }
 
+// sections
+// header
+
 .secondary-nav ul {
   display: flex;
   justify-content: space-between;
@@ -115,6 +119,7 @@ button {
   padding-top: 66px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
   margin-bottom: 1000px;
+  background-color: $secondaryColor;
   ul {
     display: flex;
     justify-content: space-between;
@@ -134,4 +139,12 @@ button {
   &:focus {
     color: $tertiaryColor;
   }
+}
+
+// landscaping-design.liquid
+
+.landscaping-design img {
+  height: 400px;
+  width: 400px;
+  margin-top: calc(66px + 98.0333px);
 }
