@@ -11,6 +11,8 @@
   - Home page only: only shows on the home page
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header">
+
+  <!-- <div class="wrapper"> -->
     <header role="banner">
         {% for link in linklists.main-menu.links %}
             {% assign child_list_handle = link.title | handleize %}
@@ -24,7 +26,7 @@
             {% endif %}
         {% endfor %}
     
-         <a href="/cart">cart</a>
+         <a href="/cart">Cart</a>
     
         {% if shop.customer_accounts_enabled %}
             {% if customer %}
@@ -56,8 +58,8 @@
         {% else %}
             </div>
         {% endif %}
-
-    </header>
+      </header>
+    <!-- </div> -->
   </section>
   
   {% schema %}
@@ -66,50 +68,12 @@
       "settings": [
         {
           "type": "header",
-          "content": "Announcement bar"
-        },
-        {
-          "type": "checkbox",
-          "id": "announcement_bar_enabled",
-          "label": "Show announcement",
-          "default": false
-        },
-        {
-          "type": "checkbox",
-          "id": "announcement_bar_home_page_only",
-          "label": "Show on home page only",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "announcement_bar_text",
-          "label": "Announcement text",
-          "default": "Announce something here"
-        },
-        {
-          "type": "url",
-          "id": "announcement_bar_link",
-          "label": "Announcement link",
-          "info": "Optional"
-        },
-        {
-          "type": "header",
           "content": "Header"
         },
         {
           "type": "image_picker",
           "id": "logo",
-          "label": "Logo image"
-        },
-        {
-          "type": "range",
-          "id": "logo_max_width",
-          "min": 50,
-          "max": 450,
-          "step": 10,
-          "unit": "px",
-          "label": "Custom logo width",
-          "default": 250
+          "label": "Company's logo"
         },
         {
           "type": "link_list",
@@ -120,5 +84,34 @@
       ]
     }
   {% endschema %}
-  
+
+          <!-- {
+          "type": "header",
+          "content": "Announcement bar"
+          },
+          {
+          "type": "checkbox",
+          "id": "announcement_bar_enabled",
+          "label": "Show announcement",
+          "default": false
+          },
+          {
+          "type": "checkbox",
+          "id": "announcement_bar_home_page_only",
+          "label": "Show on home page only",
+          "default": true
+          },
+          {
+          "type": "text",
+          "id": "announcement_bar_text",
+          "label": "Announcement text",
+          "default": "Announce something here"
+          },
+          {
+          "type": "url",
+          "id": "announcement_bar_link",
+          "label": "Announcement link",
+          "info": "Optional"
+          },
+   -->
   
