@@ -1,0 +1,51 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Themekit template theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https://github.com/Shopify/themekit",
+    "theme_support_url": "https://github.com/Shopify/themekit/issues"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+       {
+          "type": "color",
+          "id": "color_accent",
+          "label": "Accent",
+          "default": "#c4cdd5",
+          "info": "Buttons and special ornaments"
+       },
+       {
+          "type": "color",
+          "id": "color_body_text",
+          "label": "Text",
+          "default": "#161d25"
+       },
+       {
+          "type": "color",
+          "id": "color_main_bg",
+          "label": "Background",
+          "default": "#fff"
+       }
+    ]
+ },
+ {
+    "name": "Typography",
+    "settings": [
+       {
+          "type": "font_picker",
+          "id": "font_heading",
+          "default": "helvetica_n4",
+          "label": "Headings"
+       },
+       {
+          "type": "font_picker",
+          "id": "font_body",
+          "default": "helvetica_n4",
+          "label": "Body text"
+       }
+    ]
+ }
+]
