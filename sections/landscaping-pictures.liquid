@@ -1,13 +1,44 @@
- <section class="landscape">
-  <img src="{{ section.settings.landscape_design_1 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_1_alt }}">
+ <section class="landscape design">
+  <div class="landscaping-header-text">
+    <p>{{ section.settings.landscape_design_header }}</p>
+    <div class="svg-container">
+      <img src="{{ 'brick-wall.svg' | asset_url }}" alt="Brick Wall">
+    </div>
+  </div>
+  <div class="design-img-container">
+    <figure>
+      <img src="{{ section.settings.landscape_design_1 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_1_alt }}">
+      <figcaption>{{ section.settings.landscape_design_1_heading }}</figcaption>
+    </figure>
+    <figure>
+      <img src="{{ section.settings.landscape_design_2 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_2_alt }}">
+      <figcaption>{{ section.settings.landscape_design_2_heading }}</figcaption>
+    </figure>
+    <figure>
+      <img src="{{ section.settings.landscape_design_3 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_3_alt }}">
+      <figcaption>{{ section.settings.landscape_design_3_heading }}</figcaption>
+    </figure>
+    <figure>
+      <img src="{{ section.settings.landscape_design_4 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_4_alt }}">
+      <figcaption>{{ section.settings.landscape_design_4_heading }}</figcaption>
+    </figure>
+    <figure>
+      <img src="{{ section.settings.landscape_design_5 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_5_alt }}">
+      <figcaption>{{ section.settings.landscape_design_5_heading }}</figcaption>
+    </figure>
+    <figure>
+      <img src="{{ section.settings.landscape_design_6 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_6_alt }}">
+      <figcaption>{{ section.settings.landscape_design_6_heading }}</figcaption>
+    </figure>
+  </div>
 </section>
 
-<section class="garden" hidden>
+<section class="landscape garden" hidden>
   <img src="{{ section.settings.landscape_garden_1 | img_url: 'master' }}"
     alt="{{ section.settings.landscape_garden_1_alt }}">
 </section>
 
-<section class="lawn" hidden>
+<section class="landscape lawn" hidden>
   <img src="{{ section.settings.landscape_lawn_1 | img_url: 'master' }}"
     alt="{{ section.settings.landscape_lawn_1_alt }}">
 </section>
@@ -21,14 +52,99 @@
           "content": "Landscaping Design"
         },
         {
+          "type": "text",
+          "id": "landscape_design_header",
+          "label": "Landscaping Design About"
+        },
+        {
           "type": "image_picker",
           "id": "landscape_design_1",
           "label": "Landscaping Design Image 1"
         },
         {
           "type": "text",
+          "id": "landscape_design_1_heading",
+          "label": "Landscaping Design Image 1 Heading"
+        },
+        {
+          "type": "text",
           "id": "landscape_design_1_alt",
           "label": "Landscaping Design Image 1 Alt Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_design_2",
+          "label": "Landscaping Design Image 2"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_2_heading",
+          "label": "Landscaping Design Image 2 Heading"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_2_alt",
+          "label": "Landscaping Design Image 2 Alt Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_design_3",
+          "label": "Landscaping Design Image 3"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_3_heading",
+          "label": "Landscaping Design Image 3 Heading"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_3_alt",
+          "label": "Landscaping Design Image 3 Alt Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_design_4",
+          "label": "Landscaping Design Image 4"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_4_heading",
+          "label": "Landscaping Design Image 4 Heading"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_4_alt",
+          "label": "Landscaping Design Image 4 Alt Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_design_5",
+          "label": "Landscaping Design Image 5"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_5_heading",
+          "label": "Landscaping Design Image 5 Heading"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_5_alt",
+          "label": "Landscaping Design Image 5 Alt Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_design_6",
+          "label": "Landscaping Design Image 6"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_6_heading",
+          "label": "Landscaping Design Image 6 Heading"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_6_alt",
+          "label": "Landscaping Design Image 6 Alt Text"
         },
         {
           "type": "header",

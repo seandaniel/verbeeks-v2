@@ -16,6 +16,7 @@ $primaryColor: #0e0e0e;
 $secondaryColor: #f4f4f4;
 $tertiaryColor: #a9c53e;
 $quaternaryColor: #fff;
+$quinaryColor: #f0f5dc;
 
 @mixin center {
   display: flex;
@@ -34,7 +35,6 @@ $quaternaryColor: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
 }
 
-// default styles
 body {
   font-family: {{settings.font_heading.family}};
   color: $primaryColor;
@@ -49,6 +49,24 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-weight: 700;
+}
+
+.secondary-h1 {
+  position: relative;
+  font-size: 50px;
+  letter-spacing: 3px;
+  margin: 80px auto;
+  text-transform: uppercase;
+}
+
+.secondary-h1::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 60%;
+  height: 4px;
+  background-color: $tertiaryColor;
 }
 
 p {
@@ -81,12 +99,14 @@ button {
   border: none;
   background-color: inherit;
   padding: 0;
+  font-family: {{settings.font_body.family}};
 }
 
 .button {
   background-color: $secondaryColor;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
+  border-radius: 3px;
   transition: color .35s, background-color .35s;
   &:hover,
   &:focus {
@@ -144,6 +164,7 @@ button {
   padding-top: 66px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
   background-color: $secondaryColor;
+  text-transform: uppercase;
   ul {
     @include space-between;
     li img {
@@ -163,27 +184,9 @@ button {
 }
 
 // landscaping-header.liquid
-.secondary-h1 {
-  position: relative;
-  font-size: 50px;
-  letter-spacing: 3px;
-  margin: 80px auto;
-  text-transform: uppercase;
-}
-
-.secondary-h1::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 60%;
-  height: 4px;
-  background-color: $tertiaryColor;
-}
-
 .content-img-container {
   @include space-between;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
   p {
     max-width: 550px;
     span {
@@ -202,7 +205,10 @@ button {
 .landscape-nav ul {
   @include space-between;
   margin: 0 auto 80px auto;
-  width: 300px;
+  width: 400px;
+  li button {
+    text-transform: uppercase;
+  }
   .active {
     color: $tertiaryColor;
   }
@@ -210,3 +216,54 @@ button {
 
 // landscaping-pictures.liquid
 
+.design {
+  margin-bottom: 80px;
+  .landscaping-header-text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 80px;
+    p {
+      max-width: 500px;
+    }
+  }
+}
+
+.svg-container {
+  background-color: #f0f5dc;
+  padding: 20px;
+  border-radius: 50%;
+  img {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.design-img-container {
+  @include space-between;
+  flex-wrap: wrap;
+  figure {
+    position: relative;
+    width: 32%;
+    img {
+      width: 100%;
+      height: 500px;
+      @include border-radius-box-shadow;
+    }
+  }
+}
+
+.design-img-container figure:nth-child(-n+3) {
+  margin-bottom: 2%;
+}
+
+.design-img-container figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $secondaryColor;
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+}

@@ -7,15 +7,17 @@ $(function() {
 
  const handleClick = function(e) {
 
-  // loop through and set defaults
   landscapeButtons.forEach(button => button.classList.remove('active'));
 
-  landscapeSections.forEach(section => section.hidden = true);
-
-  // target current selection
   e.target.classList.toggle('active');
 
-  // console.log(e.target.closest(`.${e.target.id}`));
+  landscapeSections.forEach(section => {
+    if (section.classList.contains(e.target.id)) {
+      section.hidden = false;
+    } else {
+      section.hidden = true;
+    }
+  })
 
  }
 
