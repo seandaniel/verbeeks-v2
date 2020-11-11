@@ -1,0 +1,63 @@
+ <section class="landscape">
+  <img src="{{ section.settings.landscape_design_1 | img_url: 'master' }}" alt="{{ section.settings.landscape_design_1_alt }}">
+</section>
+
+<section class="garden" hidden>
+  <img src="{{ section.settings.landscape_garden_1 | img_url: 'master' }}"
+    alt="{{ section.settings.landscape_garden_1_alt }}">
+</section>
+
+<section class="lawn" hidden>
+  <img src="{{ section.settings.landscape_lawn_1 | img_url: 'master' }}"
+    alt="{{ section.settings.landscape_lawn_1_alt }}">
+</section>
+ 
+ {% schema %}
+    {
+      "name": "Landscaping Pictures",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Landscaping Design"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_design_1",
+          "label": "Landscaping Design Image 1"
+        },
+        {
+          "type": "text",
+          "id": "landscape_design_1_alt",
+          "label": "Landscaping Design Image 1 Alt Text"
+        },
+        {
+          "type": "header",
+          "content": "Landscaping Gardens"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_garden_1",
+          "label": "Landscaping Garden Image 1"
+        },
+        {
+          "type": "text",
+          "id": "landscape_garden_1_alt",
+          "label": "Landscaping Garden Image 1 Alt Text"
+        },
+        {
+          "type": "header",
+          "content": "Landscaping Lawns"
+        },
+        {
+          "type": "image_picker",
+          "id": "landscape_lawn_1",
+          "label": "Landscaping Lawn Image 1"
+        },
+        {
+          "type": "text",
+          "id": "landscape_lawn_1_alt",
+          "label": "Landscaping Lawn Image 1 Alt Text"
+        }
+      ]
+    }
+  {% endschema %}

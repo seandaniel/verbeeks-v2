@@ -1,0 +1,37 @@
+<section class="landscaping-header">
+  <h1 class="secondary-h1">{{page.title}}</h1>
+  <div class="content-img-container">
+    {{page.content}}
+    <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
+      alt="{{ section.settings.landscape_header_alt }}">
+  </div>
+  <nav class="landscape-nav">
+    <ul>
+      <li><button class="active" id="design">Design</button></li>
+      <li><button id="garden">Gardens</button></li>
+      <li><button id="lawn">Lawn</button></li>
+    </ul>
+  </nav>
+</section>
+
+{% schema %}
+  {
+    "name": "Landscaping Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Landscaping Header"
+      },
+      {
+        "type": "image_picker",
+        "id": "landscape_header",
+        "label": "Landscaping Header Image"
+      },
+      {
+        "type": "text",
+        "id": "landscape_header_alt",
+        "label": "Landscaping Header Image Alt Text"
+      }
+    ]
+  }
+{% endschema %}

@@ -8,7 +8,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-// variables
+// variables/mixins
 {{ settings.font_heading | font_face }};
 {{ settings.font_body | font_face }};
 
@@ -16,6 +16,23 @@ $primaryColor: #0e0e0e;
 $secondaryColor: #f4f4f4;
 $tertiaryColor: #a9c53e;
 $quaternaryColor: #fff;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin border-radius-box-shadow {
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+}
 
 // default styles
 body {
@@ -30,8 +47,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+h1 {
+  font-weight: 700;
+}
+
 p {
   margin: 0;
+  line-height: 23px;
   font-weight: 400;
 }
 
@@ -48,6 +70,10 @@ a {
 
 figure {
   margin: 0;
+}
+
+img {
+  object-fit: cover;
 }
 
 button {
@@ -70,19 +96,18 @@ button {
 }
 
 .wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   width: 95%;
   margin: 0 auto;
 }
 
 // sections
-// header
 
+// header
 .secondary-nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include space-between;
   position: fixed;
+  z-index: 100;
   background: $tertiaryColor;
   width: 100%;
   padding: 10px 2.5%;
@@ -118,17 +143,13 @@ button {
   // .secondary-nav height
   padding-top: 66px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
-  margin-bottom: 1000px;
   background-color: $secondaryColor;
   ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include space-between;
     li img {
       display: inline-block;
       width: 200px;
       height: auto;
-      object-fit:cover;
     }
   }
 }
@@ -141,10 +162,51 @@ button {
   }
 }
 
-// landscaping-design.liquid
-
-.landscaping-design img {
-  height: 400px;
-  width: 400px;
-  margin-top: calc(66px + 98.0333px);
+// landscaping-header.liquid
+.secondary-h1 {
+  position: relative;
+  font-size: 50px;
+  letter-spacing: 3px;
+  margin: 80px auto;
+  text-transform: uppercase;
 }
+
+.secondary-h1::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 60%;
+  height: 4px;
+  background-color: $tertiaryColor;
+}
+
+.content-img-container {
+  @include space-between;
+  margin-bottom: 120px;
+  p {
+    max-width: 550px;
+    span {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+  img {
+    height: 500px;
+    width: 500px;
+    @include border-radius-box-shadow;
+  }
+}
+
+.landscape-nav ul {
+  @include space-between;
+  margin: 0 auto 80px auto;
+  width: 300px;
+  .active {
+    color: $tertiaryColor;
+  }
+}
+
+// landscaping-pictures.liquid
+
