@@ -1,0 +1,69 @@
+<section>
+  <nav class="contact-menu">
+    <div class="wrapper">
+      {%- assign contact_linklist = section.settings.contact_linklist -%}
+      {% if linklists[contact_linklist].links.size > 0 %}
+      <ul>
+        {% for link in linklists[contact_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </nav>
+  <div class="wrapper">
+    <div class="hours-img-container">
+      <div class="hours-number-container">
+        <h2>{{ section.settings.hours_heading }}</h2>
+        <p>{{ section.settings.company_hours_1 }}</p>
+        <p>{{ section.settings.company_hours_2 }}</p>
+        <a href="{{ section.settings.company_number }}"><i class="fas fa-phone"></i>{{ section.settings.company_number_text }}</a>
+      </div>
+      <img src="{{ section.settings.contact_img | img_url: 'master' }}" alt="{{ img.alt }}">
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Contact Secondary",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "contact_linklist",
+        "label": "Contact menu"
+      },
+      {
+        "type": "image_picker",
+        "id": "contact_img",
+        "label": "Company's Storefront"
+      },
+      {
+        "type": "text",
+        "id": "hours_heading",
+        "label": "Hours heading"
+      },
+      {
+        "type": "text",
+        "id": "company_hours_1",
+        "label": "Company's hours"
+      },
+      {
+        "type": "text",
+        "id": "company_hours_2",
+        "label": "Company's hours"
+      },
+      {
+      "type": "url",
+      "id": "company_number",
+      "label": "Company's phone number"
+      },
+      {
+      "type": "text",
+      "id": "company_number_text",
+      "label": "Company's phone number text"
+      }
+    ]
+  }
+
+{% endschema %}

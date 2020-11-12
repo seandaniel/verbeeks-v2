@@ -57,6 +57,11 @@ h1 {
   font-weight: 700;
 }
 
+h2 {
+  display: inline-block;
+  border-bottom: 3px solid $tertiaryColor;
+}
+
 .secondary-h1 {
   position: relative;
   font-size: 50px;
@@ -90,6 +95,7 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color .35s;
 }
 
 figure {
@@ -258,7 +264,6 @@ button {
   margin-top: 10px;
 }
 
-
 .active {
   color: $tertiaryColor;
 }
@@ -305,6 +310,120 @@ button {
   font-size: 25px;
 }
 
+// map.liquid
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+iframe {
+  width: 500px;
+  @include border-radius-box-shadow;
+}
+
+// contact-secondary.liquid
+.contact-menu {
+  padding: 80px 0;
+  margin: 80px 0;
+  background-color: $secondaryColor;
+  ul {
+    display: flex;
+    justify-content: center;
+    li a {
+      margin-right: 80px;
+      font-size: 60px;
+      transition: color .35s;
+      &:hover,
+      &:focus {
+        color: $tertiaryColor;
+      }
+    }
+  }
+}
+
+.contact-menu ul li:last-child a {
+  margin-right: 0;
+}
+
+.hours-img-container {
+  @include space-around;
+  margin-bottom: 80px;
+  .hours-number-container h2 {
+    margin-bottom: 20px;
+  }
+  .hours-number-container p {
+    margin-bottom: 20px;
+  }
+}
+
+.hours-img-container img {
+  width: 500px;
+  height: auto;
+  @include border-radius-box-shadow;
+}
+
+.hours-number-container a {
+  font-size: 24px;
+  i {
+    margin-right: 10px;
+  }
+}
+.hours-number-container a:hover,
+.hours-number-container a:focus {
+  color: $tertiaryColor;
+}
+
+// pages
+
+// page.contact.liquid
+.form-map-container {
+  @include space-between;
+  form {
+    display: flex;
+    flex-direction: column;
+    label {
+      margin-bottom: 10px;
+    }
+    input {
+      border: none;
+      border-bottom: 3px solid $tertiaryColor;
+      margin-bottom: 20px;
+      width: 400px;
+      background-color: $secondaryColor;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+  }
+}
+
+.form-map-container form textarea {
+  border: 3px solid $tertiaryColor;
+  margin: 10px 0 20px 0;
+  width: 500px;
+  background-color: $secondaryColor;
+  padding: 5px 10px;
+  border-radius: 3px;
+  resize: vertical;
+}
+
+.form-map-container form .button {
+  width: 100px;
+  margin-bottom: 0px;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+.form-success {
+  color: $primaryColor;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
 // page.covid.liquid
 .covid-text-img-container {
   @include space-around;
@@ -336,11 +455,11 @@ footer {
         font-size: 30px;
         color: $quinaryColor;
         background-color: $primaryColor;
-        padding: 10px;
-        border-radius: 3px;
+        padding: 20px 10px;
+        border-radius: 50%;
         margin-right: 20px;
         text-align: center;
-        width: 50px;
+        width: 80px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.21);
         transition: color .35s, background-color .35s;
         &:hover,

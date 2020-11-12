@@ -1,0 +1,23 @@
+<div class="map-container">
+  <h2>{{ section.settings.location_text }}</h2>
+  {{ section.settings.map_embed }}
+</div>
+
+{% schema %}
+{
+  "name": "Google Map",
+  "settings": [
+    {
+      "type": "text",
+      "id": "location_text",
+      "label": "Company's location"
+    },
+    {
+      "type": "textarea",
+      "id": "map_embed",
+      "label": "Embed map"
+    }
+  ]
+}
+
+{% endschema %}
