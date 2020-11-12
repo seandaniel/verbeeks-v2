@@ -1,9 +1,9 @@
 $(function() {
 
  // page.landscaping.liquid
- const landscapeButtons = document.querySelectorAll('.landscape-nav button');
-
  const landscapeSections = document.querySelectorAll('.landscape');
+ const landscapeButtons = document.querySelectorAll('.landscape-nav button');
+ const landscapeEnvira = document.querySelectorAll('.envira');
 
  const handleClick = function(e) {
 
@@ -18,6 +18,10 @@ $(function() {
       section.hidden = true;
     }
   })
+
+  landscapeEnvira.forEach(envira => envira.classList.remove('active'));
+
+  e.target.nextElementSibling.classList.toggle('active');
 
  }
 

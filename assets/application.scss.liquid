@@ -190,7 +190,6 @@ button {
   p {
     max-width: 550px;
     span {
-      text-transform: uppercase;
       font-weight: 700;
       font-size: 20px;
     }
@@ -202,36 +201,62 @@ button {
   }
 }
 
-.landscape-nav ul {
-  @include space-between;
-  margin: 0 auto 80px auto;
-  width: 400px;
-  li button {
-    text-transform: uppercase;
-  }
-  .active {
-    color: $tertiaryColor;
+.landscape-nav {
+  padding: 80px 0;
+  margin-bottom: 80px;
+  background-color: $secondaryColor;
+  ul {
+    @include space-between;
+    margin: 0 auto;
+    width: 400px;
+    background-color: $secondaryColor;
+    li {
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+      button {
+        text-transform: uppercase;
+        transition: .35s color;
+        &:hover,
+        &:focus {
+          color: $tertiaryColor;
+        }
+      }
+    }
   }
 }
 
-// landscaping-pictures.liquid
+.envira {
+  position: relative;
+  font-size: 20px;
+  color: $primaryColor;
+  margin-top: 10px;
+}
 
-.design {
+
+.active {
+  color: $tertiaryColor;
+}
+
+// landscaping-pictures.liquid
+.landscape {
   margin-bottom: 80px;
-  .landscaping-header-text {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 80px;
-    p {
-      max-width: 500px;
-    }
+}
+
+.landscaping-header-text {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 80px;
+  p {
+    max-width: 500px;
   }
 }
 
 .svg-container {
   background-color: #f0f5dc;
-  padding: 20px;
+  padding: 40px;
   border-radius: 50%;
   img {
     height: 80px;
@@ -239,7 +264,7 @@ button {
   }
 }
 
-.design-img-container {
+.landscape-img-container {
   @include space-between;
   flex-wrap: wrap;
   figure {
@@ -253,11 +278,11 @@ button {
   }
 }
 
-.design-img-container figure:nth-child(-n+3) {
+.landscape-img-container figure:nth-child(-n+3) {
   margin-bottom: 2%;
 }
 
-.design-img-container figcaption {
+.landscape-img-container figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
