@@ -1,2 +1,7 @@
-<h1>{{ 'general.404.title' | t }}</h1>
-<p>{{ 'general.404.subtext_html' | t }}</p>
+<div class="wrapper">
+  <section class="container-404">
+    <h1>Sorry, we aren't sure what you were looking for.</h1>
+    <p>Click <a href="{{ link.url }} ">here</a> to go home.</p>
+    <img src="{{ 'store-front.jpeg' | asset_url }}" alt="{{ img.alt }}">
+  </section>
+</div>

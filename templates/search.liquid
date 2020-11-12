@@ -15,6 +15,7 @@
       <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
     {% else %}
       no results
+      <!-- show sale products or a collection -->
     {% endfor %}
   {% endif %}
 
