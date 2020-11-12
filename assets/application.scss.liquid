@@ -166,7 +166,8 @@ button {
   background-color: $secondaryColor;
   text-transform: uppercase;
   ul {
-    @include space-between;
+    display: flex;
+    align-items: center;
     li img {
       display: inline-block;
       width: 200px;
@@ -175,7 +176,20 @@ button {
   }
 }
 
+.h1 {
+  width: 200px;
+}
+
+.primary-nav ul li:first-child {
+  margin-right: auto;
+  a {
+    margin: 0;
+  }
+}
+
 .primary-nav ul li a {
+  display: inline-block;
+  margin-left: 40px;
   transition: color .35s;
   &:hover,
   &:focus {
