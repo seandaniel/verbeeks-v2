@@ -161,7 +161,6 @@ button {
   }
   li:nth-child(2)  {
     margin: 0 auto 0 auto;
-    text-decoration: underline;
   }
   li:nth-child(3) a {
     margin-right: 20px;
@@ -170,6 +169,10 @@ button {
   li:last-child i {
     margin-right: 10px;
   }
+}
+
+.secondary-nav ul li:nth-child(2) a {
+  text-decoration: underline;
 }
 
 .secondary-nav ul li:nth-child(-n+2) a {
@@ -193,6 +196,12 @@ button {
       display: inline-block;
       width: 200px;
       height: auto;
+      opacity: 1;
+      transition: opacity .35s;
+      &:hover,
+      &:focus {
+        opacity: 0.5;
+      }
     }
   }
 }
