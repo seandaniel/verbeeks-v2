@@ -30,6 +30,12 @@ $quinaryColor: #f0f5dc;
   align-items: center;
 }
 
+@mixin space-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 @mixin border-radius-box-shadow {
   border-radius: 3px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
@@ -121,8 +127,17 @@ button {
   margin: 0 auto;
 }
 
-// sections
+.svg-container {
+  background-color: #f0f5dc;
+  padding: 40px;
+  border-radius: 50%;
+  img {
+    height: 80px;
+    width: 80px;
+  }
+}
 
+// sections
 // header
 .secondary-nav ul {
   @include space-between;
@@ -174,10 +189,6 @@ button {
       height: auto;
     }
   }
-}
-
-.h1 {
-  width: 200px;
 }
 
 .primary-nav ul li:first-child {
@@ -259,22 +270,10 @@ button {
 }
 
 .landscaping-header-text {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include space-around;
   margin-bottom: 80px;
   p {
     max-width: 500px;
-  }
-}
-
-.svg-container {
-  background-color: #f0f5dc;
-  padding: 40px;
-  border-radius: 50%;
-  img {
-    height: 80px;
-    width: 80px;
   }
 }
 
@@ -308,8 +307,17 @@ button {
 }
 
 // page.covid.liquid
-
-
+.covid-text-img-container {
+  @include space-around;
+  margin-bottom: 80px;
+  p {
+    max-width: 550px;
+    span {
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+}
 
 // footer.liquid
 footer {
