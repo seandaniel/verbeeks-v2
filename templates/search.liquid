@@ -1,8 +1,13 @@
 {% paginate search.results by 10 %}
+
+<div class="wrapper">
   <form action="/search" method="get" role="search">
     <input type="search" name="q" value="{{ search.terms | escape }}">
-    <button type="submit">search</button>
+    <button class="button" type="submit">Search</button>
   </form>
+</div>
+
+  <!-- show cart, featured items -->
 
   {% if search.performed %}
     {% for item in search.results %}
@@ -14,8 +19,8 @@
       <h5>{{ item.title | link_to: item.url }}</h5>
       <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
     {% else %}
-      no results
-      <!-- show sale products or a collection -->
+      Sorry, we don't have that but we might in our store
+      <!-- show cart, featured itmes-->
     {% endfor %}
   {% endif %}
 
