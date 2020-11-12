@@ -1,4 +1,5 @@
 <footer>
+  <div class="wrapper">
     {%- assign footer_linklist = section.settings.footer_linklist -%}
     {% if linklists[footer_linklist].links.size > 0 %}
       <ul>
@@ -7,8 +8,12 @@
         {% endfor %}
       </ul>
     {% endif %}
-
-  </footer>
+    <div class="img-copyright-container">
+      <img src="{{ section.settings.footer_img | img_url: 'master' }}" alt="{{ img.alt }}">
+      <p>{{ section.settings.company_copyright }} </p>
+    </div>
+  </div>
+</footer>
   
   {% schema %}
     {
@@ -17,8 +22,18 @@
         {
           "type": "link_list",
           "id": "footer_linklist",
-          "label": "First menu",
+          "label": "Footer menu",
           "default": "footer"
+        },
+        {
+          "type": "image_picker",
+          "id": "footer_img",
+          "label": "Company's Logo"
+        },
+        {
+          "type": "text",
+          "id": "company_copyright",
+          "label": "Company's Copyright"
         }
       ]
     }
