@@ -4,7 +4,7 @@
     <div class="content-img-container">
       {{page.content}}
       <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
-        alt="{{ section.settings.landscape_header_alt }}">
+        alt="{{ img.alt }}">
     </div>
   </div>
   <nav class="landscape-nav">
@@ -28,11 +28,6 @@
         "type": "image_picker",
         "id": "landscape_header",
         "label": "Landscaping Header Image"
-      },
-      {
-        "type": "text",
-        "id": "landscape_header_alt",
-        "label": "Landscaping Header Image Alt Text"
       }
     ]
   }
