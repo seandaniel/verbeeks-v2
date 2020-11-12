@@ -119,6 +119,9 @@ button {
     background-color: $primaryColor;
     color: $secondaryColor;
   }
+  i {
+    margin-right: 10px;
+  }
 }
 
 .wrapper {
@@ -157,9 +160,6 @@ button {
   li:nth-child(3) a {
     margin-right: 20px;
     padding: 10px;
-    i {
-      margin-right: 10px;
-    }
   }
   li:last-child i {
     margin-right: 10px;
@@ -238,7 +238,6 @@ button {
     li {
       display: flex;
       flex-direction: column;
-      // justify-content: center;
       align-items: center;
       button {
         text-transform: uppercase;
@@ -310,7 +309,7 @@ button {
 .covid-text-img-container {
   @include space-around;
   margin-bottom: 80px;
-  p {
+  .covid-text-container p {
     max-width: 550px;
     span {
       font-weight: 700;
@@ -319,9 +318,14 @@ button {
   }
 }
 
+.covid-text-container a {
+  display: inline-block;
+  margin-top: 20px;
+} 
+
 // footer.liquid
 footer {
-  padding: 80px 0;
+  padding: 40px 0;
   background: $secondaryColor;
   .wrapper {
     @include space-between;
