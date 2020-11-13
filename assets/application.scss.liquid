@@ -102,6 +102,10 @@ figure {
   margin: 0;
 }
 
+input {
+  font-family: {{settings.font_body.family}};
+}
+
 img {
   object-fit: cover;
 }
@@ -162,12 +166,32 @@ button {
   li:nth-child(2)  {
     margin: 0 auto 0 auto;
   }
-  li:nth-child(3) a {
-    margin-right: 20px;
-    padding: 10px;
+  li:last-child a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    i {
+      margin-right: 10px;
+    }
   }
-  li:last-child i {
+}
+
+.secondary-nav form {
+  @include space-between;
+  height: 40px;
+  margin-right: 20px;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  @include border-radius-box-shadow;
+  background: $secondaryColor;
+  i {
     margin-right: 10px;
+  }
+  input {
+    background: inherit;
+    border: none;
   }
 }
 
@@ -519,7 +543,7 @@ iframe {
 
 // footer.liquid
 footer {
-  padding: 80px 0 0 0;
+  padding: 80px 0;
   background: $secondaryColor;
   .wrapper {
     display: flex;
