@@ -401,6 +401,31 @@ iframe {
 }
 
 
+// three-image-banner.liquid
+.img-banner {
+  display: flex;
+  img {
+    width: 33%;
+    height: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+  }
+  figure {
+    position: relative;
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      
+      background-color: $secondaryColor;
+      padding: 10px;
+      text-align: center;
+      font-size: 25px;
+    }
+  }
+}
+
+
+
 // page.contact.liquid
 .form-map-container {
   @include space-between;

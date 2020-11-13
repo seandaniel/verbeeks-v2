@@ -1,0 +1,44 @@
+
+  <section class="img-banner">
+    <img src="{{section.settings.img_1 | img_url: 'master'}}" alt="{{ img.alt }}">
+    <figure>
+      <img src="{{ section.settings.img_2 | img_url: 'master'}}" alt="{{ img.alt }}">
+      <figcaption>{{ section.settings.img_3_description }}</figcaption>
+    </figure>
+    <img src="{{section.settings.img_3 | img_url: 'master'}}" alt="{{ img.alt }}">
+  </section>
+
+
+{% schema %}
+
+  {
+  "name": "Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Three Image About Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_1",
+      "label": "About Img 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_2",
+      "label": "About Img 2"
+    },
+    {
+      "type": "text",
+      "id": "img_3_description",
+      "label": "Image 3 Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_3",
+      "label": "About Img 3"
+    }
+  ]
+}
+
+{% endschema %}
