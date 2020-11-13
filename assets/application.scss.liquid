@@ -491,30 +491,58 @@ iframe {
 
 // footer.liquid
 footer {
-  padding: 40px 0;
+  padding: 80px 0 0 0;
   background: $secondaryColor;
   .wrapper {
-    @include space-between;
-    ul {
-      display: flex;
-      li a {
-        display: inline-block;
-        font-size: 25px;
-        color: $quinaryColor;
-        background-color: $primaryColor;
-        padding: 15px 7.5px;
-        border-radius: 50%;
-        margin-right: 20px;
-        text-align: center;
-        width: 60px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.21);
-        transition: color .35s, background-color .35s;
-        &:hover,
-        &:focus {
-          color: $primaryColor;
-          background-color: $quaternaryColor;
-        }
-      }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.links-footer-ul li a {
+  display: inline-block;
+  margin-bottom: 10px;
+  transition: color .35s;
+  &:hover,
+  &:focus {
+    color: $tertiaryColor;
+  }
+}
+
+.links-footer-ul li:last-child a {
+  margin-bottom: 0;
+}
+
+.social-footer-nav {
+  @include center;
+  background-color: $quinaryColor;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.social-footer-ul {
+  display: flex;
+  li a {
+    display: inline-block;
+    font-size: 25px;
+    color: $quaternaryColor;
+    background-color: $primaryColor;
+    padding: 15px 7.5px;
+    border-radius: 50%;
+    margin-right: 20px;
+    text-align: center;
+    width: 60px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+    transition: color .35s, background-color .35s;
+    &:hover,
+    &:focus {
+      color: $primaryColor;
+      background-color: $quaternaryColor;
     }
   }
 }

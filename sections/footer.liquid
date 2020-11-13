@@ -1,18 +1,31 @@
 <footer>
   <div class="wrapper">
-    {%- assign footer_linklist = section.settings.footer_linklist -%}
-    {% if linklists[footer_linklist].links.size > 0 %}
-      <ul>
-        {% for link in linklists[footer_linklist].links %}
-          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    <nav>
+      <h2>{{ section.settings.footer_links_heading }}</h2>
+      {%- assign footer_links_linklist = section.settings.footer_links_linklist -%}
+      {% if linklists[footer_links_linklist].links.size > 0 %}
+      <ul class="links-footer-ul">
+        {% for link in linklists[footer_links_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
         {% endfor %}
       </ul>
+    </nav>
     {% endif %}
     <div class="img-copyright-container">
       <img src="{{ section.settings.footer_img | img_url: 'master' }}" alt="{{ img.alt }}">
       <p>{{ section.settings.company_copyright }} </p>
     </div>
   </div>
+  <nav class="social-footer-nav">
+    {%- assign footer_social_linklist = section.settings.footer_social_linklist -%}
+    {% if linklists[footer_social_linklist].links.size > 0 %}
+    <ul class="social-footer-ul">
+      {% for link in linklists[footer_social_linklist].links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
 </footer>
   
 {% schema %}
@@ -20,9 +33,15 @@
       "name": "Footer",
       "settings": [
         {
+          "type": "text",
+          "id": "footer_links_heading",
+          "label": "Footer Links Heading",
+          "default": "footer"
+        },
+        {
           "type": "link_list",
-          "id": "footer_linklist",
-          "label": "Footer menu",
+          "id": "footer_links_linklist",
+          "label": "Footer Links menu",
           "default": "footer"
         },
         {
@@ -34,6 +53,12 @@
           "type": "text",
           "id": "company_copyright",
           "label": "Company's Copyright"
+        },
+        {
+          "type": "link_list",
+          "id": "footer_social_linklist",
+          "label": "Footer social menu",
+          "default": "footer"
         }
       ]
     }
