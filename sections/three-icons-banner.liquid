@@ -6,6 +6,7 @@
         <img src="{{ 'brick-wall.svg' | asset_url }}" alt="A brick wall">
       </div>
       <p>{{ section.settings.landscape_about }}</p>
+      <a class="button" href="{{ section.settings.landscape_link }}">{{ section.settings.landscape_link_text }}</a>
     </div>
     <div class="icon-container">
       <h2>Garden Centre</h2>
@@ -13,6 +14,7 @@
         <img src="{{ 'growth.svg' | asset_url }}" alt="Three flowers growing">
       </div>
       <p>{{ section.settings.garden_about }}</p>
+      <a class="button" href="{{ section.settings.garden_link }}">{{ section.settings.garden_link_text }}</a>
     </div>
     <div class="icon-container">
       <h2>Store</h2>
@@ -20,6 +22,7 @@
         <img src="{{ 'shop.svg' | asset_url }}" alt="A storefront">
       </div>
       <p>{{ section.settings.store_about }}</p>
+      <a class="button" href="{{ section.settings.store_link }}">{{ section.settings.store_link_text }}</a>
     </div>
   </section>
 </div>
@@ -38,14 +41,44 @@
         "label": "Landscape About"
       },
       {
+        "type": "url",
+        "id": "landscape_link",
+        "label": "Landscape Link"
+      },
+      {
+        "type": "text",
+        "id": "landscape_link_text",
+        "label": "Landscape Link Text"
+      },
+      {
         "type": "textarea",
         "id": "garden_about",
         "label": "Garden Centre About"
       },
       {
+        "type": "url",
+        "id": "garden_link",
+        "label": "Garden Link"
+      },
+      {
+        "type": "text",
+        "id": "garden_link_text",
+        "label": "Garden Link Text"
+      },
+      {
         "type": "textarea",
         "id": "store_about",
         "label": "Store About"
+      },
+      {
+        "type": "url",
+        "id": "store_link",
+        "label": "Store Link"
+      },
+      {
+        "type": "text",
+        "id": "store_link_text",
+        "label": "Store Link Text"
       }
     ]
   }

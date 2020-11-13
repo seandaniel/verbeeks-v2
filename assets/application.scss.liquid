@@ -389,10 +389,11 @@ iframe {
 // pages
 
 //page.about.liquid
-.about-text-section {
+.about-text-img-container {
+  @include space-around;
   margin-bottom: 80px;
   p {
-    width: 800px;
+    max-width: 550px;
     span {
       font-weight: 700;
       font-size: 20px;
@@ -428,7 +429,9 @@ iframe {
 
 // three-icons-banner.liquid
 .three-icon-container {
-  @include space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 80px;
   .icon-container {
     display: flex;
@@ -446,6 +449,7 @@ iframe {
     }
     p {
       text-align: center;
+      margin-bottom: 20px;
     }
   }
 }
