@@ -153,18 +153,23 @@ button {
 // sections
 // header
 .secondary-nav ul {
-  @include space-between;
+  display: flex;
+  align-items: center;
   position: fixed;
   z-index: 100;
   background: $tertiaryColor;
   width: 100%;
   padding: 10px 2.5%;
-  li:first-child a {
-    margin-right: calc(95.15px + 20px + 78.1499px - 35px);
-    font-size: 40px;
-  }
-  li:nth-child(2)  {
-    margin: 0 auto 0 auto;
+  li:first-child {
+    margin-right: auto;
+    a {
+      font-size: 35px;
+      transition: color .35s;
+      &:hover,
+      &:focus {
+        color: $quaternaryColor;
+      }
+    }
   }
   li:last-child a {
     display: flex;
@@ -192,18 +197,6 @@ button {
   input {
     background: inherit;
     border: none;
-  }
-}
-
-.secondary-nav ul li:nth-child(2) a {
-  text-decoration: underline;
-}
-
-.secondary-nav ul li:nth-child(-n+2) a {
-  transition: color .35s;
-  &:hover,
-  &:focus {
-    color: $secondaryColor;
   }
 }
 
@@ -390,6 +383,9 @@ iframe {
   }
   .hours-number-container p {
     margin-bottom: 20px;
+  }
+  .hours-number-container p:nth-child(2) {
+    margin-bottom: 10px;
   }
 }
 
@@ -599,7 +595,7 @@ footer {
   }
 }
 
-footer .wrapper ul li:last-child a {
+footer ul li:last-child a {
   margin-right: 0;
 }
 
