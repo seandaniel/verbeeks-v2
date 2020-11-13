@@ -1,11 +1,15 @@
 
   <section class="img-banner">
-    <img src="{{section.settings.img_1 | img_url: 'master'}}" alt="{{ img.alt }}">
+    <figure>
+      <img src="{{section.settings.img_1 | img_url: 'master'}}" alt="{{ img.alt }}">
+    </figure>
     <figure>
       <img src="{{ section.settings.img_2 | img_url: 'master'}}" alt="{{ img.alt }}">
       <figcaption>{{ section.settings.img_3_description }}</figcaption>
     </figure>
-    <img src="{{section.settings.img_3 | img_url: 'master'}}" alt="{{ img.alt }}">
+    <figure>
+      <img src="{{section.settings.img_3 | img_url: 'master'}}" alt="{{ img.alt }}">
+    </figure>
   </section>
 
 
@@ -42,3 +46,10 @@
 }
 
 {% endschema %}
+
+    <!-- {
+      "type": "checkbox",
+      "id": "img_2_description",
+      "label": "Show Description",
+      "default": true
+    }, -->

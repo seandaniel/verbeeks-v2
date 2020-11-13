@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <section class="three-icon-container">
+    <div class="icon-container">
+      <h2>Landscaping</h2>
+      <div class="svg-container">
+        <img src="{{ 'brick-wall.svg' | asset_url }}" alt="A brick wall">
+      </div>
+      <p>{{ section.settings.landscape_about }}</p>
+    </div>
+    <div class="icon-container">
+      <h2>Garden Centre</h2>
+      <div class="svg-container">
+        <img src="{{ 'growth.svg' | asset_url }}" alt="Three flowers growing">
+      </div>
+      <p>{{ section.settings.garden_about }}</p>
+    </div>
+    <div class="icon-container">
+      <h2>Store</h2>
+      <div class="svg-container">
+        <img src="{{ 'shop.svg' | asset_url }}" alt="A storefront">
+      </div>
+      <p>{{ section.settings.store_about }}</p>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Three Icons",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Three Icons"
+      },
+      {
+        "type": "textarea",
+        "id": "landscape_about",
+        "label": "Landscape About"
+      },
+      {
+        "type": "textarea",
+        "id": "garden_about",
+        "label": "Garden Centre About"
+      },
+      {
+        "type": "textarea",
+        "id": "store_about",
+        "label": "Store About"
+      }
+    ]
+  }
+{% endschema %}
