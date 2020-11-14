@@ -523,12 +523,21 @@ footer {
   background: $secondaryColor;
   .wrapper {
     display: flex;
-    justify-content: space-around;
     align-items: center;
     margin-bottom: 40px;
-    h2 {
-      margin-bottom: 20px;
-    }
+  }
+}
+
+.nav-container {
+  display: flex;
+  nav:first-child {
+    margin-right: 80px;
+  }
+  nav:nth-child(2) {
+    margin-right: auto;
+  }
+  h2 {
+    margin-bottom: 20px;
   }
 }
 
@@ -583,6 +592,7 @@ footer ul li:last-child a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: auto;
   img {
     width: 200px;
     height: auto;
