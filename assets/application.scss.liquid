@@ -143,6 +143,15 @@ button {
   }
 }
 
+.first-paragraph {
+  max-width: 550px;
+  span {
+    font-weight: 700;
+    font-size: 20px;
+    font-family: {{ settings.font_body.family}};
+  }
+}
+
 // home sections
 
 // sections
@@ -239,14 +248,6 @@ button {
 .content-img-container {
   @include space-between;
   margin-bottom: 80px;
-  p {
-    max-width: 550px;
-    span {
-      font-weight: 700;
-      font-size: 20px;
-      font-family: {{ settings.font_body.family}};
-    }
-  }
   img {
     height: 500px;
     width: 500px;
@@ -408,14 +409,6 @@ iframe {
 .about-text-img-container {
   @include space-around;
   margin-bottom: 80px;
-  p {
-    max-width: 550px;
-    span {
-      font-weight: 700;
-      font-size: 20px;
-      font-family: {{ settings.font_body.family}};
-    }
-  }
 }
 
 // three-image-banner.liquid
@@ -492,6 +485,7 @@ iframe {
 
 .form-map-container form textarea {
   border: 3px solid $tertiaryColor;
+  font-family: {{settings.font_body.family}};
   margin: 10px 0 20px 0;
   width: 500px;
   padding: 5px 10px 5px 0px;
@@ -516,14 +510,6 @@ iframe {
 .covid-text-img-container {
   @include space-around;
   margin-bottom: 80px;
-  .covid-text-container p {
-    max-width: 550px;
-    span {
-      font-weight: 700;
-      font-size: 20px;
-      font-family: {{ settings.font_body.family}};
-    }
-  }
 }
 
 .covid-text-container a {
