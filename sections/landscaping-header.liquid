@@ -3,22 +3,20 @@
     <h1>{{page.title}}</h1>
   </div>
 </div>
-<section class="landscaping-header">
-  <div class="wrapper">
-    <div class="content-img-container">
-      {{page.content}}
-      <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
-        alt="{{ img.alt }}">
-    </div>
-  </div>
-  <nav class="landscape-nav">
-    <ul>
-      <li><button class="active" id="design">Design<i class="fab fa-envira"></i></button></li>
-      <li><button id="garden">Gardens<i class="fab fa-envira"></i></button></li>
-      <li><button id="lawn">Lawn<i class="fab fa-envira"></i></button></li>
-    </ul>
-  </nav>
-</section>
+<div class="wrapper">
+  <section class="content-img-container">
+    {{page.content}}
+    <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
+      alt="{{ img.alt }}">
+  </section>
+</div>
+<nav class="landscape-nav">
+  <ul>
+    <li><button class="active" id="design">Design<i class="fab fa-envira"></i></button></li>
+    <li><button id="garden">Gardens<i class="fab fa-envira"></i></button></li>
+    <li><button id="lawn">Lawn<i class="fab fa-envira"></i></button></li>
+  </ul>
+</nav>
 
 {% schema %}
   {

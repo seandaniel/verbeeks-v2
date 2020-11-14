@@ -11,8 +11,7 @@
   - Home page only: only shows on the home page
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header">
-
-    <header role="banner">
+  <header role="banner">
     <nav class="secondary-nav">
       <ul>
         {% for link in linklists.secondary-menu.links %}
@@ -79,23 +78,8 @@
         </ul>
       </div>
     </nav>
-        
-<!--     
-        {% if shop.customer_accounts_enabled %}
-            {% if customer %}
-            <a href="/account">account</a>
-            {{ 'log out'  | customer_logout_link }}
-            {% else %}
-            {{ 'log in ' | customer_login_link }}
-            {{ 'register' | customer_register_link }}
-            {% endif %}
-        {% endif %} -->
-
-        <!-- plane jane image -->
-      
-      
-    </header>
-  </section>
+  </header>
+</section>
   
 {% schema %}
   {

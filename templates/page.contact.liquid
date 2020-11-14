@@ -3,24 +3,24 @@
     <h1>{{page.title}}</h1>
   </div>
 </div>
-<section class="contact-section">
-  <div class="wrapper">
-    <div class="form-map-container">
-      {% form 'contact' %}
-        {% if form.posted_successfully? %}<p class="form-success">Message received, we will get back to you soon!</p>{% endif %}
-        {{ form.errors | default_errors }}
-        <label for="ContactFormName">Name:</label>
-        <input type="text" id="ContactFormName" name="contact[name]">
-        <label for="ContactFormEmail">E-mail:</label>
-        <input type="email" id="ContactFormEmail" name="contact[email]">
-        <label for="ContactFormPhone">Phone:</label>
-        <input type="tel" id="ContactFormPhone" name="contact[phone]">
-        <label for="ContactFormMessage">Message:</label>
-        <textarea rows="8" id="ContactFormMessage" name="contact[body]"></textarea>
-        <button class="button" type="submit"><i class="fas fa-envelope"></i>Send</button>
-      {% endform %}
-      {% section 'map' %}
-    </div>
-  </div>
-    {% section 'contact-secondary' %}
-</section>
+<div class="wrapper">
+  <section class="form-map-container">
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}<p class="form-success">Message received, we will get back to you soon!</p>{% endif %}
+      {{ form.errors | default_errors }}
+      <label for="ContactFormName">Name:</label>
+      <input type="text" id="ContactFormName" name="contact[name]">
+      <label for="ContactFormEmail">E-mail:</label>
+      <input type="email" id="ContactFormEmail" name="contact[email]">
+      <label for="ContactFormPhone">Phone:</label>
+      <input type="tel" id="ContactFormPhone" name="contact[phone]">
+      <label for="ContactFormMessage">Message:</label>
+      <textarea rows="8" id="ContactFormMessage" name="contact[body]"></textarea>
+      <button class="button" type="submit"><i class="fas fa-envelope"></i>Send</button>
+    {% endform %}
+    {% section 'map' %}
+  </section>
+</div>
+<div class="wrapper">
+  {% section 'contact-secondary' %}
+</div>
