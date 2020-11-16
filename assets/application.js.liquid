@@ -1,9 +1,23 @@
 $(function() {
 
+ // secondary-nav form
+ const secondaryForm = document.querySelector('.secondary-nav form');
+ const secondaryFormInput = document.querySelector('.secondary-nav form input');
+
+ const highlight = () => {
+  secondaryForm.classList.toggle('toggle-border');
+ }
+
+ const removeHighlight = () => {
+   secondaryForm.classList.toggle('toggle-border');
+ }
+
+ secondaryFormInput.addEventListener('focus', highlight);
+ secondaryFormInput.addEventListener('focusout', removeHighlight);
+
  // page.landscaping.liquid
  const landscapeSections = document.querySelectorAll('.landscape');
  const landscapeButtons = document.querySelectorAll('.landscape-nav button');
- const landscapeEnvira = document.querySelectorAll('.envira');
 
  const handleClick = function(e) {
 
