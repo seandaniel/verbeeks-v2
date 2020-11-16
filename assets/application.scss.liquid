@@ -195,6 +195,7 @@ button {
   border: none;
   @include border-radius-box-shadow;
   background: $secondaryColor;
+  border: 3px solid $secondaryColor;
   i {
     margin-right: 10px;
   }
@@ -202,6 +203,10 @@ button {
     background: inherit;
     border: none;
   }
+}
+
+.secondary-nav form:focus input {
+  border: 3px solid $primaryColor;
 }
 
 .primary-nav {
@@ -475,21 +480,35 @@ iframe {
     }
     input {
       border: none;
-      border-bottom: 3px solid $tertiaryColor;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+      background: $secondaryColor;
+      border-radius: 3px;
       margin-bottom: 20px;
       width: 400px;
-      padding: 5px 10px 5px 0px;
+      padding: 10px;
+      border: 3px solid $secondaryColor;
+      transition: border .35s;
     }
   }
 }
 
 .form-map-container form textarea {
-  border: 3px solid $tertiaryColor;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+  background: $secondaryColor;
+  border-radius: 3px;
+  border: none;
   font-family: {{settings.font_body.family}};
   margin: 10px 0 20px 0;
   width: 500px;
-  padding: 5px 10px 5px 0px;
+  padding: 10px;
   resize: vertical;
+  border: 3px solid $secondaryColor;
+  transition: border .35s;
+}
+
+.form-map-container form textarea:focus,
+.form-map-container form input:focus {
+  border: 3px solid $tertiaryColor;
 }
 
 .form-map-container form .button {
