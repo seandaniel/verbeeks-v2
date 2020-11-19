@@ -70,6 +70,7 @@ h1 {
 
 h2 {
   display: inline-block;
+  font-size: 30px;
   border-bottom: 3px solid $tertiaryColor;
 }
 
@@ -112,6 +113,7 @@ button {
 }
 
 .button {
+  display: inline-block;
   background-color: $secondaryColor;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
@@ -127,6 +129,24 @@ button {
   }
 }
 
+.button-reverse {
+  display: inline-block;
+  color: $quaternaryColor;
+  background-color: $primaryColor;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.21);
+  border-radius: 3px;
+  transition: color .35s, background-color .35s;
+  &:hover,
+  &:focus {
+    background-color: $quaternaryColor;
+    color: $primaryColor;
+  }
+  i {
+    margin-right: 10px;
+  }
+}
+
 .wrapper {
   max-width: 1200px;
   width: 95%;
@@ -134,9 +154,10 @@ button {
 }
 
 .svg-container {
-  background-color: #f0f5dc;
+  background-color: $quinaryColor;
   padding: 40px;
   border-radius: 50%;
+  border: 1px solid rgba(13, 13, 13, 0.3);
   img {
     height: 80px;
     width: 80px;
@@ -171,7 +192,7 @@ button {
       transition: color .35s;
       &:hover,
       &:focus {
-        color: $quaternaryColor;
+        color: $secondaryColor;
       }
     }
   }
@@ -359,9 +380,9 @@ iframe {
 
 // contact-secondary.liquid
 .contact-menu {
-  padding: 80px 0;
+  padding: 40px 0;
   margin: 80px 0;
-  background-color: $secondaryColor;
+  background-color: $quinaryColor;
   ul {
     display: flex;
     justify-content: center;
@@ -461,6 +482,7 @@ iframe {
     padding: 40px;
     width: 32%;
     border-top: 8px solid $tertiaryColor;
+    background: $secondaryColor;
     h2 {
       margin-bottom: 20px;
     }
@@ -557,32 +579,34 @@ iframe {
   @include border-radius-box-shadow;
 }
 
-// covid.liquid
-.covid-section {
-  @include space-between;
-  width: 80%;
-  @include border-radius-box-shadow;
-  padding: 40px;
+// image-text-section.liquid
+.image-text-section {
+  padding: 80px 0;
   margin: 0 auto 80px auto;
-  border-top: 8px solid #a9c53e;
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    h2 {
-      margin-bottom: 20px;
-    }
-    p {
-      margin-bottom: 40px;
-    }
-    .svg-container {
-      margin-bottom: 20px;
+  background: $secondaryColor;
+  .image-text-container {
+    @include space-around;
+    .text-icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
     }
   }
 }
 
-.covid-img {
+.text-container {
+  margin-bottom: 20px;
+  h2 {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.right-img {
   width: 400px;
   height: 400px;
   @include border-radius-box-shadow;
