@@ -9,9 +9,14 @@
       <div class="content">
         {{ page.content }}
       </div>
-      <a class="button" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
+      <a class="button-reverse" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
     </div>
-    <img src="{{ 'staff-with-masks.jpg' | asset_url }}" alt="Three people wearing masks">
+    <div class="img-icon-container">
+      <img class="covid-image" src="{{ 'staff-with-masks.jpg' | asset_url }}" alt="A group of staff wearing masks">
+      <div class="svg-container">
+        <img src="{{ 'mask.svg' | asset_url }}" alt="A person wearing a mask">
+      </div>
+    </div>
 </div>
 </section>
 </div>

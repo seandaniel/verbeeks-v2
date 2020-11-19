@@ -5,7 +5,9 @@
 </div>
 <div class="wrapper">
   <section class="content-img-container">
-    {{page.content}}
+    <div class="content">
+      {{ page.content }}
+    </div>
     <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
       alt="{{ img.alt }}">
   </section>

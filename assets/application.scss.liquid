@@ -70,7 +70,6 @@ h1 {
 
 h2 {
   display: inline-block;
-  font-size: 30px;
   border-bottom: 3px solid $tertiaryColor;
 }
 
@@ -164,12 +163,13 @@ button {
   }
 }
 
-.first-paragraph {
+.content {
   max-width: 550px;
-  span {
-    font-weight: 700;
-    font-size: 20px;
-    font-family: {{ settings.font_body.family}};
+  p {
+    margin-bottom: 20px;
+  }
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -275,11 +275,11 @@ button {
 
 // landscaping-header.liquid
 .content-img-container {
-  @include space-between;
+  @include space-around;
   margin-bottom: 80px;
   img {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     @include border-radius-box-shadow;
   }
 }
@@ -558,25 +558,24 @@ iframe {
   margin-bottom: 80px;
 }
 
-.content {
-  max-width: 550px;
-  p {
-    margin-bottom: 40px;
-  }
-  p:last-child {
-    margin-bottom: 0;
-  }
-}
-
 .covid-text-container a {
   display: inline-block;
   margin-top: 20px;
 } 
 
-.covid-text-img-container img {
-  width: 500px;
-  height: 500px;
-  @include border-radius-box-shadow;
+.img-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .covid-image {
+    width: 400px;
+    height: 400px;
+    @include border-radius-box-shadow;
+    margin-bottom: 40px;
+  }
+  .svg-container {
+    width: min-content;
+  }
 }
 
 // image-text-section.liquid
@@ -586,24 +585,19 @@ iframe {
   background: $secondaryColor;
   .image-text-container {
     @include space-around;
-    .text-icon-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .text-container {
       width: 400px;
     }
   }
 }
 
-.text-container {
+.text-container h2 {
+  display: inline-block;
   margin-bottom: 20px;
-  h2 {
-    display: inline-block;
-    margin-bottom: 20px;
-  }
-  p {
-    margin-bottom: 20px;
-  }
+}
+
+.text-container p {
+  margin-bottom: 20px;
 }
 
 .right-img {
