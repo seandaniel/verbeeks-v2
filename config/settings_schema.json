@@ -21,6 +21,18 @@
           "id": "color_secondary_collection_2",
           "label": "Background",
           "default": "#f0f5dc"
+       },
+       {
+          "type": "color",
+          "id": "color_secondary_collection_3",
+          "label": "Background",
+          "default": "#f0f5dc"
+       },
+       {
+          "type": "color",
+          "id": "color_secondary_collection_4",
+          "label": "Background",
+          "default": "#f0f5dc"
        }
     ]
  },
