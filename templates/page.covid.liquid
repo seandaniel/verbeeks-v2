@@ -6,11 +6,12 @@
 <div class="wrapper">
   <section class="covid-text-img-container">
     <div class="covid-text-container">
-      {{ page.content }}
+      <div class="content">
+        {{ page.content }}
+      </div>
       <a class="button" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
     </div>
-    <div class="svg-container">
-      <img src="{{ 'mask.svg' | asset_url }}" alt="A person wearing a mask">
+    <img src="{{ 'staff-with-masks.jpg' | asset_url }}" alt="Three people wearing masks">
     </div>
   </section>
 </div>
