@@ -152,14 +152,8 @@ button {
   }
 }
 
-// home sections
-
 // sections
 // header
-
-.secondary-nav {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
-}
 
 .secondary-nav ul {
   display: flex;
@@ -169,6 +163,7 @@ button {
   background: $tertiaryColor;
   width: 100%;
   padding: 10px 2.5%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
   li:first-child {
     margin-right: auto;
     a {
@@ -563,7 +558,6 @@ iframe {
 }
 
 // covid.liquid
-
 .covid-section {
   @include space-between;
   width: 80%;
@@ -580,7 +574,7 @@ iframe {
       margin-bottom: 20px;
     }
     p {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
     .svg-container {
       margin-bottom: 20px;
@@ -708,9 +702,13 @@ footer ul li:last-child a {
 // home 
 // secondary-collections.liquid
 
-.secondary-collection-container {
+.secondary-collections {
+  // + 40px margin for before and after elements
+  margin: 120px 0;
+}
+
+.secondary-collections-container {
   @include space-around;
-  margin-bottom: 80px;
   .secondary-collection {
     position: relative;
     background-repeat: no-repeat;
@@ -719,6 +717,10 @@ footer ul li:last-child a {
     height: 450px;
     @include border-radius-box-shadow;
   }
+}
+
+.secondary-collections .secondary-collections-container:first-child {
+  margin-bottom: 80px;
 }
 
 .collection-1::before {

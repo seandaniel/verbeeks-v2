@@ -1,63 +1,64 @@
 <div class="wrapper">
-  <section class="secondary-collection-container">
-
-  {%- assign collection = collections[section.settings.collection_1] -%}
-    <div class="secondary-collection collection-1" style="background-image: url({{collection.image |img_url: 'master'}})">
-      <div class="collection-button-container">
-        {% if section.settings.title_1 != blank %}
-          <h2 class="featured-collection__title">{{ section.settings.title_1 | escape }}</h2>
-        {% endif %}
-
-        {% if section.settings.link_1 != blank %}
-          <a class="button" href="{{section.settings.link_1}}">{{section.settings.link_text_1}}</a>
-        {% endif %}
+  <section class="secondary-collections">
+    <div class="secondary-collections-container">
+  
+    {%- assign collection = collections[section.settings.collection_1] -%}
+      <div class="secondary-collection collection-1" style="background-image: url({{collection.image | img_url: 'master'}})">
+        <div class="collection-button-container">
+          {% if section.settings.title_1 != blank %}
+            <h2 class="featured-collection__title">{{ section.settings.title_1 | escape }}</h2>
+          {% endif %}
+  
+          {% if section.settings.link_1 != blank %}
+            <a class="button" href="{{section.settings.link_1}}">{{section.settings.link_text_1}}</a>
+          {% endif %}
+        </div>
       </div>
+      
+    {%- assign collection = collections[section.settings.collection_2] -%}
+      <div class="secondary-collection collection-2" style="background-image: url({{collection.image | img_url: 'master'}})">
+        <div class="collection-button-container">
+          {% if section.settings.title_2 != blank %}
+            <h2 class="featured-collection__title">{{ section.settings.title_2 | escape }}</h2>
+          {% endif %}
+  
+          {% if section.settings.link_2 != blank %}
+            <a class="button" href="{{section.settings.link_2}}">{{section.settings.link_text_2}}</a>
+          {% endif %}
+        </div>
+      </div>
+  
     </div>
+    <div class="secondary-collections-container">
     
-  {%- assign collection = collections[section.settings.collection_2] -%}
-    <div class="secondary-collection collection-2" style="background-image: url({{collection.image |img_url: 'master'}})">
-      <div class="collection-button-container">
-        {% if section.settings.title_2 != blank %}
-          <h2 class="featured-collection__title">{{ section.settings.title_2 | escape }}</h2>
-        {% endif %}
-
-        {% if section.settings.link_2 != blank %}
-          <a class="button" href="{{section.settings.link_2}}">{{section.settings.link_text_2}}</a>
-        {% endif %}
+      {%- assign collection = collections[section.settings.collection_3] -%}
+      <div class="secondary-collection collection-3"
+        style="background-image: url({{collection.image | img_url: 'master'}})">
+        <div class="collection-button-container">
+          {% if section.settings.title_3 != blank %}
+          <h2 class="featured-collection__title">{{ section.settings.title_3 | escape }}</h2>
+          {% endif %}
+    
+          {% if section.settings.link_3 != blank %}
+          <a class="button" href="{{section.settings.link_3}}">{{section.settings.link_text_3}}</a>
+          {% endif %}
+        </div>
+      </div>
+    
+      {%- assign collection = collections[section.settings.collection_4] -%}
+      <div class="secondary-collection collection-4"
+        style="background-image: url({{collection.image | img_url: 'master'}})">
+        <div class="collection-button-container">
+          {% if section.settings.title_4 != blank %}
+          <h2 class="featured-collection__title">{{ section.settings.title_4 | escape }}</h2>
+          {% endif %}
+    
+          {% if section.settings.link_4 != blank %}
+          <a class="button" href="{{section.settings.link_4}}">{{section.settings.link_text_4}}</a>
+          {% endif %}
+        </div>
       </div>
     </div>
-
-  </section>
-  <section class="secondary-collection-container">
-  
-    {%- assign collection = collections[section.settings.collection_3] -%}
-    <div class="secondary-collection collection-3"
-      style="background-image: url({{collection.image |img_url: 'master'}})">
-      <div class="collection-button-container">
-        {% if section.settings.title_3 != blank %}
-        <h2 class="featured-collection__title">{{ section.settings.title_3 | escape }}</h2>
-        {% endif %}
-  
-        {% if section.settings.link_3 != blank %}
-        <a class="button" href="{{section.settings.link_3}}">{{section.settings.link_text_3}}</a>
-        {% endif %}
-      </div>
-    </div>
-  
-    {%- assign collection = collections[section.settings.collection_4] -%}
-    <div class="secondary-collection collection-4"
-      style="background-image: url({{collection.image |img_url: 'master'}})">
-      <div class="collection-button-container">
-        {% if section.settings.title_4 != blank %}
-        <h2 class="featured-collection__title">{{ section.settings.title_4 | escape }}</h2>
-        {% endif %}
-  
-        {% if section.settings.link_4 != blank %}
-        <a class="button" href="{{section.settings.link_4}}">{{section.settings.link_text_4}}</a>
-        {% endif %}
-      </div>
-    </div>
-  
   </section>
 </div>
 

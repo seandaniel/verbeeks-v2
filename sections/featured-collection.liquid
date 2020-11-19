@@ -6,23 +6,33 @@
   - Collection
 
 {%- endcomment -%}
+<div class="h1-container">
+  <div class="wrapper">
+    <h1>{{ section.settings.collection_title }}</h1>
+  </div>
+</div>
 <section class="featured-collection">
   
 </section>
 
 {% schema %}
   {
-    "name": "Featured collection",
+    "name": "Featured Collection",
     "settings": [
       {
-        "id": "collection",
+        "type": "text",
+        "id": "collection_title",
+        "label": "Collection"
+      },
+      {
         "type": "collection",
+        "id": "collection",
         "label": "Collection"
       }
     ],
     "presets": [
       {
-        "name": "Featured collection",
+        "name": "Featured Collection",
         "category": "Collection"
       }
     ]

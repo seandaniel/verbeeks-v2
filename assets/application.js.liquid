@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
   
   // secondary-nav form
   const secondaryForm = document.querySelector('.secondary-nav form');
@@ -36,5 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   landscapeButtons.forEach(button => button.addEventListener('click', handleClick));
+
 });
 
