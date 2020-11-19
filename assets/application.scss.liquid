@@ -430,6 +430,7 @@ iframe {
     width: 30%;
     figcaption {
       width: 100%;
+      border-bottom: 3px solid $tertiaryColor;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -551,6 +552,40 @@ iframe {
 } 
 
 .covid-text-img-container img {
+  width: 500px;
+  height: 500px;
+  @include border-radius-box-shadow;
+}
+
+// covid.liquid
+
+.covid-section {
+  @include space-between;
+  width: 80%;
+  @include border-radius-box-shadow;
+  padding: 40px;
+  margin: 0 auto 80px auto;
+  border-top: 8px solid #a9c53e;
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    .svg-container {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+
+.covid-img {
   width: 400px;
   height: 400px;
   @include border-radius-box-shadow;

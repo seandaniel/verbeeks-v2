@@ -1,40 +1,40 @@
-$(function() {
-
- // secondary-nav form
- const secondaryForm = document.querySelector('.secondary-nav form');
- const secondaryFormInput = document.querySelector('.secondary-nav form input');
-
- const highlight = () => {
-  secondaryForm.classList.toggle('toggle-border');
- }
-
- const removeHighlight = () => {
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // secondary-nav form
+  const secondaryForm = document.querySelector('.secondary-nav form');
+  const secondaryFormInput = document.querySelector('.secondary-nav form input');
+  
+  const highlight = () => {
    secondaryForm.classList.toggle('toggle-border');
- }
-
- secondaryFormInput.addEventListener('focus', highlight);
- secondaryFormInput.addEventListener('focusout', removeHighlight);
-
- // page.landscaping.liquid
- const landscapeSections = document.querySelectorAll('.landscape');
- const landscapeButtons = document.querySelectorAll('.landscape-nav button');
-
- const handleClick = function(e) {
-
-  landscapeButtons.forEach(button => button.classList.remove('active'));
-
-  e.target.classList.toggle('active');
-
-  landscapeSections.forEach(section => {
-    if (section.classList.contains(e.target.id)) {
-      section.hidden = false;
-    } else {
-      section.hidden = true;
-    }
-  })
-
- }
-
- landscapeButtons.forEach(button => button.addEventListener('click', handleClick));
-
+  }
+  
+  const removeHighlight = () => {
+    secondaryForm.classList.toggle('toggle-border');
+  }
+  
+  secondaryFormInput.addEventListener('focus', highlight);
+  secondaryFormInput.addEventListener('focusout', removeHighlight);
+  
+  // page.landscaping.liquid
+  const landscapeSections = document.querySelectorAll('.landscape');
+  const landscapeButtons = document.querySelectorAll('.landscape-nav button');
+  
+  const handleClick = function(e) {
+  
+   landscapeButtons.forEach(button => button.classList.remove('active'));
+  
+   e.target.classList.toggle('active');
+  
+   landscapeSections.forEach(section => {
+     if (section.classList.contains(e.target.id)) {
+       section.hidden = false;
+     } else {
+       section.hidden = true;
+     }
+   })
+  
+  }
+  
+  landscapeButtons.forEach(button => button.addEventListener('click', handleClick));
 });
+
