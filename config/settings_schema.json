@@ -12,22 +12,15 @@
     "settings": [
        {
           "type": "color",
-          "id": "color_accent",
-          "label": "Accent",
-          "default": "#c4cdd5",
-          "info": "Buttons and special ornaments"
-       },
-       {
-          "type": "color",
-          "id": "color_body_text",
-          "label": "Text",
-          "default": "#161d25"
-       },
-       {
-          "type": "color",
-          "id": "color_main_bg",
+          "id": "color_secondary_collection_1",
           "label": "Background",
-          "default": "#fff"
+          "default": "#f0f5dc"
+       },
+       {
+          "type": "color",
+          "id": "color_secondary_collection_2",
+          "label": "Background",
+          "default": "#f0f5dc"
        }
     ]
  },
