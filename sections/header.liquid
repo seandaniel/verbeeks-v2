@@ -12,6 +12,9 @@
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header">
   <header role="banner">
+    <div class="call-to-action">
+      <a href="{{ section.settings.call_to_action }}">{{ section.settings.call_to_action_text }}</a>
+    </div>
     <nav class="secondary-nav">
       <ul>
         {% for link in linklists.secondary-menu.links %}
@@ -88,6 +91,16 @@
       {
         "type": "header",
         "content": "Header"
+      },
+      {
+        "type": "url",
+        "id": "call_to_action",
+        "label": "Call To Action Link"
+      },
+      {
+        "type": "text",
+        "id": "call_to_action_text",
+        "label": "Call To Action Text"
       },
       {
         "type": "link_list",

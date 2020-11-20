@@ -175,15 +175,34 @@ button {
 // sections
 // header
 
+.call-to-action {
+  background: $quinaryColor;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+  a {
+    text-decoration: underline;
+    transition: color .35s;
+    &:hover,
+    &:focus {
+      color: $tertiaryColor;
+    }
+  }
+}
+
+.secondary-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $tertiaryColor;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+}
+
 .secondary-nav ul {
   display: flex;
   align-items: center;
-  position: fixed;
-  z-index: 100;
-  background: $tertiaryColor;
   width: 100%;
   padding: 10px 2.5%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
   li:first-child {
     margin-right: auto;
     a {
@@ -232,12 +251,11 @@ button {
 }
 
 .primary-nav {
-  // .secondary-nav height
-  padding-top: 66px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
   background-color: $secondaryColor;
   text-transform: uppercase;
   margin-bottom: 80px;
+  padding: 5px 0;
   ul {
     display: flex;
     align-items: center;
@@ -257,8 +275,11 @@ button {
 
 .primary-nav ul li:first-child {
   margin-right: auto;
-  a {
-    margin: 0;
+  h1 {
+    height: 94.5px;
+    a {
+      margin-right: 0;
+    }
   }
 }
 
