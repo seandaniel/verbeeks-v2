@@ -12,39 +12,19 @@
   - Button link: link of the button
 {%- endcomment -%}
 
-<section class="image-with-text">
-    {% capture image_layout %}
-      <div class="image-with-text__image">
-        {% if section.settings.image != blank %}
-          <img src="{{section.settings.image | img_url: '425x'}}" alt="{{section.settings.image }}">
-        {% else %}
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-        {% endif %}
+
+<section class="image-text-section">
+  <div class="wrapper">
+    <div class="image-text-container">
+      <div class="text-container">
+        <h2>{{ section.settings.title }}</h2>
+        <p>{{ section.settings.text }}</p>
+        <a class="button-reverse" href="{{ section.settings.button_link }} ">{{ section.settings.button_label }}</a>
       </div>
-    {% endcapture %}
-  
-    {% if section.settings.layout == 'left' %}
-      {{ image_layout }}
-    {% endif %}
-  
-    <div class="image-with-text__text">
-      {% if section.settings.title != blank %}
-        <h2>{{ section.settings.title | escape }}</h2>
-      {% endif %}
-      {% if section.settings.text != blank %}
-        <div>{{ section.settings.text }}</div>
-      {% endif %}
-      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-        <a href="{{ section.settings.button_link }}">
-          {{ section.settings.button_label | escape }}
-        </a>
-      {% endif %}
+      <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ img.alt }}">
     </div>
-  
-    {% if section.settings.layout == 'right' %}
-      {{ image_layout }}
-    {% endif %}
-  </section>
+  </div>
+</section>
   
   {% schema %}
     {
@@ -54,22 +34,6 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
-        },
-        {
-          "type": "select",
-          "id": "layout",
-          "label": "Image alignment",
-          "default": "left",
-          "options": [
-            {
-              "value": "left",
-              "label": "Left"
-            },
-            {
-              "value": "right",
-              "label": "Right"
-            }
-          ]
         },
         {
           "type": "text",

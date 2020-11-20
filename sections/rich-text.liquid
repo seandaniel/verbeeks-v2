@@ -6,15 +6,11 @@
   - Heading: title of the rich text section
   - Text: description of the rich text section
 {%- endcomment -%}
-<section>
-  {%- if section.settings.title != blank -%}
+<section class="rich-text">
+  <div class="wrapper">
     <h2>{{ section.settings.title | escape }}</h2>
-  {%- endif -%}
-  {%- if section.settings.text != blank -%}
-    <div class="rte">
-      {{ section.settings.text }}
-    </div>
-  {%- endif -%}
+    {{ section.settings.text }}
+  </div>
 </section>
 
 {% schema %}
