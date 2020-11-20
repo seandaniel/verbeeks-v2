@@ -24,9 +24,17 @@
       </nav>
       {% endif %}
     </div>
-    <div class="img-copyright-container">
-      <img src="{{ section.settings.footer_img | img_url: 'master' }}" alt="{{ img.alt }}">
-      <p>{{ section.settings.company_copyright }} </p>
+    <div class="hours-logo-container">
+      <div class="hours-number-container">
+        <h2>{{ section.settings.hours_heading }}</h2>
+        <p>{{ section.settings.company_hours_1 }}</p>
+        <p>{{ section.settings.company_hours_2 }}</p>
+        <a href="{{ section.settings.company_number }}"><i class="fas fa-phone"></i>{{ section.settings.company_number_text }}</a>
+      </div>
+      <div class="img-copyright-container">
+        <img src="{{ section.settings.footer_img | img_url: 'master' }}" alt="{{ img.alt }}">
+        <p>{{ section.settings.company_copyright }} </p>
+      </div>
     </div>
   </div>
   <nav class="social-footer-nav">
@@ -68,6 +76,31 @@
           "id": "footer_links_2_linklist",
           "label": "Footer Links Menu 2",
           "default": "footer"
+        },
+        {
+          "type": "text",
+          "id": "hours_heading",
+          "label": "Hours heading"
+        },
+        {
+          "type": "text",
+          "id": "company_hours_1",
+          "label": "Company's hours"
+        },
+        {
+          "type": "text",
+          "id": "company_hours_2",
+          "label": "Company's hours"
+        },
+        {
+          "type": "url",
+          "id": "company_number",
+          "label": "Company's phone number"
+        },
+        {
+          "type": "text",
+          "id": "company_number_text",
+          "label": "Company's phone number text"
         },
         {
           "type": "image_picker",

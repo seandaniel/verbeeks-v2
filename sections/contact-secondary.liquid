@@ -1,25 +1,23 @@
-<nav class="contact-menu">
-  {%- assign contact_linklist = section.settings.contact_linklist -%}
-  {% if linklists[contact_linklist].links.size > 0 %}
-  <ul>
-    {% for link in linklists[contact_linklist].links %}
-    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-</nav>
 <div class="wrapper">
-  <div class="hours-img-container">
+  <section class="contact-secondary">
     <div class="hours-number-container">
       <h2>{{ section.settings.hours_heading }}</h2>
       <p>{{ section.settings.company_hours_1 }}</p>
       <p>{{ section.settings.company_hours_2 }}</p>
       <a href="{{ section.settings.company_number }}"><i class="fas fa-phone"></i>{{ section.settings.company_number_text }}</a>
     </div>
-    <img src="{{ section.settings.contact_img | img_url: 'master' }}" alt="{{ img.alt }}">
-  </div>
+    <nav class="contact-menu">
+      {%- assign contact_linklist = section.settings.contact_linklist -%}
+      {% if linklists[contact_linklist].links.size > 0 %}
+      <ul>
+        {% for link in linklists[contact_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </nav>
+  </section>
 </div>
-
 
 {% schema %}
   {
@@ -29,11 +27,6 @@
         "type": "link_list",
         "id": "contact_linklist",
         "label": "Contact menu"
-      },
-      {
-        "type": "image_picker",
-        "id": "contact_img",
-        "label": "Company's Storefront"
       },
       {
         "type": "text",
