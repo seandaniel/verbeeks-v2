@@ -1,0 +1,123 @@
+<div class="wrapper">
+  <section class="tertiary-collection-container">
+    <div class="icon-container">
+      <h2>{{ section.settings.collection_1_heading }}</h2>
+      <img src="{{ section.settings.collection_1_img | img_url: 'master' }}" alt="{{ img.alt }}">
+      <p>{{ section.settings.collection_1_about }}</p>
+      <a class="button-reverse" href="{{ section.settings.collection_1_link }}">{{ section.settings.collection_1_label }}</a>
+    </div>
+    <div class="icon-container">
+      <h2>{{ section.settings.collection_2_heading }}</h2>
+      <img src="{{ section.settings.collection_2_img | img_url: 'master' }}" alt="{{ img.alt }}">
+      <p>{{ section.settings.collection_2_about }}</p>
+      <a class="button-reverse" href="{{ section.settings.collection_2_link }}">{{ section.settings.collection_2_label }}</a>
+    </div>
+    <div class="icon-container">
+      <h2>{{ section.settings.collection_3_heading }}</h2>
+      <img src="{{ section.settings.collection_3_img | img_url: 'master' }}" alt="{{ img.alt }}">
+      <p>{{ section.settings.collection_3_about }}</p>
+      <a class="button-reverse" href="{{ section.settings.collection_3_link }}">{{ section.settings.collection_3_label }}</a>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Tertiary Collections",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Tertiary Collection 1"
+      },
+      {
+        "type": "text",
+        "id": "collection_1_heading",
+        "label": "Collection 1 Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_1_img",
+        "label": "Collection 1 Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_1_about",
+        "label": "Collection 1 Description"
+      },
+      {
+        "type": "url",
+        "id": "collection_1_link",
+        "label": "Collection 1 Link"
+      },
+      {
+        "type": "text",
+        "id": "collection_1_label",
+        "label": "Collection 1 Label"
+      },
+      {
+        "type": "header",
+        "content": "Tertiary Collection 2"
+      },
+      {
+        "type": "text",
+        "id": "collection_2_heading",
+        "label": "Collection 2 Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_2_img",
+        "label": "Collection 2 Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_2_about",
+        "label": "Collection 2 Description"
+      },
+      {
+        "type": "url",
+        "id": "collection_2_link",
+        "label": "Collection 2 Link"
+      },
+      {
+        "type": "text",
+        "id": "collection_2_label",
+        "label": "Collection 2 Label"
+      },
+      {
+        "type": "header",
+        "content": "Tertiary Collection 3"
+      },
+      {
+        "type": "text",
+        "id": "collection_3_heading",
+        "label": "Collection 3 Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_3_img",
+        "label": "Collection 3 Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_3_about",
+        "label": "Collection 3 Description"
+      },
+      {
+        "type": "url",
+        "id": "collection_3_link",
+        "label": "Collection 3 Link"
+      },
+      {
+        "type": "text",
+        "id": "collection_3_label",
+        "label": "Collection 3 Label"
+      }
+    ],
+      "presets": [
+      {
+        "name": "Tertiary Collections",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}

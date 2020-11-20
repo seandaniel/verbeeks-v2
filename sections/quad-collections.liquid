@@ -1,14 +1,12 @@
 <div class="wrapper">
   <section class="quad-collections">
     <div class="quad-collections-container">
-  
     {%- assign collection = collections[section.settings.collection_1] -%}
       <div class="quad-collection collection-1" style="background-image: url({{collection.image | img_url: 'master'}})">
         <div class="collection-button-container">
           {% if section.settings.title_1 != blank %}
             <h2 class="featured-collection__title">{{ section.settings.title_1 | escape }}</h2>
           {% endif %}
-  
           {% if section.settings.link_1 != blank %}
             <a class="button" href="{{section.settings.link_1}}">{{section.settings.link_text_1}}</a>
           {% endif %}
@@ -21,16 +19,13 @@
           {% if section.settings.title_2 != blank %}
             <h2 class="featured-collection__title">{{ section.settings.title_2 | escape }}</h2>
           {% endif %}
-  
           {% if section.settings.link_2 != blank %}
             <a class="button" href="{{section.settings.link_2}}">{{section.settings.link_text_2}}</a>
           {% endif %}
         </div>
       </div>
-  
     </div>
     <div class="quad-collections-container">
-    
       {%- assign collection = collections[section.settings.collection_3] -%}
       <div class="quad-collection collection-3"
         style="background-image: url({{collection.image | img_url: 'master'}})">
@@ -38,7 +33,6 @@
           {% if section.settings.title_3 != blank %}
           <h2 class="featured-collection__title">{{ section.settings.title_3 | escape }}</h2>
           {% endif %}
-    
           {% if section.settings.link_3 != blank %}
           <a class="button" href="{{section.settings.link_3}}">{{section.settings.link_text_3}}</a>
           {% endif %}
@@ -52,7 +46,6 @@
           {% if section.settings.title_4 != blank %}
           <h2 class="featured-collection__title">{{ section.settings.title_4 | escape }}</h2>
           {% endif %}
-    
           {% if section.settings.link_4 != blank %}
           <a class="button" href="{{section.settings.link_4}}">{{section.settings.link_text_4}}</a>
           {% endif %}
@@ -64,8 +57,12 @@
 
 {% schema %}
   {
-    "name": "Quad collections",
+    "name": "Quad Collections",
     "settings": [
+      {
+        "type": "header",
+        "content":" Quad Collection 1"
+      },
       {
         "type": "text",
         "id": "title_1",
@@ -86,6 +83,10 @@
         "type": "text",
         "id": "link_text_1",
         "label": "Link Text 1"
+      },
+      {
+        "type": "header",
+        "content":" Quad Collection 2"
       },
       {
         "type": "text",
@@ -109,6 +110,10 @@
         "label": "Link Text 2"
       },
       {
+        "type": "header",
+        "content":" Quad Collection 3"
+      },
+      {
         "type": "text",
         "id": "title_3",
         "label": "Heading 3",
@@ -128,6 +133,10 @@
         "type": "text",
         "id": "link_text_3",
         "label": "Link Text 3"
+      },
+      {
+        "type": "header",
+        "content":" Quad Collection 4"
       },
       {
         "type": "text",
