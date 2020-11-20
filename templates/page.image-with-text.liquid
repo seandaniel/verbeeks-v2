@@ -11,6 +11,7 @@
       </div>
       {% section 'button' %}
     </div>
-    {% section 'img' %}
+    <!-- <img src="{{ block.settings.image_id | img_url: 'master' }}" alt="{{ img.alt }}">  -->
+    <img src="{{ page.image | img_url: 'master' }}" alt="{{ img.alt }}"> 
   </section>
 </div>
