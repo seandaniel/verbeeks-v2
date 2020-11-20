@@ -256,7 +256,7 @@ button {
   text-transform: uppercase;
   margin-bottom: 80px;
   padding: 5px 0;
-  ul {
+  .primary-ul {
     display: flex;
     align-items: center;
     li img {
@@ -273,8 +273,9 @@ button {
   }
 }
 
-.primary-nav ul li:first-child {
-  margin-right: auto;
+// logo
+.primary-ul li:first-child {
+  margin: 0 auto 0 0;
   h1 {
     height: 94.5px;
     a {
@@ -284,15 +285,44 @@ button {
   }
 }
 
-.primary-nav ul li a {
-  display: inline-block;
+.primary-ul li {
   margin-left: 40px;
-  transition: color .35s;
-  &:hover,
-  &:focus {
+  position: relative;
+  a {
+    transition: color .35s;
+    &:hover,
+    &:focus {
     color: $tertiaryColor;
+    }
   }
 }
+
+.dropdown-ul {
+  display: none;
+  // top: 104.5px;
+  top: 15px;
+  position: absolute;
+  @include border-radius-box-shadow;
+  background-color: $quinaryColor;
+  padding: 10px;
+  width: max-content;
+  li {
+    margin: 0 0 10px 0;
+  }
+}
+
+.dropdown-ul li:first-child {
+  margin-bottom: 10px;
+}
+
+.primary-ul li:hover > .dropdown-ul {
+  display: block;
+}
+
+.dropdown-ul li:last-child {
+  margin-bottom: 0;
+}
+
 
 // landscaping-header.liquid
 .content-img-container {
