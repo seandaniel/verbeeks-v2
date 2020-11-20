@@ -278,7 +278,8 @@ button {
   h1 {
     height: 94.5px;
     a {
-      margin-right: 0;
+      margin-left: 0;
+      height: 94.5px;
     }
   }
 }
@@ -571,30 +572,21 @@ iframe {
   font-weight: 700;
 }
 
-// page.covid.liquid
-.covid-text-img-container {
+// page.image-with-text.liquid
+.text-img-container {
   @include space-around;
   margin-bottom: 80px;
 }
 
-.covid-text-container a {
+.text-container a {
   display: inline-block;
   margin-top: 20px;
 } 
 
-.img-icon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .covid-image {
-    width: 400px;
-    height: 400px;
-    @include border-radius-box-shadow;
-    margin-bottom: 40px;
-  }
-  .svg-container {
-    width: min-content;
-  }
+.text-img-container img {
+  width: 400px;
+  height: 400px;
+  @include border-radius-box-shadow;
 }
 
 // image-text-section.liquid
@@ -732,17 +724,14 @@ footer ul li:last-child a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 80px 0;
-  p {
-    margin-top: 40px;
-    a {
-      font-weight: 700;
-      color: $tertiaryColor;
-      transition: color .35s;
-      &:hover,
-      &:focus {
-        color: $primaryColor;
-      }
+  margin-bottom: 80px;
+  a {
+    font-weight: 700;
+    color: $tertiaryColor;
+    transition: color .35s;
+    &:hover,
+    &:focus {
+      color: $primaryColor;
     }
   }
   img {
