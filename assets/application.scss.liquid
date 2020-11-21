@@ -254,10 +254,10 @@ button {
   background-color: $secondaryColor;
   text-transform: uppercase;
   margin-bottom: 80px;
-  padding: 5px 0;
+  padding-top: 5px;
   .primary-ul {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     li img {
       display: inline-block;
       width: 200px;
@@ -278,7 +278,8 @@ button {
   h1 {
     height: 94.5px;
     a {
-      margin-left: 0;
+      display: inline-block;
+      margin: 0;
       height: 94.5px;
     }
   }
@@ -288,6 +289,8 @@ button {
   margin-left: 40px;
   position: relative;
   a {
+    display: inline-block;
+    padding-bottom: 20px;
     transition: color .35s;
     &:hover,
     &:focus {
@@ -298,30 +301,44 @@ button {
 
 .dropdown-ul {
   display: none;
-  // top: 104.5px;
-  top: 15px;
+  top: 34px;
   position: absolute;
   @include border-radius-box-shadow;
-  background-color: $quinaryColor;
-  padding: 10px;
+  border-top: 5px solid $tertiaryColor;
+  background-color: $quaternaryColor;
   width: max-content;
+  padding: 20px 0 0 20px;
   li {
-    margin: 0 0 10px 0;
+    width: 180px;
+    position: relative;
+    margin-left: 0;
+    padding: 0 0 20px 0;
+    a {
+      padding: 0;
+    }
   }
-}
-
-.dropdown-ul li:first-child {
-  margin-bottom: 10px;
 }
 
 .primary-ul li:hover > .dropdown-ul {
   display: block;
 }
 
-.dropdown-ul li:last-child {
-  margin-bottom: 0;
+
+.dropdown-ul-2 {
+  display: none;
+  top: 0;
+  right: -180px;
+  position: absolute;
+  padding: 20px 0 0 20px;
+  @include border-radius-box-shadow;
+  border-top: 5px solid $tertiaryColor;
+  background-color: $quaternaryColor;
+  width: 100%;
 }
 
+.dropdown-ul li:hover > .dropdown-ul-2 {
+  display: block;
+}
 
 // landscaping-header.liquid
 .content-img-container {
