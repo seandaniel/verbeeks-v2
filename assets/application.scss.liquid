@@ -176,7 +176,7 @@ button {
 
 .call-to-action {
   background: $quinaryColor;
-  padding: 10px 0;
+  padding: 5px 0;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
   a {
@@ -773,7 +773,6 @@ footer ul li:last-child a {
 
 // home 
 // quad-collections.liquid
-
 .quad-collections {
   // + 40px margin for before and after elements
   margin: 120px 0;
@@ -867,10 +866,14 @@ footer ul li:last-child a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include border-radius-box-shadow;
     padding: 40px;
     width: 32%;
-    border-top: 8px solid $tertiaryColor;
+    border-top: 8px solid $quaternaryColor;
+    transition: border-radius .35s, box-shadow .35s, border-top .35s;
+    &:hover {
+          border-top: 8px solid $tertiaryColor;
+          @include border-radius-box-shadow
+    }
     h2 {
       margin-bottom: 20px;
     }

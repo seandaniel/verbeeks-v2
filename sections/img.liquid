@@ -1,10 +1,9 @@
   {% for block in section.blocks %}
       {% case block.type %}
       {% when 'image_picker' %}
-        <img src="{{ block.settings.image_id | img_url: 'master' }}" alt="{{ img.alt }}">
+        <img {{ block.shopify_attributes }} src="{{ block.settings.image_id | img_url: 'master' }}" alt="{{ img.alt }}">
       {% endcase %}
   {% endfor %}
-
 
 {% schema %}
 {

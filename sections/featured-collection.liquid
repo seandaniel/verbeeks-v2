@@ -6,16 +6,8 @@
   - Collection
 
 {%- endcomment -%}
-<section>
-  <div class="h1-container">
-    <div class="wrapper">
-      <h1>{{ section.settings.collection_title }}</h1>
-    </div>
-  </div>
-</section>
+
 <section class="featured-collection">
-
-
 </section>
 
 {% schema %}
@@ -32,12 +24,13 @@
         "id": "featured_collection",
         "label": "Collection"
       }
-    ],
-    "presets": [
-      {
-        "name": "Featured Collection",
-        "category": "Collection"
-      }
     ]
   }
-{% endschema %}
+  {% endschema %}
+  
+  <!-- "presets": [
+    {
+      "name": "Featured Collection",
+      "category": "Collection"
+    }
+  ] -->
