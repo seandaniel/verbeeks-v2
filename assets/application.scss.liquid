@@ -357,6 +357,32 @@ button {
   }
 }
 
+.landscape-categories-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.landscaping-header-text {
+  margin: 0 0 2% 0;
+  padding: 40px;
+  width: 49%;
+  border-top: 8px solid $tertiaryColor;
+  @include border-radius-box-shadow;
+  .p-icon-container {
+    @include space-between;
+    p {
+      max-width: 320px;
+    }
+  }
+}
+
+.landscape-categories-container .landscaping-header-text:last-child {
+  margin: 0 auto;
+}
+
 .landscape-nav {
   padding: 40px 0;
   margin-bottom: 2%;
@@ -395,22 +421,7 @@ button {
 
 // landscaping-pictures.liquid
 .landscape {
-  background: $quaternaryColor;
   margin-bottom: 80px;
-}
-
-.landscaping-header-text {
-  margin: 0 auto 80px auto;
-  padding: 40px;
-  width: 70%;
-  border-top: 8px solid $tertiaryColor;
-  @include border-radius-box-shadow;
-  .p-icon-container {
-    @include space-between;
-    p {
-      max-width: 500px;
-    }
-  }
 }
 
 .landscape-img-container {
