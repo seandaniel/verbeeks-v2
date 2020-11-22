@@ -12,8 +12,15 @@
     "settings": [
 
 
+      // CALL TO ACTION
+      {
+         "type": "color",
+         "id": "call_to_action_bg",
+         "label": "Background Call To Action",
+         "default": "#f0f5dc"
+      },
+      
       // IMAGE WITH TEXT
-
       // {
       //    "type": "color",
       //    "id": "image_text_bg",

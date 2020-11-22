@@ -44,11 +44,7 @@
       <div class="wrapper">
         <ul class="primary-ul">
           <li>
-            {% if template.name == 'index' %}
-                <h1>
-            {% else %}
-                <div class="h1">
-            {% endif %}
+            <h1>
               <a href="/">
                 {% if section.settings.logo != blank %}
                   {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
@@ -59,11 +55,7 @@
                   {{ shop.name }}
                 {% endif %}
               </a>
-            {% if template.name == 'index' %}
-                </h1>
-            {% else %}
-                </div>
-            {% endif %}
+            </h1>
           </li>
           {%- for link in linklists.main-menu.links -%}
                 <li class="primary">

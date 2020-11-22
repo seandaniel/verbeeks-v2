@@ -175,7 +175,7 @@ button {
 // header
 
 .call-to-action {
-  background: $quinaryColor;
+  background-color: {{ settings.call_to_action_bg }};
   padding: 5px 0;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
@@ -358,8 +358,7 @@ button {
 }
 
 .landscape-nav {
-  padding: 80px 0;
-  margin-bottom: 80px;
+  padding-top: 80px;
   background-color: $secondaryColor;
   ul {
     @include space-between;
@@ -395,6 +394,7 @@ button {
 
 // landscaping-pictures.liquid
 .landscape {
+  background: $quaternaryColor;
   margin-bottom: 80px;
 }
 
