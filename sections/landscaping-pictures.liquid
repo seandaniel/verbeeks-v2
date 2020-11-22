@@ -1,11 +1,5 @@
  <div class="wrapper">
   <section class="landscape design">
-    <div class="landscaping-header-text">
-      <p>{{ section.settings.landscape_design_header }}</p>
-      <div class="svg-container">
-        <img src="{{ 'brick-wall.svg' | asset_url }}" alt="Brick Wall">
-      </div>
-    </div>
     <div class="landscape-img-container">
       <figure>
         <img src="{{ section.settings.landscape_design_1 | img_url: 'master' }}" alt="{{ img.alt }}">
@@ -35,12 +29,6 @@
   </section>
 
   <section class="landscape garden" hidden>
-    <div class="landscaping-header-text">
-      <p>{{ section.settings.landscape_garden_header }}</p>
-      <div class="svg-container">
-        <img src="{{ 'growth.svg' | asset_url }}" alt="Three Flowers">
-      </div>
-    </div>
     <div class="landscape-img-container">
       <figure>
         <img src="{{ section.settings.landscape_garden_1 | img_url: 'master' }}"
@@ -76,12 +64,6 @@
   </section>
 
   <section class="landscape lawn" hidden>
-    <div class="landscaping-header-text">
-      <p>{{ section.settings.landscape_lawn_header }}</p>
-      <div class="svg-container">
-        <img src="{{ 'house.svg' | asset_url }}" alt="A Home">
-      </div>
-    </div>
     <div class="landscape-img-container">
       <figure>
         <img src="{{ section.settings.landscape_lawn_1 | img_url: 'master' }}"
@@ -112,11 +94,6 @@
         {
           "type": "header",
           "content": "Landscaping Design"
-        },
-        {
-          "type": "textarea",
-          "id": "landscape_design_header",
-          "label": "Landscaping Design About"
         },
         {
           "type": "image_picker",
@@ -186,11 +163,6 @@
           "content": "Landscaping Garden"
         },
         {
-          "type": "textarea",
-          "id": "landscape_garden_header",
-          "label": "Landscaping Garden About"
-        },
-        {
           "type": "image_picker",
           "id": "landscape_garden_1",
           "label": "Landscaping Garden Image 1"
@@ -256,11 +228,6 @@
         {
           "type": "header",
           "content": "Landscaping Lawns"
-        },
-        {
-          "type": "textarea",
-          "id": "landscape_lawn_header",
-          "label": "Landscaping Lawn About"
         },
         {
           "type": "image_picker",

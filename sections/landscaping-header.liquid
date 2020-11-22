@@ -11,6 +11,35 @@
     <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
       alt="{{ img.alt }}">
   </section>
+  <section class="landscape-categories-container">
+    <div class="landscaping-header-text">
+      <h2> {{section.settings.heading_1 }}</h2>
+      <div class="p-icon-container">
+        <p>{{ section.settings.landscape_design_header }}</p>
+        <div class="svg-container">
+          <img src="{{ 'brick-wall.svg' | asset_url }}" alt="Brick Wall">
+        </div>
+      </div>
+    </div>
+    <div class="landscaping-header-text">
+      <h2> {{section.settings.heading_2 }}</h2>
+      <div class="p-icon-container">
+        <p>{{ section.settings.landscape_garden_header }}</p>
+        <div class="svg-container">
+          <img src="{{ 'growth.svg' | asset_url }}" alt="Three Flowers">
+        </div>
+      </div>
+    </div>
+    <div class="landscaping-header-text">
+      <h2> {{section.settings.heading_3 }}</h2>
+      <div class="p-icon-container">
+        <p>{{ section.settings.landscape_lawn_header }}</p>
+        <div class="svg-container">
+          <img src="{{ 'house.svg' | asset_url }}" alt="A Home">
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 <nav class="landscape-nav">
   <ul>
@@ -22,16 +51,46 @@
 
 {% schema %}
   {
-    "name": "Landscaping Header",
+    "name": "Landscaping Main",
     "settings": [
       {
         "type": "header",
-        "content": "Landscaping Header"
+        "content": "Landscaping Main"
       },
       {
         "type": "image_picker",
         "id": "landscape_header",
         "label": "Landscaping Header Image"
+      },
+      {
+        "type": "textarea",
+        "id": "landscape_design_header",
+        "label": "Landscaping Design About"
+      },
+      {
+        "type": "text",
+        "id": "heading_1",
+        "label": "Design Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "landscape_garden_header",
+        "label": "Landscaping Garden About"
+      },
+      {
+        "type": "text",
+        "id": "heading_2",
+        "label": "Gardens Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "landscape_lawn_header",
+        "label": "Landscaping Lawn About"
+      },
+      {
+        "type": "text",
+        "id": "heading_3",
+        "label": "Lawn Heading"
       }
     ]
   }

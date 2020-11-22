@@ -49,7 +49,7 @@
                 {% if section.settings.logo != blank %}
                   {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
                   <img src="{{ section.settings.logo | img_url: image_size }}"
-                      srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                      srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ sectYion.settings.logo | img_url: image_size, scale: 2 }} 2x"
                       alt="{{ section.settings.logo.alt | default: shop.name }}">
                 {% else %}
                   {{ shop.name }}

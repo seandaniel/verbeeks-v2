@@ -358,7 +358,8 @@ button {
 }
 
 .landscape-nav {
-  padding-top: 80px;
+  padding: 40px 0;
+  margin-bottom: 2%;
   background-color: $secondaryColor;
   ul {
     @include space-between;
@@ -399,10 +400,16 @@ button {
 }
 
 .landscaping-header-text {
-  @include space-around;
-  margin-bottom: 80px;
-  p {
-    max-width: 500px;
+  margin: 0 auto 80px auto;
+  padding: 40px;
+  width: 70%;
+  border-top: 8px solid $tertiaryColor;
+  @include border-radius-box-shadow;
+  .p-icon-container {
+    @include space-between;
+    p {
+      max-width: 500px;
+    }
   }
 }
 
