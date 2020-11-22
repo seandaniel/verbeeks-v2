@@ -8,11 +8,6 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-  <!-- JavaScript -->
-  {{ 'application.js' | asset_url | script_tag }}
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/d9461c25c6.js"></script>
   <!-- CSS -->
@@ -28,4 +23,9 @@
 
   {% section 'footer' %}
 </body>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <!-- JavaScript -->
+  {{ 'application.js' | asset_url | script_tag }}
 </html>

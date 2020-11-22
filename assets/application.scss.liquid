@@ -300,16 +300,18 @@ button {
 }
 
 .dropdown-ul {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   top: 34px;
   position: absolute;
   @include border-radius-box-shadow;
   border-top: 5px solid $tertiaryColor;
   background-color: $quaternaryColor;
-  width: max-content;
+  width: 160px;
   padding: 20px 0 0 20px;
+  transition: opacity .35s;
   li {
-    width: 180px;
+    // width: 180px;
     position: relative;
     margin-left: 0;
     padding: 0 0 20px 0;
@@ -320,24 +322,28 @@ button {
 }
 
 .primary-ul li:hover > .dropdown-ul {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 
 .dropdown-ul-2 {
-  display: none;
+  visibility: hidden;
   top: 0;
-  right: -180px;
+  right: -140px;
   position: absolute;
   padding: 20px 0 0 20px;
   @include border-radius-box-shadow;
   border-top: 5px solid $tertiaryColor;
   background-color: $quaternaryColor;
   width: 100%;
+  opacity: 0;
+  transition: opacity .35s;
 }
 
 .dropdown-ul li:hover > .dropdown-ul-2 {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 // landscaping-header.liquid
@@ -555,7 +561,6 @@ iframe {
       margin-bottom: 20px;
     }
     p {
-      text-align: center;
       margin-bottom: 20px;
     }
   }
@@ -901,8 +906,48 @@ footer ul li:last-child a {
       margin-bottom: 20px;
     }
     p {
-      text-align: center;
       margin-bottom: 20px;
     }
   }
+}
+
+// four-bricks.liquid
+.four-bricks-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+  a {
+    display: inline-block;
+    margin-bottom: 2%;
+    position: relative;
+    top: 0;
+    opacity: 1;
+    transition: opacity .35s, top .35s;
+    width: 48%;
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+      top: -20px;
+    }
+    img {
+      width: 100%;
+      height: 300px;
+      @include border-radius-box-shadow;
+    }
+  }
+}
+
+.four-bricks-container .brick:nth-child(n + 3) {
+  margin-bottom: 0;
+}
+
+.four-bricks-container h2 {
+  background: $secondaryColor;
+  @include border-radius-box-shadow;
+  text-align: center;
+  position: absolute;
+  padding: 10px;
+  bottom: 10px;
+  left: 10px;
 }

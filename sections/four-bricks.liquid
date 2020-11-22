@@ -1,0 +1,103 @@
+<div class="wrapper">
+  <section class="four-bricks-container">
+    
+    {%- assign collection = collections[section.settings.collection_1] -%}
+      <a href="{{ collection.handle}}" class="brick">
+        <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}">
+        <h2 class="featured-collection__title">{{ section.settings.title_1 | escape }}</h2>
+      </a>
+      
+    {%- assign collection = collections[section.settings.collection_2] -%}
+      <a href="{{ collection.handle}}" class="brick">
+          <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_2 }}">
+        <h2 class="featured-collection__title">{{ section.settings.title_2 | escape }}</h2>
+      </a>
+    
+      {%- assign collection = collections[section.settings.collection_3] -%}
+      <a href="{{ collection.handle}}" class="brick">
+        <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}">
+        <h2 class="featured-collection__title">{{ section.settings.title_3 | escape }}</h2>
+      </a>
+    
+      {%- assign collection = collections[section.settings.collection_4] -%}
+      <a href="{{ collection.handle}}" class="brick">
+          <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}">
+        <h2 class="featured-collection__title">{{ section.settings.title_4 | escape }}</h2>
+      </a>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Bricks",
+    "settings": [
+      {
+        "type": "header",
+        "content":" Brick Collection 1"
+      },
+      {
+        "type": "text",
+        "id": "title_1",
+        "label": "Heading 1",
+        "default": "Quad Collection 1"
+      },
+      {
+        "id": "collection_1",
+        "type": "collection",
+        "label": "Collection 1"
+      },
+      {
+        "type": "header",
+        "content":" Brick Collection 2"
+      },
+      {
+        "type": "text",
+        "id": "title_2",
+        "label": "Heading 2",
+        "default": "Brick Collection 2"
+      },
+      {
+        "id": "collection_2",
+        "type": "collection",
+        "label": "Collection 2"
+      },
+
+      {
+        "type": "header",
+        "content":" Brick Collection 3"
+      },
+      {
+        "type": "text",
+        "id": "title_3",
+        "label": "Heading 3",
+        "default": "Brick Collection 3"
+      },
+      {
+        "id": "collection_3",
+        "type": "collection",
+        "label": "Collection 3"
+      },
+      {
+        "type": "header",
+        "content":" Brick Collection 4"
+      },
+      {
+        "type": "text",
+        "id": "title_4",
+        "label": "Heading 4",
+        "default": "Brick Collection 4"
+      },
+      {
+        "id": "collection_4",
+        "type": "collection",
+        "label": "Collection 4"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Brick Collections",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}
