@@ -366,9 +366,9 @@ button {
 }
 
 .landscaping-header-text {
-  margin: 0 0 2% 0;
+  margin: 0 0 1% 0;
   padding: 40px;
-  width: 49%;
+  width: 49.5%;
   border-top: 8px solid $tertiaryColor;
   @include border-radius-box-shadow;
   .p-icon-container {
@@ -385,7 +385,7 @@ button {
 
 .landscape-nav {
   padding: 40px 0;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   background-color: $secondaryColor;
   ul {
     @include space-between;
@@ -812,6 +812,53 @@ footer ul li:last-child a {
 }
 
 // home 
+
+// home-landscape.liquid
+
+.landscape-image-container,
+.landscape-image-container-2 {
+  @include space-between;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.landscape-image-container img:first-child,
+.landscape-image-container-2 img:last-child {
+  @include border-radius-box-shadow;
+  width: 60%;
+  height: 400px;
+}
+
+.landscape-image-container img:last-child,
+.landscape-image-container-2 img:first-child {
+  @include border-radius-box-shadow;
+  width: 38%;
+  height: 400px;
+}
+
+.landscaping-text-container {
+  @include space-around;
+  margin-bottom: 80px;
+  .p-button-container {
+    max-width: 400px;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include border-radius-box-shadow;
+    padding: 40px;
+    width: 300px;
+    border-top: 8px solid $tertiaryColor;
+    .svg-container {
+      margin-bottom: 20px;
+    }
+  }
+}
+
 // quad-collections.liquid
 .quad-collections {
   // + 40px margin for before and after elements
@@ -911,8 +958,8 @@ footer ul li:last-child a {
     border-top: 8px solid $quaternaryColor;
     transition: border-radius .35s, box-shadow .35s, border-top .35s;
     &:hover {
-          border-top: 8px solid $tertiaryColor;
-          @include border-radius-box-shadow
+      border-top: 8px solid $tertiaryColor;
+      @include border-radius-box-shadow
     }
     h2 {
       margin-bottom: 20px;

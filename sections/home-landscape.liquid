@@ -1,0 +1,92 @@
+<div class="h1-container">
+  <div class="wrapper">
+    <h1>{{ section.settings.main_heading }} </h1>
+  </div>
+</div>
+<div class="wrapper">
+</div>
+<section class="landscape-image-container">
+    <img src="{{ section.settings.img_1 | img_url: 'master' }}" alt="{{ img.alt }}">
+    <img src="{{ section.settings.img_2 | img_url: 'master' }}" alt="{{ img.alt }}">
+</section>
+<div class="wrapper">
+  <section class="landscaping-text-container">
+    <div class="p-button-container">
+      <p>{{ section.settings.landscape_text }}</p>
+      <a href="{{ section.settings.button_link }}" class="button-reverse">{{ section.settings.button_link_label }}</a>
+    </div>
+    <div class="icon-container">
+      <div class="svg-container">
+        <img src="{{ 'brick-wall.svg' | asset_url }}" alt="A brick wall">
+      </div>
+      <h2>Design</h2>
+    </div>
+  </section>
+</div>
+<section class="landscape-image-container-2">
+    <img src="{{ section.settings.img_3 | img_url: 'master' }}" alt="{{ img.alt }}">
+    <img src="{{ section.settings.img_4 | img_url: 'master' }}" alt="{{ img.alt }}">
+</section>
+
+{% schema %}
+  {
+    "name": "Home Landscape",
+    "settings": [
+      {
+      "type": "header",
+      "content":"Landscape Text"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading",
+        "label": "Main Heading",
+        "default": "Landscaping"
+      },
+      {
+        "type": "text",
+        "id": "landscape_text",
+        "label": "Landscape Description"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Landscape Page Link"
+      },
+      {
+        "type": "text",
+        "id": "button_link_label",
+        "label": "Landscape Button Label"
+      },
+      {
+        "type": "header",
+        "content":"Landscape Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_1",
+        "label": "Landscape Image 1 (Landscape)"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_2",
+        "label": "Landscape Image 2 (Portrait)"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_3",
+        "label": "Landscape Image 3 (Landscape)"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_4",
+        "label": "Landscape Image 4 (Portrait)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home Landscape",
+        "category": "Home Landscape"
+      }
+    ]
+  }
+{% endschema %}
