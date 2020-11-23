@@ -1,0 +1,61 @@
+<!-- page handle differentiates with each page -->
+{% assign page_handle = page.handle %}
+
+{% if section.blocks.size > 0 %}
+
+	{% for block in section.blocks %}
+		<!-- ONLY print specific page data -->
+		{% if block.settings.page_handle == page_handle %}
+			<!-- To print content of particular page -->
+      <div class="wrapper">
+        <section class="text-img-container">
+          <div class="text-container">
+            <div class="content">
+              {{ page.content }}
+            </div>
+            <a class="button-reverse" href="{{ block.settings.link }}">{{ block.settings.button_label }}</a>
+          </div>
+          <img src="{{ block.settings.img_id | img_url: 'master' }}" alt="{{ img.alt }}">
+        </section>
+      </div>
+		
+		{% endif %}
+	{% endfor %}
+
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Page Management",
+    "class": "index-section",
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Page Management",
+        "settings": [
+		  {
+            "type": "page",
+            "id": "page_handle",
+            "label": "Select a page"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Button Link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Link Label"
+          },
+          {
+            "type": "image_picker",
+            "id": "img_id",
+            "label": "New Page Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

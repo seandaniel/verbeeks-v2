@@ -30,7 +30,6 @@
 
 
       // QUAD COLLECTION
-
        {
           "type": "color",
           "id": "color_quad_collection_1",
@@ -55,9 +54,6 @@
           "label": "Background Quad 4",
           "default": "#f0f5dc"
        }
-
-
-
     ]
  },
  {
