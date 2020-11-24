@@ -12,7 +12,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 {{ settings.font_heading | font_face }};
 {{ settings.font_body | font_face }};
 
-$primaryColor: #0e0e0e;
+$primaryColor: #272727;
 $secondaryColor: #f4f4f4;
 $tertiaryColor: #a9c53e;
 $quaternaryColor: #fff;
@@ -61,6 +61,16 @@ h1 {
   padding: 40px 0;
   margin: 0 auto 80px 0;
   background-color: $quinaryColor;
+  h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+  }
+}
+
+.secondary-h1-container {
+  padding: 40px 0;
+  margin: 0 auto 80px 0;
+  background-color: $secondaryColor;
   h1 {
     font-size: 50px;
     letter-spacing: 3px;
@@ -164,11 +174,17 @@ button {
 .content {
   max-width: 550px;
   p {
+    font-size: 17px;
     margin-bottom: 20px;
   }
-  p:last-child {
+  p:last-of-type {
     margin-bottom: 0;
   }
+}
+
+.content + a {
+  display: inline-block;
+  margin-top: 20px;
 }
 
 // sections
@@ -350,6 +366,9 @@ button {
 .content-img-container {
   @include space-around;
   margin-bottom: 80px;
+  p {
+    font-size: 17px;
+  }
   img {
     height: 400px;
     width: 400px;
@@ -375,6 +394,7 @@ button {
       flex-direction: column;
       align-items: center;
       button {
+        font-size: 17px;
         text-transform: uppercase;
         transition: .35s color;
         display: flex;
@@ -507,6 +527,9 @@ iframe {
 .about-text-img-container {
   @include space-around;
   margin-bottom: 80px;
+  p {
+    font-size: 17px;
+  }
 }
 
 // three-image-banner.liquid
@@ -624,12 +647,10 @@ iframe {
 .text-img-container {
   @include space-around;
   margin-bottom: 80px;
+  p {
+    font-size: 17px;
+  }
 }
-
-.text-container a {
-  display: inline-block;
-  margin-top: 20px;
-} 
 
 .text-img-container img {
   width: 400px;
@@ -645,7 +666,7 @@ iframe {
   .image-text-container {
     @include space-around;
     .text-container {
-      width: 400px;
+      width: 450px;
     }
   }
 }
@@ -656,6 +677,8 @@ iframe {
 }
 
 .text-container p {
+  font-size: 17px;
+  max-width: 550px;
   margin-bottom: 20px;
 }
 
@@ -671,6 +694,9 @@ iframe {
   margin-bottom: 80px;
   h2 {
     margin-bottom: 40px;
+  }
+  p {
+    font-size: 17px;
   }
 }
 
@@ -850,9 +876,10 @@ footer ul li:last-child a {
   @include space-around;
   margin-bottom: 80px;
   .p-button-container {
-    max-width: 400px;
+    max-width: 450px;
     p {
       margin-bottom: 20px;
+      font-size: 17px;
     }
   }
   .icon-container {
