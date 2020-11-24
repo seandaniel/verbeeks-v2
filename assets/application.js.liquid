@@ -1,4 +1,5 @@
 $(function() {
+
   // secondary-nav form
   const secondaryForm = document.querySelector('.secondary-nav form');
   const secondaryFormInput = document.querySelector('.secondary-nav form input');
@@ -36,74 +37,51 @@ $(function() {
   
   landscapeButtons.forEach(button => button.addEventListener('click', handleClick));
 
-  // const dropdown = document.querySelector('.dropdown-ul');
-  // console.log(dropdown);
-  // const dropdown2 = document.querySelector('.dropdown-ul-2');
-  // console.log(dropdown2);
-
-  // let newWidth = dropdown.offsetWidth;
-  // console.log(newWidth);
-
-  // // grab the dropdown
-  // // get the dropdown width
-  // // toggle class with right -dropdown width
-  // dropdown2.style.width = `${newWidth}`;
-  // console.log(dropdown2.style.width);
-
-  // i have a set Timeout, run it every 5 seconds and making the background property a different asset route.
-
+  // landscape home icon animation
   const backgroundIcon = document.querySelector('.background-icon');
   const category = document.querySelector('.category');
   
+  const wait = (ms) => new Promise(function(resolve) {
+    setTimeout(resolve, ms);
+  })
 
-  setTimeout(function() {
-    backgroundIcon.classList.add('garden-background');
-    backgroundIcon.classList.remove('design-background');
-    category.textContent = 'Gardens';
+  const animateArguments = (newIcon, oldIcon, textContent) => {
+    backgroundIcon.classList.add(`${newIcon}`);
+    backgroundIcon.classList.remove(`${oldIcon}`);
+    category.textContent = `${textContent}`;
+  }
 
-    setTimeout(function() {
-      backgroundIcon.classList.add('lawn-background');
-      backgroundIcon.classList.remove('garden-background');
-      category.textContent = 'Lawn';
+  const iconAnimate = async () => {
+    animateArguments('garden-background', 'design-background', 'Gardens');
+    await wait(2200);
 
-      setTimeout(function() {
-        backgroundIcon.classList.add('design-background');
-        backgroundIcon.classList.remove('lawn-background');
-        category.textContent = 'Design';
-      }, 2200)
+    animateArguments('lawn-background', 'garden-background', 'Lawn');
+    await wait(2200);
 
-    }, 2200)
+    animateArguments('design-background', 'lawn-background', 'Design');
+    await wait(2200);
+  }
 
-
-  }, 2200);
+  iconAnimate();
 
   setInterval(function() {
-
-    setTimeout(function() {
-      backgroundIcon.classList.add('garden-background');
-      backgroundIcon.classList.remove('design-background');
-      category.textContent = 'Gardens';
-  
-      setTimeout(function() {
-        backgroundIcon.classList.add('lawn-background');
-        backgroundIcon.classList.remove('garden-background');
-        category.textContent = 'Lawn';
-
-        setTimeout(function() {
-          backgroundIcon.classList.add('design-background');
-          backgroundIcon.classList.remove('lawn-background');
-          category.textContent = 'Design';
-        }, 2200)
-        
-      }, 2200)
-      
-      
-    }, 2200);
-
+    iconAnimate();
   }, 6600)
-    
-  
-  
-  
   
 });
+
+// trying to grab dropdown-ul with and applying it to dropdown-ul-2 width
+
+// const dropdown = document.querySelector('.dropdown-ul');
+// console.log(dropdown);
+// const dropdown2 = document.querySelector('.dropdown-ul-2');
+// console.log(dropdown2);
+
+// let newWidth = dropdown.offsetWidth;
+// console.log(newWidth);
+
+// // grab the dropdown
+// // get the dropdown width
+// // toggle class with right -dropdown width
+// dropdown2.style.width = `${newWidth}`;
+// console.log(dropdown2.style.width);
