@@ -1,0 +1,66 @@
+<div class="h1-container">
+  <div class="wrapper">
+    <h1>{{ section.settings.about_heading }}</h1>
+  </div>
+</div>
+<div class="wrapper">
+  <section class="three-icon-container">
+    <div class="icon-container container-1 jump">
+      <div class="svg-container">
+        <img src="{{ 'family.svg' | asset_url }}" alt="Two parents and a child standing">
+      </div>
+      <h2>{{ section.settings.icon_text_1 }}</h2>
+    </div>
+    <div class="icon-container container-2">
+      <div class="svg-container">
+        <img src="{{ 'canada.svg' | asset_url }}" alt="A red maple leaf">
+      </div>
+      <h2>{{ section.settings.icon_text_2 }}</h2>
+    </div>
+    <div class="icon-container container-3">
+      <div class="svg-container">
+        <img src="{{ 'calendar.svg' | asset_url }}" alt="A calendar with a clock infront">
+      </div>
+      <h2>{{ section.settings.icon_text_3 }}</h2>
+    </div>
+  </section>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Home About",
+    "settings": [
+      {
+        "type": "text",
+        "id": "about_heading",
+        "label": "Home About Heading",
+        "default": "About Us"
+      },
+      {
+        "type": "text",
+        "id": "icon_text_1",
+        "label": "Icon Heading 1",
+        "default": "Family Owned and Operated"
+      },
+      {
+        "type": "text",
+        "id": "icon_text_2",
+        "label": "Icon Heading 2",
+        "default": "100% Canadian"
+      },
+      {
+        "type": "text",
+        "id": "icon_text_3",
+        "label": "Icon Heading 3",
+        "default": "Since 1970"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home About",
+        "category": "Home About"
+      }
+    ]
+  }
+{% endschema %}

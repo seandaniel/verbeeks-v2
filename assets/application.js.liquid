@@ -67,6 +67,26 @@ $(function() {
   setInterval(function() {
     iconAnimate();
   }, 6600)
+
+  // about home icon animation
+  const container1 = document.querySelector('.container-1');
+  const container2 = document.querySelector('.container-2');
+  const container3 = document.querySelector('.container-3');
+  
+  container1.addEventListener('animationend', () => {
+    container1.classList.remove('jump');
+    container2.classList.add('jump');
+  })
+
+  container2.addEventListener('animationend', () => {
+    container2.classList.remove('jump');
+    container3.classList.add('jump');
+  })
+
+  container3.addEventListener('animationend', () => {
+    container3.classList.remove('jump');
+    container1.classList.add('jump');
+  })
   
 });
 

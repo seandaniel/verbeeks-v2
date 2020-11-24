@@ -162,7 +162,7 @@ button {
 }
 
 .svg-container {
-  background-color: $quinaryColor;
+  background-color: $secondaryColor;
   padding: 40px;
   border-radius: 50%;
   img {
@@ -817,6 +817,53 @@ footer ul li:last-child a {
 }
 
 // home 
+
+// home-about.liquid
+.jump {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: jump 3.5s ease-in 1;
+}
+
+@keyframes jump {
+  0% {
+    top: 0;
+  }
+  12% {
+    top: -40px;
+  }
+  24% {
+    top: 0;
+  }
+  30% {
+    top: -5px;
+  }
+  36% {
+    top: 0px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.color {
+  background: $quinaryColor;
+  animation: color 4s ease-in infinite;
+}
+
+@keyframes color {
+  0% {
+    background: $quinaryColor;
+  }
+  50% {
+    background: $secondaryColor;
+  }
+  100% {
+    background: $quinaryColor;
+  }
+}
+
 
 // home-landscape.liquid
 
