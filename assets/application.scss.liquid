@@ -801,18 +801,49 @@ footer ul li:last-child a {
   margin-bottom: 80px;
 }
 
-.landscape-image-container img:first-child,
-.landscape-image-container-2 img:last-child {
-  @include border-radius-box-shadow;
+.landscape-image-container figure:first-child,
+.landscape-image-container-2 figure:last-child {
+  position: relative;
   width: 60%;
   height: 400px;
+  img {
+    @include border-radius-box-shadow;
+    width: 100%;
+    height: 400px;
+  }
 }
 
-.landscape-image-container img:last-child,
-.landscape-image-container-2 img:first-child {
-  @include border-radius-box-shadow;
+.landscape-image-container figure:last-child,
+.landscape-image-container-2 figure:first-child {
+  position: relative;
   width: 38%;
   height: 400px;
+  img {
+    @include border-radius-box-shadow;
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.landscape-image-container figure h2,
+.landscape-image-container-2 figure h2 {
+  background: $secondaryColor;
+  @include border-radius-box-shadow;
+  text-align: center;
+  position: absolute;
+  padding: 10px;
+}
+
+.landscape-image-container figure:first-child h2,
+.landscape-image-container-2 figure:first-child h2 {
+  bottom: 10px;
+  right: 10px;
+}
+
+.landscape-image-container figure:last-child h2,
+.landscape-image-container-2 figure:last-child h2 {
+  bottom: 10px;
+  left: 10px;
 }
 
 .landscaping-text-container {
