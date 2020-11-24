@@ -49,4 +49,61 @@ $(function() {
   // // toggle class with right -dropdown width
   // dropdown2.style.width = `${newWidth}`;
   // console.log(dropdown2.style.width);
+
+  // i have a set Timeout, run it every 5 seconds and making the background property a different asset route.
+
+  const backgroundIcon = document.querySelector('.background-icon');
+  const category = document.querySelector('.category');
+  
+
+  setTimeout(function() {
+    backgroundIcon.classList.add('garden-background');
+    backgroundIcon.classList.remove('design-background');
+    category.textContent = 'Gardens';
+
+    setTimeout(function() {
+      backgroundIcon.classList.add('lawn-background');
+      backgroundIcon.classList.remove('garden-background');
+      category.textContent = 'Lawn';
+
+      setTimeout(function() {
+        backgroundIcon.classList.add('design-background');
+        backgroundIcon.classList.remove('lawn-background');
+        category.textContent = 'Design';
+      }, 2200)
+
+    }, 2200)
+
+
+  }, 2200);
+
+  setInterval(function() {
+
+    setTimeout(function() {
+      backgroundIcon.classList.add('garden-background');
+      backgroundIcon.classList.remove('design-background');
+      category.textContent = 'Gardens';
+  
+      setTimeout(function() {
+        backgroundIcon.classList.add('lawn-background');
+        backgroundIcon.classList.remove('garden-background');
+        category.textContent = 'Lawn';
+
+        setTimeout(function() {
+          backgroundIcon.classList.add('design-background');
+          backgroundIcon.classList.remove('lawn-background');
+          category.textContent = 'Design';
+        }, 2200)
+        
+      }, 2200)
+      
+      
+    }, 2200);
+
+  }, 6600)
+    
+  
+  
+  
+  
 });

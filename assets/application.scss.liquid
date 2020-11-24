@@ -357,30 +357,8 @@ button {
   }
 }
 
-.landscape-categories-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 80px;
-}
-
-.landscaping-header-text {
-  margin: 0 0 1% 0;
-  padding: 40px;
-  width: 49.5%;
-  border-top: 8px solid $tertiaryColor;
-  @include border-radius-box-shadow;
-  .p-icon-container {
-    @include space-between;
-    p {
-      max-width: 320px;
-    }
-  }
-}
-
-.landscape-categories-container .landscaping-header-text:last-child {
-  margin: 0 auto;
+.three-icon-container .icon-container .landscape-p {
+  margin-bottom: 0;
 }
 
 .landscape-nav {
@@ -572,10 +550,11 @@ iframe {
     padding: 40px;
     width: 32%;
     border-top: 8px solid $tertiaryColor;
-    h2 {
-      margin-bottom: 20px;
-    }
     .svg-container {
+      width: min-content;
+      margin: 0 auto 20px auto;
+    }
+    h2 {
       margin-bottom: 20px;
     }
     p {
@@ -859,6 +838,32 @@ footer ul li:last-child a {
   }
 }
 
+.design-background {
+  background: url('./brick-wall.svg');
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+}
+
+.garden-background {
+  background: url('./growth.svg');
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+}
+
+.lawn-background {
+  background: url('./house.svg');
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+}
+
+
+
 // quad-collections.liquid
 .quad-collections {
   // + 40px margin for before and after elements
@@ -961,13 +966,13 @@ footer ul li:last-child a {
       border-top: 8px solid $tertiaryColor;
       @include border-radius-box-shadow
     }
-    h2 {
-      margin-bottom: 20px;
-    }
     img {
       @include border-radius-box-shadow;
       height: 300px;
       width: 300px;
+      margin-bottom: 20px;
+    }
+    h2 {
       margin-bottom: 20px;
     }
     p {

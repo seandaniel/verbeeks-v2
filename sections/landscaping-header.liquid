@@ -11,33 +11,27 @@
     <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
       alt="{{ img.alt }}">
   </section>
-  <section class="landscape-categories-container">
-    <div class="landscaping-header-text">
+  <section class="three-icon-container">
+    <div class="icon-container">
+      <div class="svg-container">
+        <img src="{{ 'brick-wall.svg' | asset_url }}" alt="Brick Wall">
+      </div>
       <h2> {{section.settings.heading_1 }}</h2>
-      <div class="p-icon-container">
-        <p>{{ section.settings.landscape_design_header }}</p>
-        <div class="svg-container">
-          <img src="{{ 'brick-wall.svg' | asset_url }}" alt="Brick Wall">
-        </div>
-      </div>
+      <p class="landscape-p">{{ section.settings.landscape_design_header }}</p>
     </div>
-    <div class="landscaping-header-text">
+    <div class="icon-container">
+      <div class="svg-container">
+        <img src="{{ 'growth.svg' | asset_url }}" alt="Three Flowers">
+      </div>
       <h2> {{section.settings.heading_2 }}</h2>
-      <div class="p-icon-container">
-        <p>{{ section.settings.landscape_garden_header }}</p>
-        <div class="svg-container">
-          <img src="{{ 'growth.svg' | asset_url }}" alt="Three Flowers">
-        </div>
-      </div>
+      <p class="landscape-p">{{ section.settings.landscape_garden_header }}</p>
     </div>
-    <div class="landscaping-header-text">
-      <h2> {{section.settings.heading_3 }}</h2>
-      <div class="p-icon-container">
-        <p>{{ section.settings.landscape_lawn_header }}</p>
-        <div class="svg-container">
-          <img src="{{ 'house.svg' | asset_url }}" alt="A Home">
-        </div>
+    <div class="icon-container">
+      <div class="svg-container">
+        <img src="{{ 'house.svg' | asset_url }}" alt="A Home">
       </div>
+      <h2> {{section.settings.heading_3 }}</h2>
+      <p class="landscape-p">{{ section.settings.landscape_lawn_header }}</p>
     </div>
   </section>
 </div>
