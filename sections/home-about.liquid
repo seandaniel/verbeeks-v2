@@ -1,9 +1,17 @@
-<div class="h1-container">
+<div class="h1-container about-h1">
   <div class="wrapper">
     <h1>{{ section.settings.about_heading }}</h1>
   </div>
 </div>
 <div class="wrapper">
+  <section class="about-header">
+    <h2>{{ section.settings.about_heading_2 }}</h2>
+    <img src="{{ section.settings.img_about | img_url: 'master' }}" alt="{{ img.alt }}">
+    <div class="p-button-container">
+      <p>{{ section.settings.about_desc }}</p>
+      <a class="button-reverse" href="{{ section.settings.button_link }} ">{{ section.settings.button_label }}</a>
+    </div>
+  </section>
   <section class="three-icon-container">
     <div class="icon-container container-1 jump">
       <div class="svg-container">
@@ -36,6 +44,32 @@
         "id": "about_heading",
         "label": "Home About Heading",
         "default": "About Us"
+      },
+      {
+        "type": "text",
+        "id": "about_heading_2",
+        "label": "Home About Heading 2",
+        "default": "Located in the heart of Huron County"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_about",
+        "label": "Home About Image"
+      },
+      {
+        "type": "textarea",
+        "id": "about_desc",
+        "label": "About Description"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
       },
       {
         "type": "text",
