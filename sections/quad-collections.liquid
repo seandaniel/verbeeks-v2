@@ -2,7 +2,7 @@
   <section class="quad-collections">
     <div class="quad-collections-container">
     {%- assign collection = collections[section.settings.collection_1] -%}
-      <div class="quad-collection collection-1" style="background-image: url({{collection.image | img_url: 'master'}})">
+      <div class="quad-collection quad-collection-1" style="background-image: url({{collection.image | img_url: 'master'}})">
         <div class="collection-button-container">
           {% if section.settings.title_1 != blank %}
             <h2 class="featured-collection__title">{{ section.settings.title_1 | escape }}</h2>
@@ -14,7 +14,7 @@
       </div>
       
     {%- assign collection = collections[section.settings.collection_2] -%}
-      <div class="quad-collection collection-2" style="background-image: url({{collection.image | img_url: 'master'}})">
+      <div class="quad-collection quad-collection-2" style="background-image: url({{collection.image | img_url: 'master'}})">
         <div class="collection-button-container">
           {% if section.settings.title_2 != blank %}
             <h2 class="featured-collection__title">{{ section.settings.title_2 | escape }}</h2>
@@ -27,7 +27,7 @@
     </div>
     <div class="quad-collections-container">
       {%- assign collection = collections[section.settings.collection_3] -%}
-      <div class="quad-collection collection-3"
+      <div class="quad-collection quad-collection-1"
         style="background-image: url({{collection.image | img_url: 'master'}})">
         <div class="collection-button-container">
           {% if section.settings.title_3 != blank %}
@@ -40,7 +40,7 @@
       </div>
     
       {%- assign collection = collections[section.settings.collection_4] -%}
-      <div class="quad-collection collection-4"
+      <div class="quad-collection quad-collection-2"
         style="background-image: url({{collection.image | img_url: 'master'}})">
         <div class="collection-button-container">
           {% if section.settings.title_4 != blank %}

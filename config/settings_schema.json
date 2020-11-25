@@ -10,50 +10,13 @@
   {
     "name": "Colors",
     "settings": [
-
-
       // CALL TO ACTION
       {
          "type": "color",
          "id": "call_to_action_bg",
          "label": "Background Call To Action",
          "default": "#f0f5dc"
-      },
-      
-      // IMAGE WITH TEXT
-      // {
-      //    "type": "color",
-      //    "id": "image_text_bg",
-      //    "label": "Background",
-      //    "default": "#f4f4f4"
-      // },
-
-
-      // QUAD COLLECTION
-       {
-          "type": "color",
-          "id": "color_quad_collection_1",
-          "label": "Background Quad 1",
-          "default": "#f0f5dc"
-       },
-       {
-          "type": "color",
-          "id": "color_quad_collection_2",
-          "label": "Background Quad 2",
-          "default": "#f0f5dc"
-       },
-       {
-          "type": "color",
-          "id": "color_quad_collection_3",
-          "label": "Background Quad 3",
-          "default": "#f0f5dc"
-       },
-       {
-          "type": "color",
-          "id": "color_quad_collection_4",
-          "label": "Background Quad 4",
-          "default": "#f0f5dc"
-       }
+      }
     ]
  },
  {

@@ -689,7 +689,7 @@ iframe {
 }
 
 .rich-text {
-  background: $quinaryColor;
+  background: $secondaryColor;
   padding: 40px 0;
   margin-bottom: 80px;
   h2 {
@@ -1003,7 +1003,6 @@ footer ul li:last-child a {
 .quad-collections-container {
   @include space-around;
   .quad-collection {
-    position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     width: 450px;
@@ -1016,49 +1015,30 @@ footer ul li:last-child a {
   margin-bottom: 80px;
 }
 
-.collection-1::before {
+.quad-collection-1,
+.quad-collection-2 {
+  position: relative;
+}
+
+.quad-collection-1:before {
   content: '';
   position: absolute;
   top: -40px;
   left: -40px;
   z-index: -10;
-  background: {{ settings.color_quad_collection_1 }};
+  background: $quinaryColor;
   width: 100%;
   height: 100%;
   border-radius: 3px;
 }
 
-.collection-2::before {
+.quad-collection-2:before {
   content: '';
   position: absolute;
   top: -40px;
   right: -40px;
   z-index: -10;
-  background: {{ settings.color_quad_collection_2 }};
-  width: 100%;
-  height: 100%;
-  border-radius: 3px;
-}
-
-.collection-3::before {
-  content: '';
-  position: absolute;
-  bottom: -40px;
-  left: -40px;
-  z-index: -10;
-  background: {{ settings.color_quad_collection_3 }};
-  width: 100%;
-  height: 100%;
-  border-radius: 3px;
-}
-
-.collection-4::before {
-  content: '';
-  position: absolute;
-  bottom: -40px;
-  right: -40px;
-  z-index: -10;
-  background: {{ settings.color_quad_collection_4 }};
+  background: $quinaryColor;
   width: 100%;
   height: 100%;
   border-radius: 3px;
