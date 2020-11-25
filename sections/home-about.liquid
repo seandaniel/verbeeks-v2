@@ -1,15 +1,17 @@
-<div class="h1-container about-h1">
+<div class="h1-container">
   <div class="wrapper">
     <h1>{{ section.settings.about_heading }}</h1>
   </div>
 </div>
 <div class="wrapper">
   <section class="about-header">
-    <h2>{{ section.settings.about_heading_2 }}</h2>
-    <img src="{{ section.settings.img_about | img_url: 'master' }}" alt="{{ img.alt }}">
     <div class="p-button-container">
       <p>{{ section.settings.about_desc }}</p>
       <a class="button-reverse" href="{{ section.settings.button_link }} ">{{ section.settings.button_label }}</a>
+    </div>
+    <div class="heading-img-container">
+      <h2>{{ section.settings.about_heading_2 }}</h2>
+      <img src="{{ section.settings.img_about | img_url: 'master' }}" alt="{{ img.alt }}">
     </div>
   </section>
   <section class="three-icon-container">

@@ -15,7 +15,10 @@
             </div>
             <a class="button-reverse" href="{{ block.settings.link }}">{{ block.settings.button_label }}</a>
           </div>
-          <img src="{{ block.settings.img_id | img_url: 'master' }}" alt="{{ img.alt }}">
+          <div class="heading-img-container">
+            <h2>{{ block.settings.alternate_heading }}</h2>
+            <img src="{{ block.settings.img_id | img_url: 'master' }}" alt="{{ img.alt }}">
+          </div>
         </section>
       </div>
 		
@@ -34,7 +37,7 @@
         "type": "text_block",
         "name": "Page Management",
         "settings": [
-		  {
+		      {
             "type": "page",
             "id": "page_handle",
             "label": "Select a page"
@@ -48,6 +51,12 @@
             "type": "text",
             "id": "button_label",
             "label": "Button Link Label"
+          },
+          {
+            "type": "text",
+            "id": "alternate_heading",
+            "label": "Alternate Heading",
+            "default": "Something Relating To This New Page"
           },
           {
             "type": "image_picker",

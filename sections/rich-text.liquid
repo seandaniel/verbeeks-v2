@@ -9,7 +9,7 @@
 <section class="rich-text">
   <div class="wrapper">
     <h2>{{ section.settings.title }}</h2>
-    {{ section.settings.text }}
+    <p>{{ section.settings.text }}</p>
   </div>
 </section>
 
@@ -21,13 +21,13 @@
         "type": "text",
         "id": "title",
         "label": "Heading",
-        "default": "Talk about your brand"
+        "default": "Talk About Your Brand"
       },
       {
-        "type": "richtext",
+        "type": "textarea",
         "id": "text",
         "label": "Text",
-        "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        "default": "Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store."
       }
     ],
     "presets": [{

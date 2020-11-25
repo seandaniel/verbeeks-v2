@@ -172,7 +172,7 @@ button {
 }
 
 .content {
-  max-width: 550px;
+  max-width: 450px;
   p {
     font-size: 17px;
     margin-bottom: 20px;
@@ -678,7 +678,7 @@ iframe {
 
 .text-container p {
   font-size: 17px;
-  max-width: 550px;
+  max-width: 450px;
   margin-bottom: 20px;
 }
 
@@ -817,51 +817,32 @@ footer ul li:last-child a {
 }
 
 // home 
-
-// home-about.liquid
-.about-h1 {
-  margin-bottom: 120px;
-}
 .about-header {
-  // 321.8px
+  @include space-around;
+  margin-bottom: 80px;
+  .p-button-container {
+    max-width: 450px;
+    p {
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+  }
+}
+
+.heading-img-container {
+  width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 80px;
+  align-items: flex-end;
   h2 {
-    position: relative;
     margin-bottom: 20px;
   }
   img {
-    height: 600px;
-    width: 600px;
-    margin-bottom: 40px;
+    height: 400px;
+    width: 400px;
     @include border-radius-box-shadow;
   }
 }
-
-.about-header .p-button-container {
-  width: 500px;
-  margin-bottom: 20px;
-  p {
-    margin-bottom: 20px;
-    font-size: 17px;
-  }
-}
-
-.about-header h2::before {
-  content: '';
-  background: $secondaryColor;
-  width: 800px;
-  height: 600px;
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 3px;
-  z-index: -10;
-}
-
 
 .jump {
   position: relative;

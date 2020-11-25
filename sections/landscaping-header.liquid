@@ -8,8 +8,11 @@
     <div class="content">
       {{ page.content }}
     </div>
-    <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
-      alt="{{ img.alt }}">
+    <div class="heading-img-container">
+      <h2>{{ section.settings.landscape_heading }}</h2>
+      <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
+        alt="{{ img.alt }}">
+    </div>
   </section>
 </div>
 <div class="secondary-h1-container">
@@ -57,6 +60,12 @@
       {
         "type": "header",
         "content": "Landscaping Main"
+      },
+      {
+        "type": "text",
+        "id": "landscape_heading",
+        "label": "Landscaping Heading",
+        "default": "Trusted Professionals"
       },
       {
         "type": "image_picker",
