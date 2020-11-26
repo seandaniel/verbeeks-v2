@@ -17,19 +17,7 @@
     </div>
     <nav class="secondary-nav">
       <ul>
-        {% for link in linklists.secondary-menu.links %}
-            {% assign child_list_handle = link.title | handleize %}
-            {% if linklists[child_list_handle].links != blank %}
-              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                [{% for childlink in linklists[child_list_handle].links %}
-                    <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
-                {% endfor %}]
-            {% elsif link.url contains "search" %}
-              <li><a class="button" href="{{ link.url }}"><i class="fas fa-search"></i>{{ link.title }}</a></li>
-            {% else %}
-              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-            {% endif %}
-        {% endfor %}
+        <li><img src="{{ 'alternateLogo.svg' | asset_url }}" alt="The letter V with a leaf on the end"></li>
         <li>
           <form action="/search" method="get" role="search">
             <i class="fas fa-search"></i>
@@ -46,14 +34,7 @@
           <li>
             <h1>
               <a href="/">
-                {% if section.settings.logo != blank %}
-                  {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
-                  <img src="{{ section.settings.logo | img_url: image_size }}"
-                      srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ sectYion.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                      alt="{{ section.settings.logo.alt | default: shop.name }}">
-                {% else %}
-                  {{ shop.name }}
-                {% endif %}
+                <img src="{{ 'logo.png' | asset_url }}" alt="Verbeek's Farm and Garden Centre">
               </a>
             </h1>
           </li>
@@ -116,19 +97,9 @@
       },
       {
         "type": "link_list",
-        "id": "secondary",
-        "label": "Secondary Menu"
-      },
-      {
-        "type": "link_list",
         "id": "menu",
         "label": "Menu",
         "default": "main-menu"
-      },
-      {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Company's Logo"
       }
     ]
   }
