@@ -37,7 +37,7 @@ $quinaryColor: #f0f5dc;
 }
 
 @mixin border-radius-box-shadow {
-  border-radius: 3px;
+  border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
 }
 
@@ -125,7 +125,7 @@ button {
   background-color: $secondaryColor;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
-  border-radius: 3px;
+  border-radius: 6px;
   transition: color .35s, background-color .35s;
   &:hover,
   &:focus {
@@ -143,7 +143,7 @@ button {
   background-color: $primaryColor;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
-  border-radius: 3px;
+  border-radius: 6px;
   transition: color .35s, background-color .35s;
   &:hover,
   &:focus {
@@ -195,7 +195,6 @@ button {
   background-color: {{ settings.call_to_action_bg }};
   padding: 5px 0;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
   a {
     text-decoration: underline;
     transition: color .35s;
@@ -211,7 +210,7 @@ button {
   top: 0;
   z-index: 100;
   background: $tertiaryColor;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+  box-shadow: 0 2px 4px rgba(0,0,0,.21);
 }
 
 .secondary-nav ul {
@@ -273,7 +272,7 @@ button {
   background-color: $secondaryColor;
   text-transform: uppercase;
   margin-bottom: 80px;
-  padding-top: 5px;
+  padding: 10px 0;
   .primary-ul {
     display: flex;
     align-items: flex-end;
@@ -434,9 +433,9 @@ button {
     position: relative;
     width: 32%;
     img {
+      @include border-radius-box-shadow;
       width: 100%;
       height: 500px;
-      @include border-radius-box-shadow;
     }
   }
 }
@@ -607,7 +606,7 @@ iframe {
       border: none;
       box-shadow: 0 2px 4px rgba(0,0,0,0.21);
       background: $secondaryColor;
-      border-radius: 3px;
+      border-radius: 6px;
       margin-bottom: 20px;
       width: 400px;
       padding: 10px;
@@ -620,7 +619,7 @@ iframe {
 .form-map-container form textarea {
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
   background: $secondaryColor;
-  border-radius: 3px;
+  border-radius: 6px;
   border: none;
   font-family: {{settings.font_body.family}};
   margin: 10px 0 20px 0;
@@ -920,6 +919,8 @@ footer ul li:last-child a {
 .landscape-image-container-2 figure h2 {
   background: $secondaryColor;
   @include border-radius-box-shadow;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   text-align: center;
   position: absolute;
   padding: 10px;
@@ -1023,7 +1024,7 @@ footer ul li:last-child a {
   background: $quinaryColor;
   width: 100%;
   height: 100%;
-  border-radius: 3px;
+  border-radius: 6px;
 }
 
 .quad-collection-2:before {
@@ -1035,7 +1036,7 @@ footer ul li:last-child a {
   background: $quinaryColor;
   width: 100%;
   height: 100%;
-  border-radius: 3px;
+  border-radius: 6px;
 }
 
 .collection-button-container {
@@ -1119,9 +1120,74 @@ footer ul li:last-child a {
 .four-bricks-container h2 {
   background: $secondaryColor;
   @include border-radius-box-shadow;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   text-align: center;
   position: absolute;
   padding: 10px;
   bottom: 10px;
   left: 10px;
+}
+
+.main-carousel {
+  margin-bottom: 120px;
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-cell {
+  width: 30%;
+  height: 500px;
+  margin-right: 5%;
+  background-color: blue;
+  @include border-radius-box-shadow;
+  border-top: 8px solid $tertiaryColor;
+}
+
+.carousel-cell:last-child {
+  margin-right: 0;
+}
+
+// .carousel-cell.is-selected {
+//   border-top: 8px solid $tertiaryColor;
+//   transition: border-top .35s;
+// }
+
+.flickity-button {
+  display: inline-block;
+  color: $quaternaryColor;
+  background-color: $primaryColor;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.21);
+  border-radius: 6px;
+  transition: color .35s, background-color .35s;
+  &:hover,
+  &:focus {
+    background-color: $quaternaryColor;
+    color: $primaryColor;
+  }
+}
+
+.flickity-prev-next-button.previous {
+  left: -80px;
+}
+.flickity-prev-next-button.next {
+  right: -80px;
+}
+
+.flickity-page-dots {
+  // +18px for button height
+  bottom: -58px;
+}
+
+.flickity-page-dots .dot {
+  width: 18px;
+  height: 18px;
+  opacity: 1;
+  background: transparent;
+  border: 4px solid $primaryColor;
+}
+
+.flickity-page-dots .dot.is-selected {
+  background: $tertiaryColor;
 }

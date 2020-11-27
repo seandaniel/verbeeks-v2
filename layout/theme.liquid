@@ -10,6 +10,8 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/d9461c25c6.js"></script>
+  <!-- Flickity -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <!-- CSS -->
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
 </head>
@@ -28,4 +30,5 @@
     crossorigin="anonymous"></script>
   <!-- JavaScript -->
   {{ 'application.js' | asset_url | script_tag }}
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </html>
