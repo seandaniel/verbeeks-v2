@@ -1,10 +1,16 @@
 <div class="wrapper">
   <div class="main-carousel">
     <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
+    <div class="carousel-cell cell-2">
+      <div class="h1-img-container">
+        <img src="{{ 'logo-alternate.svg' | asset_url }}" alt="A V with a little leaf on it">
+        <h1>Verbeek's Farm & Garden Centre</h1>
+      </div>
+      <div class="cell-button-container">
+        <a class="button-reverse" href="{{ section.settings.button_link_1 }}">{{ section.settings.button_label_1 }}</a>
+        <a class="button-reverse" href="{{ section.settings.button_link_2 }}">{{ section.settings.button_label_2 }}</a>
+      </div>
+    </div>
     <div class="carousel-cell">...</div>
     <div class="carousel-cell">...</div>
     <div class="carousel-cell">...</div>
@@ -19,6 +25,26 @@
       {
         "type": "header",
         "content":"Home Header"
+      },
+      {
+        "type": "url",
+        "id": "button_link_1",
+        "label": "Button Link 1"
+      },
+      {
+        "type": "text",
+        "id": "button_label_1",
+        "label": "Button Label 1"
+      },
+      {
+        "type": "url",
+        "id": "button_link_2",
+        "label": "Button Link 2"
+      },
+      {
+        "type": "text",
+        "id": "button_label_2",
+        "label": "Button Label 2"
       }
     ],
     "presets": [
