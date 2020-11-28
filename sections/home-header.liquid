@@ -1,6 +1,14 @@
 <div class="wrapper">
   <div class="main-carousel">
-    <div class="carousel-cell">...</div>
+    <div class="carousel-cell" style="background-image: url({{ section.settings.img_1 | img_url: 'master' }})"">
+      <div class="cell-content-container">
+        <h2>{{ section.settings.heading_cell_1 }}</h2>
+        {% if section.settings.text_1 != '' %}
+          <p> {{ section.settings.text_1 }} </p>
+        {% endif %}
+        <a class="button-reverse" href="{{ section.settings.link_1 }}">{{ section.settings.link_label_1 }}</a>
+      </div>
+    </div>
     <div class="carousel-cell cell-2">
       <div class="h1-img-container">
         <img src="{{ 'logo-alternate.svg' | asset_url }}" alt="A V with a little leaf on it">
@@ -11,16 +19,75 @@
         <a class="button-reverse" href="{{ section.settings.button_link_2 }}">{{ section.settings.button_label_2 }}</a>
       </div>
     </div>
-    <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
-    <div class="carousel-cell">...</div>
+    <div class="carousel-cell" style="background-image: url({{ section.settings.img_3 | img_url: 'master' }})">
+      <div class="cell-content-container">
+        <h2>{{ section.settings.heading_cell_3 }}</h2>
+        {% if section.settings.text_3 != '' %}
+          <p> {{ section.settings.text_3 }} </p>
+        {% endif %}
+        <a class="button-reverse" href="{{ section.settings.link_3 }}">{{ section.settings.link_label_3 }}</a>
+      </div>
+    </div>
+    <div class="carousel-cell" style="background-image: url({{ section.settings.img_4 | img_url: 'master' }})">
+      <div class="cell-content-container">
+        <h2>{{ section.settings.heading_cell_4 }}</h2>
+        {% if section.settings.text_4 != '' %}
+          <p> {{ section.settings.text_4 }} </p>
+        {% endif %}
+        <a class="button-reverse" href="{{ section.settings.link_4 }}">{{ section.settings.link_label_4 }}</a>
+      </div>
+    </div>
+    <div class="carousel-cell" style="background-image: url({{ section.settings.img_5 | img_url: 'master' }})">
+      <div class="cell-content-container" >
+        <h2>{{ section.settings.heading_cell_5 }}</h2>
+        {% if section.settings.text_5 != '' %}
+          <p> {{ section.settings.text_5 }} </p>
+        {% endif %}
+        <a class="button-reverse" href="{{ section.settings.link_5 }}">{{ section.settings.link_label_5 }}</a>
+      </div>
+    </div>
+    <div class="carousel-cell" style="background-image: url({{ section.settings.img_6 | img_url: 'master' }})">
+      <div class="cell-content-container">
+        <h2>{{ section.settings.heading_cell_6 }}</h2>
+        {% if section.settings.text_6 != '' %}
+          <p> {{ section.settings.text_6 }} </p>
+        {% endif %}
+        <a class="button-reverse" href="{{ section.settings.link_6 }}">{{ section.settings.link_label_6 }}</a>
+      </div>
+    </div>
+    <div class="carousel-cell" style="background-image: url({{ section.settings.img_7 | img_url: 'master' }})">
+      <div class="cell-content-container">
+        <h2>{{ section.settings.heading_cell_7 }}</h2>
+        {% if section.settings.text_7 != '' %}
+          <p> {{ section.settings.text_7 }} </p>
+        {% endif %}
+        <a class="button-reverse" href="{{ section.settings.link_7 }}">{{ section.settings.link_label_7 }}</a>
+      </div>
+    </div>
+    <div class="carousel-cell" style="background-image: url({{ section.settings.img_8 | img_url: 'master' }})">
+      <div class="cell-content-container">
+        <h2>{{ section.settings.heading_cell_8 }}</h2>
+        {% if section.settings.text_8 != '' %}
+          <p> {{ section.settings.text_8 }} </p>
+        {% endif %}
+        <a class="button-reverse" href="{{ section.settings.link_8 }}">{{ section.settings.link_label_8 }}</a>
+      </div>
+    </div>
+    <div class="carousel-cell" style="background-image: url({{ section.settings.img_9 | img_url: 'master' }})">
+      <div class="cell-content-container">
+        <h2>{{ section.settings.heading_cell_9 }}</h2>
+        {% if section.settings.text_9 != '' %}
+          <p> {{ section.settings.text_9 }} </p>
+        {% endif %}
+        <a class="button-reverse" href="{{ section.settings.link_9 }}">{{ section.settings.link_label_9 }}</a>
+      </div>
+    </div>
   </div>
 </div>
 
 {% schema %}
   {
-    "name": "Home Landscape",
+    "name": "Home Header",
     "settings": [
       {
         "type": "header",
@@ -45,6 +112,206 @@
         "type": "text",
         "id": "button_label_2",
         "label": "Button Label 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "text",
+        "id": "heading_cell_1",
+        "label": "Heading 1"
+      },
+      {
+        "type": "text",
+        "id": "text_1",
+        "label": "Description 1"
+      },
+      {
+        "type": "url",
+        "id": "link_1",
+        "label": "Link 1"
+      },
+      {
+        "type": "text",
+        "id": "link_label_1",
+        "label": "Link Label 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_3",
+        "label": "Image 3"
+      },
+      {
+        "type": "text",
+        "id": "heading_cell_3",
+        "label": "Heading 3"
+      },
+      {
+        "type": "text",
+        "id": "text_3",
+        "label": "Description 3"
+      },
+      {
+        "type": "url",
+        "id": "link_3",
+        "label": "Link 3"
+      },
+      {
+        "type": "text",
+        "id": "link_label_3",
+        "label": "Link Label 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_4",
+        "label": "Image 4"
+      },
+      {
+        "type": "text",
+        "id": "heading_cell_4",
+        "label": "Heading 4"
+      },
+      {
+        "type": "text",
+        "id": "text_4",
+        "label": "Description 4"
+      },
+      {
+        "type": "url",
+        "id": "link_4",
+        "label": "Link 4"
+      },
+      {
+        "type": "text",
+        "id": "link_label_4",
+        "label": "Link Label 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_5",
+        "label": "Image 5"
+      },
+      {
+        "type": "text",
+        "id": "heading_cell_5",
+        "label": "Heading 5"
+      },
+      {
+        "type": "text",
+        "id": "text_5",
+        "label": "Description 5"
+      },
+      {
+        "type": "url",
+        "id": "link_5",
+        "label": "Link 5"
+      },
+      {
+        "type": "text",
+        "id": "link_label_5",
+        "label": "Link Label 5"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_6",
+        "label": "Image 6"
+      },
+      {
+        "type": "text",
+        "id": "heading_cell_6",
+        "label": "Heading 6"
+      },
+      {
+        "type": "text",
+        "id": "text_6",
+        "label": "Description 6"
+      },
+      {
+        "type": "url",
+        "id": "link_6",
+        "label": "Link 6"
+      },
+      {
+        "type": "text",
+        "id": "link_label_6",
+        "label": "Link Label 6"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_7",
+        "label": "Image 7"
+      },
+      {
+        "type": "text",
+        "id": "heading_cell_7",
+        "label": "Heading 7"
+      },
+      {
+        "type": "text",
+        "id": "text_7",
+        "label": "Description 7"
+      },
+      {
+        "type": "url",
+        "id": "link_7",
+        "label": "Link 7"
+      },
+      {
+        "type": "text",
+        "id": "link_label_7",
+        "label": "Link Label 7"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_8",
+        "label": "Image 8"
+      },
+      {
+        "type": "text",
+        "id": "heading_cell_8",
+        "label": "Heading 8"
+      },
+      {
+        "type": "text",
+        "id": "text_8",
+        "label": "Description 8"
+      },
+      {
+        "type": "url",
+        "id": "link_8",
+        "label": "Link 8"
+      },
+      {
+        "type": "text",
+        "id": "link_label_8",
+        "label": "Link Label 8"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_9",
+        "label": "Image 9"
+      },
+      {
+        "type": "text",
+        "id": "heading_cell_9",
+        "label": "Heading 9"
+      },
+      {
+        "type": "text",
+        "id": "text_9",
+        "label": "Description 9"
+      },
+      {
+        "type": "url",
+        "id": "link_9",
+        "label": "Link 9"
+      },
+      {
+        "type": "text",
+        "id": "link_label_9",
+        "label": "Link Label 9"
       }
     ],
     "presets": [
