@@ -1,26 +1,25 @@
 $(function() {
 
   // flickity
+
+
   let elem = document.querySelector('.main-carousel');
-  let flkty = new Flickity(elem, {
-    // options
-    cellAlign: 'left',
-    contain: true,
-    draggable: true,
-    friction: 0.8,
-    wrapAround: false,
-    prevNextButtons: false,
-    // lazyLoad: false,
-    groupCells: true,
-    pageDots: true,
 
-  });
+  if (elem !== null) {
+    let flkty = new Flickity(elem, {
+      // options
+      cellAlign: 'left',
+      contain: true,
+      draggable: true,
+      friction: 0.5,
+      wrapAround: false,
+      prevNextButtons: false,
+      lazyLoad: true,
+      groupCells: true,
+      pageDots: true,
 
-  // element argument can be a selector string
-  //   for an individual element
-  // var flkty = new Flickity('.main-carousel', {
-  //   // options
-  // });
+    });
+  }
 
   // secondary-nav form
   const secondaryForm = document.querySelector('.secondary-nav form');

@@ -1,0 +1,47 @@
+<div class="h1-container">
+  <div class="wrapper">
+    <h1>{{ section.settings.eight_heading }}</h1>
+  </div>
+</div>
+<div class="wrapper">
+  <section class="eight-products-container">
+    {%- assign collection = collections[section.settings.eight_collection] -%}
+
+    {% for product in collection.products limit:8 %}
+      <div class="product-container">
+        <img src="{{ product.featured_image | img_url: 'master'}}" alt="{{ product.title}}">
+        <div class="product-content">
+          <h2>{{ product.title }}</h2>
+          <p>{{ product.price | money}}</p>
+        </div>
+      </div>
+    {% endfor %}
+
+  </section>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Eight Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "eight_heading",
+        "label": "Eight Products Collection Heading",
+        "default": "Popular"
+      },
+      {
+        "id": "eight_collection",
+        "type": "collection",
+        "label": "Eight Products Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Eight Products",
+        "category": "Products"
+      }
+    ]
+  }
+{% endschema %}
