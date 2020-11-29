@@ -7,18 +7,6 @@
     "theme_documentation_url": "https://github.com/Shopify/themekit",
     "theme_support_url": "https://github.com/Shopify/themekit/issues"
   },
-  {
-    "name": "Colors",
-    "settings": [
-      // CALL TO ACTION
-      {
-         "type": "color",
-         "id": "call_to_action_bg",
-         "label": "Background Call To Action",
-         "default": "#f0f5dc"
-      }
-    ]
- },
  {
     "name": "Typography",
     "settings": [

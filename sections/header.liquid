@@ -12,12 +12,9 @@
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header">
   <header role="banner">
-    <div class="call-to-action">
-      <a href="{{ section.settings.call_to_action }}">{{ section.settings.call_to_action_text }}</a>
-    </div>
     <nav class="secondary-nav">
       <ul>
-        <li><i class="fab fa-envira"></i></li>
+        <li><a href="{{ section.settings.call_to_action }}">{{ section.settings.call_to_action_text }}</a></li>
         <li>
           <form action="/search" method="get" role="search">
             <i class="fas fa-search"></i>
