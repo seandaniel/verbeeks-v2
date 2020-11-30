@@ -1325,11 +1325,14 @@ footer ul li:last-child a {
   .wrapper {
     @include space-between;
     a { 
-      font-size: 20px;
+      position: relative;
+      top: 0;
+      font-size: 16px;
+      text-align: center;
       line-height: 1.2;
       text-transform: uppercase;
       background: $tertiaryColor;
-      padding: 15px;
+      padding: 10px;
       @include border-radius-box-shadow;
       transition: background .35s;
       &:hover,
@@ -1337,5 +1340,27 @@ footer ul li:last-child a {
         background: $quinaryColor;
       }
     }
+  }
+}
+
+.pull {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: pull 3s ease-in 1;
+}
+
+@keyframes pull {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -20px;
+  }
+  75% {
+    top: 20px;
+  }
+  100% {
+    top: 0;
   }
 }

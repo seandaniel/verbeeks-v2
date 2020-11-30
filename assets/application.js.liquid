@@ -91,6 +91,24 @@ $(function() {
     }, 6600)
   }
 
+  // banner collection animation
+  const bannerButton = document.querySelectorAll('.banner .wrapper a');
+
+  if (bannerButton !== null) {
+
+    const buttonAnimateEnd = function() {
+      if (this.nextElementSibling === null) {
+        this.classList.remove('pull');
+        this.parentElement.children[0].classList.add('pull');
+      } else {
+        this.classList.remove('pull');
+        this.nextElementSibling.classList.add('pull');
+      }
+    }
+
+    bannerButton.forEach(button => button.addEventListener('animationend', buttonAnimateEnd));
+  }
+
   // about home icon animation
   const container1 = document.querySelector('.container-1');
   const container2 = document.querySelector('.container-2');
