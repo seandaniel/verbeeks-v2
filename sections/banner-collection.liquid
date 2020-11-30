@@ -1,0 +1,62 @@
+<div class="banner">
+  <div class="wrapper">
+    <a href="{{ section.settings.button_link_1 }}">{{ section.settings.button_label_1 }}</a>
+    <a href="{{ section.settings.button_link_2 }}">{{ section.settings.button_label_2 }}</a>
+    <a href="{{ section.settings.button_link_3 }}">{{ section.settings.button_label_3 }}</a>
+    <a href="{{ section.settings.button_link_4 }}">{{ section.settings.button_label_4 }}</a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Collection",
+    "settings": [
+      {
+        "type": "url",
+        "id": "button_link_1",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_label_1",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link_2",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_label_2",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link_3",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_label_3",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link_4",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_label_4",
+        "label": "Button Label"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner Collection",
+        "category": "Banner Collection"
+      }
+    ]
+  }
+{% endschema %}

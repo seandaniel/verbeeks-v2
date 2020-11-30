@@ -41,6 +41,10 @@ $quinaryColor: #f0f5dc;
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: {{settings.font_body.family}};
   color: $primaryColor;
@@ -1311,4 +1315,27 @@ footer ul li:last-child a {
 
 .eight-products-container .product-container:nth-child(n + 5) {
   margin-bottom: 0;
+}
+
+// banner-collection.liquid
+.banner {
+  background: $secondaryColor;
+  padding: 40px 0;
+  margin-bottom: 80px;
+  .wrapper {
+    @include space-between;
+    a { 
+      font-size: 20px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      background: $tertiaryColor;
+      padding: 15px;
+      @include border-radius-box-shadow;
+      transition: background .35s;
+      &:hover,
+      &:focus {
+        background: $quinaryColor;
+      }
+    }
+  }
 }
