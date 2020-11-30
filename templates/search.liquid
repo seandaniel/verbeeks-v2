@@ -1,11 +1,17 @@
 {% paginate search.results by 10 %}
 
-<div class="wrapper">
-  <form action="/search" method="get" role="search">
-    <input type="search" name="q" value="{{ search.terms | escape }}">
-    <button class="button" type="submit">Search</button>
-  </form>
+<div class="h1-container">
+  <div class="wrapper">
+    <form class="search-form" action="/search" method="get" role="search" placeholder="Search products...">
+      <div class="search-container"><i class="fas fa-search"></i><input type="search" name="q" value="{{ search.terms | escape }}"></div>
+      <button class="button" type="submit">Search</button>
+    </form>
+  </div>
 </div>
+
+<div class="wrapper">
+
+
 
   <!-- show cart, featured items -->
 
@@ -19,10 +25,12 @@
       <h5>{{ item.title | link_to: item.url }}</h5>
       <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
     {% else %}
-      Sorry, we don't have that but we might in our store
-      <!-- show cart, featured itmes-->
+        <div class="no-search-container">
+          <h2>Sorry, we don't have that item. Search again or <a href="/pages/contact">message us</a> and we may have it in store!</h2>
+        </div>
     {% endfor %}
   {% endif %}
 
   {% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
-{% endpaginate %}
+  {% endpaginate %}
+</div>
