@@ -1,0 +1,28 @@
+<nav class="sidebar-nav">
+  <h2>{{ section.settings.sidebar_heading }}</h2>
+  {%- assign sidebar_links = section.settings.sidebar_links -%}
+  <ul class="links-footer-ul">
+    {% for link in linklists[sidebar_links].links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></l>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% schema %}
+  {
+    "name": "Sidebar Navigation",
+    "settings": [
+      {
+        "type": "text",
+        "id": "sidebar_heading",
+        "label": "Sidebar Heading",
+        "default": "Collections"
+      },
+      {
+        "type": "link_list",
+        "id": "sidebar_links",
+        "label": "Sidebar Links"
+      }
+    ]
+  }
+{% endschema %}
