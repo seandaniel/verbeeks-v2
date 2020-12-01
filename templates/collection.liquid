@@ -1,4 +1,4 @@
-{% paginate collection.products by 16 %}
+{% paginate collection.products by 9 %}
 
   <div class="h1-container">
     <div class="wrapper">
@@ -7,8 +7,15 @@
   </div>
 
   {% if collection.all_products_count != 0 %}
-    <div class="wrapper">
-      <section class="home-products-container">
+  <div class="wrapper">
+    {% render 'breadcrumbs' %}
+    <div class="collections-products-container">
+
+      <p class="test">Collection</p>
+    <div class="products-sort-container">
+
+      {% render 'sort-by' %}
+      <div class="home-products-container three-products-container">
 
       {% for product in collection.products %}
 
@@ -21,9 +28,11 @@
             <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-      {% endfor %}
-    </section>
-  </div>
+        {% endfor %}
+      </div>
+      </div>
+      </div>
+    </div>
 
     {% else %}
 

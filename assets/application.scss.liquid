@@ -1246,77 +1246,6 @@ footer ul li:last-child a {
   margin-right: 40px;
 }
 
-// home-products.liquid
-
-.home-products-container {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  margin-bottom: calc(80px - 2.66666666667%);
-  .product-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 23%;
-    @include border-radius-box-shadow;
-    margin: 0 2.66666666667% 2.66666666667% 0;
-    .product-img {
-      display: inherit;
-      img {
-        width: 100%;
-        height: 300px;
-        border-top-right-radius: 6px;
-        border-top-left-radius: 6px;
-        opacity: 1;
-        transition: opacity .35s;
-        &:hover,
-        &:focus {
-          opacity: 0.3;
-        }
-      }
-    }
-    h2 {
-      font-size: 20px;
-      line-height: 1.2;
-      border-bottom: none;
-      padding: 20px 20px;
-      background: $quinaryColor;
-    }
-  }
-}
-.home-products-container .product-container:nth-child(4n) {
-  margin-right: 0;
-}
-
-// .home-products-container .product-container:nth-last-child(-n + 4) {
-//   margin-bottom: 0;
-// }
-
-.product-button-container {
-  @include space-between;
-  padding: 20px;
-  p {
-    font-size: 20px;
-    font-weight: 500;
-  }
-  .product-button {
-    border-radius: 50%;
-    padding: 7px;
-    text-align: center;
-    border: 3px solid $primaryColor;
-    transition: color .35s, border .35s, background .35s;
-    width: 38px;
-    &:hover,
-    &:focus {
-      color: $tertiaryColor;
-      border: 3px solid $tertiaryColor;
-    }
-    i {
-      margin-right: 0;
-    }
-  }
-}
-
 // .button-toggle {
 //   background: $quaternaryColor;
 //   color: $tertiaryColor;
@@ -1373,6 +1302,11 @@ footer ul li:last-child a {
 }
 
 // search.liquid
+
+.search-terms {
+  text-transform: capitalize;
+}
+
 .search-h2 {
   margin-bottom: 80px;
 }
@@ -1429,3 +1363,127 @@ footer ul li:last-child a {
   }
 }
 
+// breadcrumbs.liquid
+.breadcrumb {
+  margin-bottom: 40px;
+  font-size: 24px;
+  border-bottom: 3px solid $tertiaryColor;
+  display: inline-block;
+  a:hover,
+  a:focus {
+    color: $tertiaryColor;
+  }
+}
+
+// sort-by.liquid
+.sort-by {
+  font-size: 17px;
+  margin-bottom: 40px;
+  label {
+    margin-right: 10px;
+  }
+  select {
+    cursor: pointer;
+    font-family: {{ settings.font_body.family }};
+    background: url({{ 'down-arrow.svg' | asset-url }});
+    background-repeat: no-repeat;
+    background-position: right 10px top 60%, 0 0;
+    background-size: 20px;
+    background-color: $secondaryColor;
+    appearance: none;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    @include border-radius-box-shadow;
+    option {
+       font-family: {{ settings.font_body.family }};
+    }
+  }
+}
+
+// home-products.liquid
+
+.home-products-container {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: calc(80px - 2.66666666667%);
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 23%;
+    @include border-radius-box-shadow;
+    margin: 0 2.66666666667% 2.66666666667% 0;
+    .product-img {
+      display: inherit;
+      img {
+        width: 100%;
+        height: 300px;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        opacity: 1;
+        transition: opacity .35s;
+        &:hover,
+        &:focus {
+          opacity: 0.3;
+        }
+      }
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 1.2;
+      border-bottom: none;
+      padding: 20px 20px;
+      background: $quinaryColor;
+    }
+  }
+}
+
+.home-products-container .product-container:nth-child(4n) {
+  margin-right: 0;
+}
+
+
+.product-button-container {
+  @include space-between;
+  padding: 20px;
+  p {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .product-button {
+    border-radius: 50%;
+    padding: 7px;
+    text-align: center;
+    border: 3px solid $primaryColor;
+    transition: color .35s, border .35s, background .35s;
+    width: 38px;
+    &:hover,
+    &:focus {
+      color: $tertiaryColor;
+      border: 3px solid $tertiaryColor;
+    }
+    i {
+      margin-right: 0;
+    }
+  }
+}
+
+
+// collection.liquid
+
+.collections-products-container {
+  @include space-between;
+}
+
+.three-products-container .product-container:nth-child(3n) {
+  margin-right: 0;
+}
+
+.test {
+  width: 400px;
+  background: quinaryColor;
+  height: 600px;
+  @include border-radius-box-shadow;
+}
