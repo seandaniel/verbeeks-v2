@@ -10,29 +10,29 @@
   <div class="wrapper">
     {% render 'breadcrumbs' %}
     <div class="collections-products-container">
+      <div class="test">
+        <p>test</p>
+        <p>test</p>
+      </div>
+      <div class="products-sort-container">
+        {% render 'sort-by' %}
+        <div class="three-products-container">
+        {% for product in collection.products %}
 
-      <p class="test">Collection</p>
-    <div class="products-sort-container">
-
-      {% render 'sort-by' %}
-      <div class="home-products-container three-products-container">
-
-      {% for product in collection.products %}
-
-        <div class="product-container">
-          <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
-              alt="{{ product.title}}"></a>
-          <h2>{{ product.title }}</h2>
-          <div class="product-button-container">
-            <p>{{ product.price | money}}</p>
-            <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+          <div class="product-container">
+            <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
+                alt="{{ product.title}}"></a>
+            <h2>{{ product.title }}</h2>
+            <div class="product-button-container">
+              <p>{{ product.price | money}}</p>
+              <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-      </div>
-      </div>
       </div>
     </div>
+  </div>
 
     {% else %}
 
@@ -46,8 +46,8 @@
     {% endif %}
 
 {% if paginate.pages > 1 %}
-  <div class="wrapper">
-    <div class="paginate-container">
+  <div class="wrapper paginate-three-product">
+    <div class="paginate-container paginate-container-three">
         {{ paginate | default_pagination }}
       {% endif %}
     </div>
