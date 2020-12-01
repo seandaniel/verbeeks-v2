@@ -6,10 +6,11 @@
     </div>
   </div>
   
-
 {% if search.performed %}
 
+  {% if search.results_count != 0 %}
   <div class="wrapper">
+    <h2 class="search-h2">{{ search.results_count }} Results Found</h2>
       <section class="home-products-container">
         {% for item in search.results %}
           <div class="product-container">
@@ -24,14 +25,15 @@
         {% endfor %}
       </section>
   </div>
-  
-{% else %}
-  <div class="wrapper">
-    <section class="container-404">
-      <h2>We don't have that item. <a href="/pages/contact">Message us,</a> we may have it in store.</h2>
-      <img src="{{ 'store-front.jpeg' | asset_url }}" alt="{{ img.alt }}">
-    </section>
-  </div>
+  {% else %}
+    <div class="wrapper">
+      <section class="container-404">
+        <h2>We don't have that item. <a href="/pages/contact">Message us,</a> we may have it in store.</h2>
+        <img src="{{ 'store-front.jpeg' | asset_url }}" alt="{{ img.alt }}">
+      </section>
+    </div>
+  {% endif %}
+
 {% endif %}
 
 <div class="wrapper">
@@ -42,5 +44,3 @@
     {% endpaginate %}
   </div>
 </div>
-
-
