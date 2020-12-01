@@ -1,36 +1,54 @@
-{% paginate search.results by 10 %}
-
-<div class="h1-container">
-  <div class="wrapper">
-    <form class="search-form" action="/search" method="get" role="search" placeholder="Search products...">
-      <div class="search-container"><i class="fas fa-search"></i><input type="search" name="q" value="{{ search.terms | escape }}"></div>
-      <button class="button" type="submit">Search</button>
-    </form>
-  </div>
-</div>
-
-<div class="wrapper">
-
-
-
-  <!-- show cart, featured items -->
+{% paginate search.results by 16 %}
 
   {% if search.performed %}
-    {% for item in search.results %}
-      {% if item.featured_image %}
-        <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
-          {{ item.featured_image.src | img_url: 'medium' | img_tag: item.featured_image.alt }}
-        </a>
-      {% endif %}
-      <h5>{{ item.title | link_to: item.url }}</h5>
-      <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
-    {% else %}
-        <div class="no-search-container">
-          <h2>Sorry, we don't have that item. Search again or <a href="/pages/contact">message us</a> and we may have it in store!</h2>
-        </div>
-    {% endfor %}
-  {% endif %}
 
-  {% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
-  {% endpaginate %}
-</div>
+  {% if search.results_count == 0 %} 
+
+        <div class="h1-container">
+          <div class="wrapper">
+            <h1>{{ search.terms }}</h1>
+          </div>
+        </div>
+        <div class="wrapper">
+          <section class="container-404">
+            <h2>We don't have that item. <a href="/pages/contact">Message us,</a> we may have it in store.</h2>
+            <img src="{{ 'store-front.jpeg' | asset_url }}" alt="{{ img.alt }}">
+          </section>
+        </div>
+
+
+    {% endif %}
+    
+    
+    {% else %}
+  
+        <div class="wrapper">
+          <h2 class="search-h2">{{ search.results_count }} Results Found</h2>
+          <section class="home-products-container">
+            {% for item in search.results %}
+        
+            <div class="product-container">
+              <a class="product-img" href="{{ item.url }}"><img src="{{ item.featured_image | img_url: 'master'}}"
+                  alt="{{ product.title}}"></a>
+              <h2>{{ item.title }}</h2>
+              <div class="product-button-container">
+                <p>{{ item.price | money}}</p>
+                <a href="{{ item.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+        
+            {% endfor %}
+          </section>
+        </div>
+
+    {% endif %}
+
+
+  <div class="wrapper">
+    <div class="paginate-container">
+      {% if paginate.pages > 1 %}
+      {{ paginate | default_pagination }}
+      {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>

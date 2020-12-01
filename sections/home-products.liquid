@@ -1,11 +1,11 @@
 <div class="h1-container">
   <div class="wrapper">
-    <h1>{{ section.settings.eight_heading }}</h1>
+    <h1>{{ section.settings.home_heading }}</h1>
   </div>
 </div>
 <div class="wrapper">
-  <section class="eight-products-container">
-    {%- assign collection = collections[section.settings.eight_collection] -%}
+  <section class="home-products-container">
+    {%- assign collection = collections[section.settings.home_collection] -%}
 
     {% for product in collection.products limit:8 %}
       <div class="product-container">
@@ -24,23 +24,23 @@
 
 {% schema %}
   {
-    "name": "Eight Products",
+    "name": "Home Products",
     "settings": [
       {
         "type": "text",
-        "id": "eight_heading",
-        "label": "Eight Products Collection Heading",
+        "id": "home_heading",
+        "label": "Home Products Collection Heading",
         "default": "Popular"
       },
       {
-        "id": "eight_collection",
+        "id": "home_collection",
         "type": "collection",
-        "label": "Eight Products Collection"
+        "label": "Home Products Collection"
       }
     ],
     "presets": [
       {
-        "name": "Eight Products",
+        "name": "Home Products",
         "category": "Products"
       }
     ]

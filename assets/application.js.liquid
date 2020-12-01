@@ -33,23 +33,6 @@ $(function() {
   
   secondaryFormInput.addEventListener('focus', highlight);
   secondaryFormInput.addEventListener('focusout', removeHighlight);
-
-  
-  // search input
-  const searchContainer = document.querySelector('.search-container');
-  const searchContainerInput = searchContainer.querySelector('input');
-  console.log(searchContainer, searchContainerInput);
-
-  const highlight2 = () => {
-    searchContainer.classList.toggle('toggle-border');
-  }
-
-  const removeHighlight2 = () => {
-    searchContainer.classList.toggle('toggle-border');
-  }
-
-  searchContainerInput.addEventListener('focus', highlight2);
-  searchContainerInput.addEventListener('focusout', removeHighlight2);
   
   // page.landscaping.liquid
   const landscapeSections = document.querySelectorAll('.landscape');
