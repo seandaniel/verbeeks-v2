@@ -1,54 +1,46 @@
 {% paginate search.results by 16 %}
 
-  {% if search.performed %}
-
-  {% if search.results_count == 0 %} 
-
-        <div class="h1-container">
-          <div class="wrapper">
-            <h1>{{ search.terms }}</h1>
-          </div>
-        </div>
-        <div class="wrapper">
-          <section class="container-404">
-            <h2>We don't have that item. <a href="/pages/contact">Message us,</a> we may have it in store.</h2>
-            <img src="{{ 'store-front.jpeg' | asset_url }}" alt="{{ img.alt }}">
-          </section>
-        </div>
-
-
-    {% endif %}
-    
-    
-    {% else %}
-  
-        <div class="wrapper">
-          <h2 class="search-h2">{{ search.results_count }} Results Found</h2>
-          <section class="home-products-container">
-            {% for item in search.results %}
-        
-            <div class="product-container">
-              <a class="product-img" href="{{ item.url }}"><img src="{{ item.featured_image | img_url: 'master'}}"
-                  alt="{{ product.title}}"></a>
-              <h2>{{ item.title }}</h2>
-              <div class="product-button-container">
-                <p>{{ item.price | money}}</p>
-                <a href="{{ item.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-        
-            {% endfor %}
-          </section>
-        </div>
-
-    {% endif %}
-
-
-  <div class="wrapper">
-    <div class="paginate-container">
-      {% if paginate.pages > 1 %}
-      {{ paginate | default_pagination }}
-      {% endif %}
-      {% endpaginate %}
+  <div class="h1-container">
+    <div class="wrapper">
+      <h1>{{ search.terms }}</h1>
     </div>
   </div>
+  
+
+{% if search.performed %}
+
+  <div class="wrapper">
+      <section class="home-products-container">
+        {% for item in search.results %}
+          <div class="product-container">
+            <a class="product-img" href="{{ item.url }}"><img src="{{ item.featured_image | img_url: 'master'}}"
+                alt="{{ product.title}}"></a>
+            <h2>{{ item.title }}</h2>
+            <div class="product-button-container">
+              <p>{{ item.price | money}}</p>
+              <a href="{{ item.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+  </div>
+  
+{% else %}
+  <div class="wrapper">
+    <section class="container-404">
+      <h2>We don't have that item. <a href="/pages/contact">Message us,</a> we may have it in store.</h2>
+      <img src="{{ 'store-front.jpeg' | asset_url }}" alt="{{ img.alt }}">
+    </section>
+  </div>
+{% endif %}
+
+<div class="wrapper">
+  <div class="paginate-container">
+    {% if paginate.pages > 1 %}
+    {{ paginate | default_pagination }}
+    {% endif %}
+    {% endpaginate %}
+  </div>
+</div>
+
+
