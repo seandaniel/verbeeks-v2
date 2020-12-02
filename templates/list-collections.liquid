@@ -5,7 +5,7 @@
 </div>
 
 {% for collection in collections %}
-{% if collection.products_count != 0 %} 
+{% if collection.products_count > 3 %} 
   <div class="wrapper">
     <h2 class="collection-h2">{{ collection.title }}</h2>
     <section class="home-products-container">
@@ -14,6 +14,7 @@
         <div class="product-container">
           <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
               alt="{{ product.title}}"></a>
+          {% unless product.available %}<p class="sold-out">Sold Out!</p>{% endunless %}
           <h2>{{ product.title }}</h2>
           <div class="product-button-container">
             <p>{{ product.price | money}} CAD</p>
@@ -31,7 +32,28 @@
     </section>
   </div>
 
+  {% elsif collection.products_count == 1  or collection.products_count <= 3 and collection.products_count != 0 %}
+
+    <div class="wrapper">
+    <h2 class="collection-h2">{{ collection.title }}</h2>
+      <section class="home-products-container">
+        {% for product in collection.products limit: 3 %}
+          <div class="product-container">
+            <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
+                alt="{{ product.title}}"></a>
+            {% unless product.available %}<p class="sold-out">Sold Out!</p>{% endunless %}
+            <h2>{{ product.title }}</h2>
+            <div class="product-button-container">
+              <p>{{ product.price | money}} CAD</p>
+              <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </section>
+
   {% else %}
+
   <div class="wrapper">
     <h2 class="collection-h2">{{ collection.title }}</h2>
     <div class="no-collection">

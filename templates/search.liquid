@@ -17,6 +17,7 @@
           <div class="product-container">
             <a class="product-img" href="{{ item.url }}"><img src="{{ item.featured_image | img_url: 'master'}}"
                 alt="{{ item.title}}"></a>
+            {% unless product.available %}<p class="sold-out">Sold Out!</p>{% endunless %}
             <h2>{{ item.title }}</h2>
             <div class="product-button-container">
               <p>{{ item.price | money}} CAD</p>
