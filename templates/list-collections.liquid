@@ -1,17 +1,44 @@
+<div class="h1-container">
+  <div class="wrapper">
+    <h1>All Collections</h1>
+  </div>
+</div>
+
 {% for collection in collections %}
-  {% unless collection.handle == 'frontpage' %}
-    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
-    <a href="{{ collection.url }}">More {{ collection_title }} &rsaquo;</a>
-    {% for product in collection.products limit:5 %}
-      {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
-      <div>
-        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-        {{ product.price | money }}
-        {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-        <a href="{{ product.url | within: collection }}">
-          <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-        </a>
-      </div>
-    {% endfor %}
-  {% endunless %}
+{% if collection.products_count != 0 %} 
+  <div class="wrapper">
+    <h2 class="collection-h2">{{ collection.title }}</h2>
+    <section class="home-products-container">
+
+      {% for product in collection.products limit: 3 %}
+        <div class="product-container">
+          <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
+              alt="{{ product.title}}"></a>
+          <h2>{{ product.title }}</h2>
+          <div class="product-button-container">
+            <p>{{ product.price | money}} CAD</p>
+            <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      {% endfor %}
+        <div class="view-more">
+          <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}"/>
+          <div class="view-more-content">
+            <h2>{{ collection.all_products_count }} Total</h2>
+            <a href="{{ product.url }}" class="button-reverse product-button">View More</a>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  {% else %}
+  <div class="wrapper">
+    <h2 class="collection-h2">{{ collection.title }}</h2>
+    <div class="no-collection">
+      <p>Sorry, but we don't have any items in this collection currently.</p>
+    </div>
+  </div>
+
+  {% endif %}
+
 {% endfor %}
