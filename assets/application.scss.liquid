@@ -1189,12 +1189,6 @@ footer ul li:last-child a {
   }
 }
 
-.flickity-prev-next-button.previous {
-  left: -80px;
-}
-.flickity-prev-next-button.next {
-  right: -80px;
-}
 
 .flickity-page-dots {
   // +18px for button height
@@ -1346,7 +1340,7 @@ footer ul li:last-child a {
       color: $primaryColor;
     }
   }
-  .current {
+  .current, .deco {
     cursor: auto;
     display: inline-block;
     color: $primaryColor;
@@ -1454,7 +1448,6 @@ footer ul li:last-child a {
 .home-products-container .product-container:nth-child(4n) {
   margin-right: 0;
 }
-
 
 .product-button-container {
   @include space-between;
@@ -1583,7 +1576,7 @@ footer ul li:last-child a {
     width: 100%;
     height: 100%;
     opacity: 0.15;
-    
+    border-radius: 6px;
   }
   .view-more-content {
     display: flex;
