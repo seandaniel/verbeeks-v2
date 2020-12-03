@@ -11,13 +11,17 @@
   {% if search.results_count != 0 %}
 
   <div class="wrapper">
+    {% if search.results_count == 1 %} 
+    <h2 class="search-h2">{{ search.results_count }} Result Found</h2>
+    {% else %}
     <h2 class="search-h2">{{ search.results_count }} Results Found</h2>
+    {% endif %}
       <section class="home-products-container">
         {% for item in search.results %}
           <div class="product-container">
             <a class="product-img" href="{{ item.url }}"><img src="{{ item.featured_image | img_url: 'master'}}"
                 alt="{{ item.title}}"></a>
-            {% unless product.available %}<p class="sold-out">Sold Out!</p>{% endunless %}
+            {% unless item.available %}<p class="sold-out">Sold Out!</p>{% endunless %}
             <h2>{{ item.title }}</h2>
             <div class="product-button-container">
               <p>{{ item.price | money}} CAD</p>

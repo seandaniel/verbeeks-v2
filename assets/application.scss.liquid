@@ -1386,7 +1386,7 @@ footer ul li:last-child a {
   }
   select {
     cursor: pointer;
-    font-family: {{ settings.font_body.family }};
+    // font-family: {{ settings.font_body.family }};
     background: url({{ 'down-arrow.svg' | asset-url }});
     background-repeat: no-repeat;
     background-position: right 10px top 60%, 0 0;
@@ -1397,9 +1397,6 @@ footer ul li:last-child a {
     padding: 10px;
     width: 200px;
     @include border-radius-box-shadow;
-    option {
-       font-family: {{ settings.font_body.family }};
-    }
   }
 }
 
@@ -1607,5 +1604,33 @@ footer ul li:last-child a {
   p {
     font-size: 17px;
     text-align: center;
+  }
+}
+
+// recaptcha
+
+.shopify-challenge__container {
+  margin-bottom: 80px;
+  iframe {
+    width: 301.333px;
+    height: 75.3px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  color: $quaternaryColor;
+  background-color: $primaryColor;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.21);
+  border-radius: 6px;
+  transition: color .35s, background-color .35s;
+  &:hover,
+  &:focus {
+    background-color: $secondaryColor;
+    color: $primaryColor;
   }
 }
