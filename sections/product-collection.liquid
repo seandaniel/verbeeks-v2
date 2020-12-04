@@ -1,13 +1,9 @@
-<div class="h1-container">
-  <div class="wrapper">
-    <h1>{{ section.settings.home_heading }}</h1>
-  </div>
-</div>
 <div class="wrapper">
+  <h2 class="product-collection-h2">{{ section.settings.collection_heading }} </h2>
   <section class="home-products-container">
     {%- assign collection = collections[section.settings.home_collection] -%}
 
-    {% for product in collection.products limit:16 %}
+    {% for product in collection.products limit:3 %}
       <div class="product-container">
         <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}" alt="{{ product.title}}"></a>
         {% unless product.available %}<p class="sold-out">Sold Out!</p>{% endunless %}
@@ -18,6 +14,13 @@
         </div>
       </div>
     {% endfor %}
+    <div class="view-more">
+      <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}" />
+      <div class="view-more-content">
+        <h2>{{ collection.all_products_count }} Total</h2>
+        <a href="{{ product.url }}" class="button-reverse product-button">View More</a>
+      </div>
+    </div>
 
   </section>
 </div>
@@ -29,9 +32,9 @@
     "settings": [
       {
         "type": "text",
-        "id": "home_heading",
-        "label": "Home Products Collection Heading",
-        "default": "Popular"
+        "id": "collection_heading",
+        "label": "Collections Heading",
+        "default": "Collection Name"
       },
       {
         "id": "home_collection",
@@ -41,7 +44,7 @@
     ],
     "presets": [
       {
-        "name": "Home Products",
+        "name": "Collection Results",
         "category": "Products"
       }
     ]

@@ -70,6 +70,11 @@ h1 {
   }
 }
 
+.special-p {
+  font-size: 50px;
+  font-weight: 700;
+}
+
 .secondary-h1-container {
   padding: 40px 0;
   margin: 0 auto 80px 0;
@@ -135,9 +140,6 @@ button {
     background-color: $primaryColor;
     color: $secondaryColor;
   }
-  i {
-    margin-right: 10px;
-  }
 }
 
 .button-reverse {
@@ -152,9 +154,6 @@ button {
   &:focus {
     background-color: $secondaryColor;
     color: $primaryColor;
-  }
-  i {
-    margin-right: 10px;
   }
 }
 
@@ -233,6 +232,10 @@ button {
       margin-right: 10px;
     }
   }
+}
+
+.secondary-nav ul li:last-child a .no-right {
+  margin-right: 0;
 }
 
 .secondary-nav form {
@@ -637,6 +640,9 @@ iframe {
   margin-bottom: 0px;
   border-bottom: none;
   cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
 }
 
 .form-success {
@@ -1440,7 +1446,7 @@ footer ul li:last-child a {
       line-height: 1.2;
       border-bottom: none;
       padding: 20px 20px;
-      background: $quinaryColor;
+      background: $secondaryColor;
     }
   }
 }
@@ -1544,7 +1550,7 @@ footer ul li:last-child a {
       line-height: 1.2;
       border-bottom: none;
       padding: 20px 20px;
-      background: $quinaryColor;
+      background: $secondaryColor;
     }
   }
 }
@@ -1626,4 +1632,9 @@ footer ul li:last-child a {
     background-color: $secondaryColor;
     color: $primaryColor;
   }
+}
+
+// product-collection.liquid
+.product-collection-h2 {
+  margin-bottom: 40px;
 }
