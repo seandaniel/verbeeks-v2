@@ -6,6 +6,8 @@
 
 {% for collection in collections %}
 {% if collection.products_count > 3 %} 
+<div class="background">
+
   <div class="wrapper">
     <h2 class="collection-h2">{{ collection.title }}</h2>
     <section class="home-products-container">
@@ -37,6 +39,7 @@
           </div>
         </div>
     </section>
+  </div>
   </div>
 
   {% elsif collection.products_count == 1  or collection.products_count <= 3 and collection.products_count != 0 %}

@@ -1618,7 +1618,6 @@ footer ul li:last-child a {
 }
 
 // recaptcha
-
 .shopify-challenge__container {
   margin-bottom: 80px;
   iframe {
@@ -1648,4 +1647,21 @@ footer ul li:last-child a {
 // product-collection.liquid
 .product-collection-h2 {
   margin-bottom: 40px;
+}
+
+// product-collection.liquid && list-collection.liquid
+
+.background {
+  background: $secondaryColor;
+  padding-top: 40px;
+  .home-products-container {
+    padding-bottom: calc(40px - 2.66666666667%);
+    margin-bottom: 80px;
+    .product-container {
+      background: $quaternaryColor;
+      h2 {
+        background-color: $quinaryColor;
+      }
+    }
+  }
 }
