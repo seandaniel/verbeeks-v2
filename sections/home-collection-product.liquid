@@ -1,0 +1,111 @@
+{%- assign collection = collections[section.settings.home_collection] -%}
+
+{% if collection.products_count > 3 %} 
+  <div class="background">
+
+    <div class="wrapper">
+      <h2 class="collection-h2">{{ section.settings.collection_heading }}</h2>
+      <section class="home-products-container">
+
+        {% for product in collection.products limit: 3 %}
+          <div class="product-container">
+            <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
+                alt="{{ product.title}}"></a>
+            {% unless product.compare_at_price_max < product.price %}<p class="sale">Sale</p>{% endunless %}
+            {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
+            <h2>{{ product.title }}</h2>
+            <div class="product-button-container">
+              {% if product.compare_at_price_max > product.price %}
+              <div class="prices-container">
+                <p>{{ product.price | money}} CAD</p>
+                <p>{{ product.compare_at_price_max | money}}</p>
+              </div>
+              {% else %}
+              <p>{{ product.price | money}} CAD</p>
+              {% endif %}
+              <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        {% endfor %}
+          <div class="view-more">
+            <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}"/>
+            <div class="view-more-content">
+              <h2>{{ collection.all_products_count }} Total</h2>
+              <a href="{{ product.url }}" class="button-reverse product-button">View More</a>
+            </div>
+          </div>
+      </section>
+    </div>
+  </div>
+
+  {% elsif collection.products_count == 1  or collection.products_count <= 3 and collection.products_count != 0 %}
+  <div class="background">
+    <div class="wrapper">
+    <h2 class="collection-h2">{{ section.settings.collection_heading }}</h2>
+      <section class="home-products-container">
+        {% for product in collection.products limit: 3 %}
+          <div class="product-container">
+            <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
+                alt="{{ product.title}}"></a>
+            {% unless product.compare_at_price_max < product.price %}<p class="sale">Sale</p>{% endunless %}
+            {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
+            <h2>{{ product.title }}</h2>
+            <div class="product-button-container">
+              {% if product.compare_at_price_max > product.price %}
+              <div class="prices-container">
+                <p>{{ product.price | money}} CAD</p>
+                <p>{{ product.compare_at_price_max | money}}</p>
+              </div>
+              {% else %}
+              <p>{{ product.price | money}} CAD</p>
+              {% endif %}
+              <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        {% endfor %}
+        <div class="view-more">
+          <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}" />
+          <div class="view-more-content">
+            <h2 class="margin-bottom">{{ collection.all_products_count }} Total</h2>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  {% else %}
+
+  <div class="wrapper">
+    <h2 class="collection-h2">{{ section.settings.collection_heading }}</h2>
+    <div class="no-collection">
+      <p>Sorry, but we don't have any products in this collection currently.</p>
+    </div>
+  </div>
+
+  {% endif %}
+
+
+{% schema %}
+  {
+    "name": "Collection with Total",
+    "settings": [
+      {
+        "type": "text",
+        "id": "collection_heading",
+        "label": "Collections Heading",
+        "default": "Collection Name"
+      },
+      {
+        "id": "home_collection",
+        "type": "collection",
+        "label": "Home Products Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection with Total",
+        "category": "Products"
+      }
+    ]
+  }
+{% endschema %}

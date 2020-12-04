@@ -998,8 +998,7 @@ footer ul li:last-child a {
 
 // quad-collections.liquid
 .quad-collections {
-  // + 40px margin for before and after elements
-  margin: 120px 0;
+  margin: 80px 0;
 }
 
 .quad-collections-container {
@@ -1197,8 +1196,8 @@ footer ul li:last-child a {
 
 
 .flickity-page-dots {
-  // +18px for button height
-  bottom: -58px;
+  // +18px for button height + 9px half button height
+  bottom: -67px;
 }
 
 .flickity-page-dots .dot {
@@ -1408,7 +1407,19 @@ footer ul li:last-child a {
   font-size: 17px;
   line-height: 1.2;
   text-transform: uppercase;
+  background: $primaryColor;
+  color: $quaternaryColor;
+  padding: 10px;
+  @include border-radius-box-shadow;
+}
+
+.sale {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-transform: uppercase;
   background: $tertiaryColor;
+  color: $primaryColor;
   padding: 10px;
   @include border-radius-box-shadow;
 }
@@ -1647,6 +1658,11 @@ footer ul li:last-child a {
 // product-collection.liquid
 .product-collection-h2 {
   margin-bottom: 40px;
+}
+
+// list-collection.liquid {
+.view-more .view-more-content .margin-bottom {
+  margin-bottom: 0;
 }
 
 // product-collection.liquid && list-collection.liquid
