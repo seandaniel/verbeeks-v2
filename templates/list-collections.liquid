@@ -17,7 +17,14 @@
           {% unless product.available %}<p class="sold-out">Sold Out!</p>{% endunless %}
           <h2>{{ product.title }}</h2>
           <div class="product-button-container">
+            {% if product.compare_at_price_max > product.price %}
+            <div class="prices-container">
+              <p>{{ product.price | money}} CAD</p>
+              <p>{{ product.compare_at_price_max | money}}</p>
+            </div>
+            {% else %}
             <p>{{ product.price | money}} CAD</p>
+            {% endif %}
             <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
@@ -57,7 +64,7 @@
   <div class="wrapper">
     <h2 class="collection-h2">{{ collection.title }}</h2>
     <div class="no-collection">
-      <p>Sorry, but we don't have any items in this collection currently.</p>
+      <p>Sorry, but we don't have any products in this collection currently.</p>
     </div>
   </div>
 

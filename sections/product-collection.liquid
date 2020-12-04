@@ -9,8 +9,14 @@
         {% unless product.available %}<p class="sold-out">Sold Out!</p>{% endunless %}
         <h2>{{ product.title }}</h2>
         <div class="product-button-container">
+          {% if product.compare_at_price_max > product.price %}
+          <div class="prices-container">
+            <p>{{ product.price | money}} CAD</p>
+            <p>{{ product.compare_at_price_max | money}}</p>
+          </div>
+          {% else %}
           <p>{{ product.price | money}} CAD</p>
-          <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
