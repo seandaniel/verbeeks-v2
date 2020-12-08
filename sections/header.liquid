@@ -20,7 +20,7 @@
             <i class="fas fa-search"></i>
             <input type="hidden" name="type" value="product" />
             <input type="hidden" name="options[prefix]" value="last">
-            <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search products...">
+            <input class="search" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search products...">
           </form>
         </li>
           {% if cart.item_count != 0 %}
@@ -34,12 +34,17 @@
     <nav class="primary-nav">
       <div class="wrapper">
         <ul class="primary-ul">
-          <li>
+          <li class="desktop-h1">
             <h1>
               <a href="/">
                 <img src="{{ 'logo.png' | asset_url }}" alt="Verbeek's Farm and Garden Centre">
               </a>
             </h1>
+          </li>
+          <li class="mobile-h1">
+            <a href="/">
+              <h1>Verbeek's</h1>
+            </a>
           </li>
           {%- for link in linklists.main-menu.links -%}
                 <li class="primary">
