@@ -236,7 +236,7 @@ button {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .secondary-nav ul {
     padding: 10px 2.5%;
   }
@@ -321,13 +321,13 @@ button {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .primary-nav .primary-ul {
     padding: 0;
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .primary-nav .primary-ul {
     align-items: center;
   }
@@ -407,7 +407,7 @@ button {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   // primary li's except for the first child
   .primary {
     display: none;
@@ -1289,6 +1289,8 @@ footer ul li:last-child a {
   margin-bottom: 120px;
   width: 100%;
   height: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 .carousel-cell {
@@ -1321,6 +1323,18 @@ footer ul li:last-child a {
   }
 }
 
+@media (max-width: 1120px) {
+  .carousel-cell {
+    width: 47.5%;
+  }
+}
+
+@media (max-width: 780px) {
+  .carousel-cell {
+    width: 100%;
+  }
+}
+
 .carousel-cell:last-child {
   margin-right: 0;
 }
@@ -1329,21 +1343,20 @@ footer ul li:last-child a {
   border: 2px solid $tertiaryColor;
 }
 
-.flickity-button {
-  display: inline-block;
-  color: $quaternaryColor;
-  background-color: $primaryColor;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.21);
-  border-radius: 6px;
-  transition: color .35s, background-color .35s;
-  &:hover,
-  &:focus {
-    background-color: $quaternaryColor;
-    color: $primaryColor;
-  }
-}
-
+// .flickity-button {
+//   display: inline-block;
+//   color: $quaternaryColor;
+//   background-color: $primaryColor;
+//   padding: 10px;
+//   box-shadow: 0 2px 4px rgba(0,0,0,.21);
+//   border-radius: 6px;
+//   transition: color .35s, background-color .35s;
+//   &:hover,
+//   &:focus {
+//     background-color: $quaternaryColor;
+//     color: $primaryColor;
+//   }
+// }
 
 .flickity-page-dots {
   // +18px for button height + 9px half button height
@@ -1356,6 +1369,14 @@ footer ul li:last-child a {
   opacity: 1;
   background: transparent;
   border: 4px solid $primaryColor;
+}
+
+@media (max-width: 330px) {
+  .flickity-page-dots .dot {
+    height: 14px;
+    width: 14px;
+    border: 2px solid $primaryColor;
+  }
 }
 
 .flickity-page-dots .dot.is-selected {
@@ -1371,6 +1392,12 @@ footer ul li:last-child a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1120px) {
+  .cell-2 {
+    order: 1;
+  }
 }
 
 .h1-img-container {
