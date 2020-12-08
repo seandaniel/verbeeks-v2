@@ -11,6 +11,21 @@
   - Home page only: only shows on the home page
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header">
+
+  <nav class="mobile-nav">
+    <ul>
+      <li><button class="exit-nav"><i class="fas fa-times-circle"></i></button></li>
+    {%- for link in linklists.mobile-menu.links -%}
+      <li>
+        <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+    <img src="{{ 'logo-alternate.png' | asset_url }}" alt="The letter V with a leaf on the end">
+  </nav>
+
   <header role="banner">
     <nav class="secondary-nav">
       <ul>
@@ -46,6 +61,11 @@
               <h1>Verbeek's</h1>
             </a>
           </li>
+          <li class="align-right">
+            <button class="open-nav">
+              <i class="fas fa-align-right"></i>
+            </button>
+          </li>
           {%- for link in linklists.main-menu.links -%}
                 <li class="primary">
                   <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>
@@ -78,7 +98,7 @@
                   {%- endif -%}
 
                 </li>
-              {%- endfor -%}
+          {%- endfor -%}
         </ul>
       </div>
     </nav>
@@ -105,9 +125,13 @@
       },
       {
         "type": "link_list",
-        "id": "menu",
-        "label": "Menu",
-        "default": "main-menu"
+        "id": "main_menu",
+        "label": "Deskop Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "mobile_menu",
+        "label": "Mobile Menu"
       }
     ]
   }

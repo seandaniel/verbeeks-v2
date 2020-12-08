@@ -4,25 +4,21 @@
       <nav>
         <h2>{{ section.settings.footer_links_heading_1 }}</h2>
         {%- assign footer_links_1_linklist = section.settings.footer_links_1_linklist -%}
-        {% if linklists[footer_links_1_linklist].links.size > 0 %}
         <ul class="links-footer-ul">
           {% for link in linklists[footer_links_1_linklist].links %}
           <li><a href="{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
       </nav>
-      {% endif %}
       <nav>
         <h2>{{ section.settings.footer_links_heading_2 }}</h2>
         {%- assign footer_links_2_linklist = section.settings.footer_links_2_linklist -%}
-        {% if linklists[footer_links_2_linklist].links.size > 0 %}
         <ul class="links-footer-ul">
           {% for link in linklists[footer_links_2_linklist].links %}
           <li><a href="{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
       </nav>
-      {% endif %}
     </div>
     <div class="hours-logo-container">
       <div class="hours-number-container">
@@ -39,14 +35,12 @@
   </div>
   <nav class="social-footer-nav">
     {%- assign footer_social_linklist = section.settings.footer_social_linklist -%}
-    {% if linklists[footer_social_linklist].links.size > 0 %}
     <ul class="social-footer-ul">
       {% for link in linklists[footer_social_linklist].links %}
       <li><a href="{{ link.url }}">{{ link.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>
-  {% endif %}
 </footer>
   
 {% schema %}

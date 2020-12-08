@@ -1,5 +1,15 @@
 $(function() {
 
+  //opens mobile-nav
+  $('.open-nav').on('click', () => {
+    $('.mobile-nav').fadeIn().css('display', 'block');
+  })
+
+  //exits mobile-nav
+  $('.exit-nav').on('click', () => {
+    $('.mobile-nav').fadeOut();
+  })
+  
   // flickity
   let elem = document.querySelector('.main-carousel');
 
