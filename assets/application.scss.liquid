@@ -1308,6 +1308,31 @@ footer ul li:last-child a {
   }
 }
 
+@media (max-width: 1150px) {
+  .tertiary-collection-container {
+    flex-wrap: wrap;
+    .icon-container {
+      width: 350px;
+      @include border-radius-box-shadow;
+      border-top: 8px solid $tertiaryColor;
+      margin-bottom: 40px;
+    }
+  }
+
+  .tertiary-collection-container .icon-container:last-child {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 745px) {
+  .tertiary-collection-container {
+    justify-content: center;
+    .icon-container {
+      width: 100%;
+    }
+  }
+}
+
 // four-bricks.liquid
 .four-bricks-container {
   display: flex;
