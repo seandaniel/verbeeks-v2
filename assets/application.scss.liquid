@@ -65,6 +65,12 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
 }
 
+@media (max-width: 700px) {
+  h2 {
+    text-align: center;
+  }
+}
+
 h1 {
   font-weight: 700;
 }
@@ -893,6 +899,12 @@ iframe {
   @include border-radius-box-shadow;
 }
 
+@media (max-width: 500px) {
+  .image-text-container img {
+    width: 100%;
+  }
+}
+
 .rich-text {
   background: $secondaryColor;
   padding: 40px 0;
@@ -1120,6 +1132,13 @@ footer ul li:last-child a {
 @media (max-width: 1120px) {
   .heading-img-container {
     align-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .heading-img-container img {
+    width: 100%;
   }
 }
 
@@ -1183,6 +1202,15 @@ footer ul li:last-child a {
   }
 }
 
+@media (max-width: 700px) {
+  .landscape-image-container figure:first-child,
+  .landscape-image-container figure:last-child,
+  .landscape-image-container-2 figure:first-child,
+  .landscape-image-container-2 figure:last-child {
+    width: 49%;
+  }
+}
+
 .landscape-image-container figure h2,
 .landscape-image-container-2 figure h2 {
   background: $secondaryColor;
@@ -1231,6 +1259,16 @@ footer ul li:last-child a {
   }
 }
 
+@media (max-width: 940px) {
+  .landscaping-text-container {
+    flex-direction: column;
+    align-items: center;
+    .p-button-container {
+      margin-bottom: 80px;
+    }
+  }
+}
+
 .design-background {
   background: url('./brick-wall.svg');
   background-size: 80px 80px;
@@ -1259,7 +1297,7 @@ footer ul li:last-child a {
 
 // quad-collections.liquid
 .quad-collections {
-  margin: 80px 0;
+  margin: 120px 0 80px 0;
 }
 
 .quad-collections-container {
@@ -1267,15 +1305,40 @@ footer ul li:last-child a {
   .quad-collection {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     width: 450px;
     height: 450px;
     @include border-radius-box-shadow;
   }
 }
 
+@media (max-width: 1000px) {
+  .quad-collections-container .quad-collection {
+    justify-content: space-between;
+    width: 45%;
+  }
+}
+
 .quad-collections .quad-collections-container:first-child {
   margin-bottom: 80px;
 }
+
+@media (max-width: 700px) {
+  .quad-collections-container {
+    flex-direction: column;
+    align-items: center;
+    .quad-collection {
+      width: 100%;
+      margin-bottom: 80px;
+    }
+  }
+
+  .quad-collections-container .quad-collection:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
 
 .quad-collection-1,
 .quad-collection-2 {
@@ -1304,6 +1367,16 @@ footer ul li:last-child a {
   width: 100%;
   height: 100%;
   border-radius: 6px;
+}
+
+@media (max-width: 1120px) {
+  .quad-collection-1:before {
+    left: 0;
+  }
+
+  .quad-collection-2:before {
+    right: 0;
+  }
 }
 
 .collection-button-container {
@@ -1353,11 +1426,11 @@ footer ul li:last-child a {
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1200px) {
   .tertiary-collection-container {
     flex-wrap: wrap;
     .icon-container {
-      width: 350px;
+      width: 48%;
       @include border-radius-box-shadow;
       border-top: 8px solid $tertiaryColor;
       margin-bottom: 40px;
