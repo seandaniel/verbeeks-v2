@@ -7,21 +7,15 @@
   <section class="home-products-container">
     {%- assign collection = collections[section.settings.home_collection] -%}
 
-    {% for product in collection.products limit:16 %}
+    {% for product in collection.products limit:8 %}
       <div class="product-container">
         <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}" alt="{{ product.title}}"></a>
-        {% unless product.compare_at_price_max < product.price %}<p class="sale">Sale</p>{% endunless %}
+        {% unless product.compare_at_price_max < product.price %}
+        <p class="sale">Sale <br> <span>{{ product.compare_at_price_max | minus: product.price | money}}</span></p>{% endunless %}
         {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
         <h2>{{ product.title }}</h2>
         <div class="product-button-container">
-          {% if product.compare_at_price_max > product.price %}
-          <div class="prices-container">
-            <p>{{ product.price | money}} CAD</p>
-            <p>{{ product.compare_at_price_max | money}}</p>
-          </div>
-          {% else %}
           <p>{{ product.price | money}} CAD</p>
-          {% endif %}
           <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
