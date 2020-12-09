@@ -355,7 +355,7 @@ button {
 
 .mobile-h1 {
   display: none;
-  font-family: 'Spartan', sans-serif;
+  text-transform: capitalize;
   h1 {
     font-size: 28px;
   }
@@ -689,9 +689,25 @@ button {
   }
 }
 
+@media (max-width: 1120px) {
+  .map-container {
+    align-items: center;
+  }
+}
+
 iframe {
-  width: 500px;
+  max-width: 500px;
   @include border-radius-box-shadow;
+}
+
+@media (max-width: 600px) {
+  #shopify-section-map {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+  }
 }
 
 // contact-secondary.liquid
@@ -703,6 +719,23 @@ iframe {
   border-top: 8px solid $tertiaryColor;
   padding: 40px;
   margin: 0 auto 80px auto;
+}
+
+@media (max-width: 950px) {
+  .contact-secondary {
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    .hours-number-container {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-secondary {
+    width: 100%;
+  }
 }
 
 .hours-number-container {
@@ -928,6 +961,25 @@ iframe {
   }
 }
 
+@media (max-width: 1120px) {
+  .form-map-container {
+    flex-direction: column;
+    align-items: center;
+    form {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .form-map-container form {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+  }
+}
+
 .form-map-container form textarea {
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
   background: $secondaryColor;
@@ -940,6 +992,12 @@ iframe {
   resize: vertical;
   border: 3px solid $secondaryColor;
   transition: border .35s;
+}
+
+@media (max-width: 600px) {
+  .form-map-container form textarea {
+    width: 100%;
+  }
 }
 
 .form-map-container form textarea:focus,
@@ -2205,22 +2263,18 @@ footer ul li:last-child a {
 }
 
 // recaptcha
-.shopify-challenge__container {
+.shopify-challenge__container .shopify-challenge__button {
   margin-bottom: 80px;
-  iframe {
-    width: 301.333px;
-    height: 75.3px;
-  }
 }
 
 .btn {
   display: inline-block;
   border: none;
   cursor: pointer;
-  display: inline-block;
   color: $quaternaryColor;
   background-color: $primaryColor;
   padding: 10px;
+  margin-bottom: 80px;
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
   border-radius: 6px;
   transition: color .35s, background-color .35s;
