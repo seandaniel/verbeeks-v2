@@ -65,12 +65,6 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
 }
 
-@media (max-width: 700px) {
-  h2 {
-    text-align: center;
-  }
-}
-
 h1 {
   font-weight: 700;
 }
@@ -103,6 +97,7 @@ h1 {
 h2 {
   display: inline-block;
   border-bottom: 3px solid $tertiaryColor;
+  text-align: center;
 }
 
 p {
@@ -189,7 +184,7 @@ button {
 }
 
 .content {
-  width: 500px;
+  max-width: 500px;
   p {
     font-size: 17px;
     line-height: 1.5;
@@ -706,8 +701,18 @@ iframe {
   margin-bottom: 80px;
   p {
     font-size: 17px;
-    width: 500px;
+    max-width: 500px;
     line-height: 1.5;
+  }
+}
+
+@media (max-width: 1120px) {
+  .about-text-img-container {
+    flex-direction: column;
+    align-items: center; 
+    .svg-container {
+      margin-top: 80px;
+    }
   }
 }
 
@@ -719,6 +724,11 @@ iframe {
   figure {
     position: relative;
     width: 28%;
+    img {
+      width: 100%;
+      height: 100%;
+      @include border-radius-box-shadow;
+    }
     figcaption {
       width: 100%;
       border-bottom: 3px solid $tertiaryColor;
@@ -731,10 +741,37 @@ iframe {
       font-size: 25px;
     }
   }
-  img {
+}
+
+@media (max-width: 1120px) {
+  .img-banner {
+    flex-wrap: wrap;
+    figure {
+      width: 45%;
+      margin-bottom: 40px;
+    }
+  }
+
+  .img-banner figure:last-child {
+    margin: 0 auto;
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .img-banner {
+    flex-direction: column;
+    padding: 0 2.5%;
+    figure {
+      width: 100%;
+      img {
+        height: 400px;
+      }
+    }
+  }
+
+  .img-banner figure:last-child {
     width: 100%;
-    height: 100%;
-    @include border-radius-box-shadow;
   }
 }
 
@@ -758,7 +795,6 @@ iframe {
     }
     h2 {
       margin-bottom: 20px;
-      text-align: center;
     }
     p {
       margin-bottom: 20px;
@@ -766,18 +802,49 @@ iframe {
   }
 }
 
+@media (max-width: 1120px) {
+  .landscape-icon-container {
+    flex-wrap: wrap;
+    .icon-container {
+      width: 48%;
+      margin-bottom: 40px;
+    }
+  }
+
+  .landscape-icon-container .icon-container:last-child {
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 760px) {
   .three-icon-container {
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     .icon-container {
-      width: 100%;
+      width: 400px;
       margin-bottom: 40px;
     }
   }
 
   .three-icon-container .icon-container:last-child {
     margin-bottom: 0;
+  }
+
+  .landscape-icon-container .icon-container {
+    width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .three-icon-container .icon-container {
+    width: 100%;
+  }
+
+  .landscape-icon-container {
+    flex-direction: column;
+    .icon-container {
+      width: 100%;
+    }
   }
 }
 
@@ -846,9 +913,19 @@ iframe {
   @include space-around;
   margin-bottom: 80px;
   p {
-    width: 500px;
     font-size: 17px;
     line-height: 1.5;
+  }
+}
+
+
+@media (max-width: 1120px) {
+  .text-img-container {
+    flex-direction: column;
+    align-items: center;
+    .text-container {
+      margin-bottom: 80px;
+    }
   }
 }
 
@@ -856,6 +933,12 @@ iframe {
   width: 400px;
   height: 400px;
   @include border-radius-box-shadow;
+}
+
+@media (max-width: 500px) {
+  .text-img-container img {
+    width: 100%;
+  }
 }
 
 // image-text-section.liquid
@@ -875,7 +958,6 @@ iframe {
   .image-text-container {
     flex-direction: column;
     align-items: center;
-    padding: 80px 0;
     .text-container {
       margin-bottom: 80px;
     }
@@ -1169,8 +1251,8 @@ footer ul li:last-child a {
     top: 0px;
   }
 }
-// home-landscape.liquid
 
+// home-landscape.liquid
 .landscape-image-container,
 .landscape-image-container-2 {
   @include space-between;
@@ -1266,6 +1348,18 @@ footer ul li:last-child a {
     .p-button-container {
       margin-bottom: 80px;
     }
+  }
+}
+
+@media (max-width: 760px) {
+  .landscaping-text-container .icon-container {
+    width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .landscaping-text-container .icon-container {
+    width: 100%;
   }
 }
 
@@ -1426,7 +1520,7 @@ footer ul li:last-child a {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1120px) {
   .tertiary-collection-container {
     flex-wrap: wrap;
     .icon-container {
@@ -1445,10 +1539,17 @@ footer ul li:last-child a {
 // 768px????
 @media (max-width: 760px) {
   .tertiary-collection-container {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     .icon-container {
-      width: 100%;
+      width: 400px;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .tertiary-collection-container .icon-container {
+    width: 100%;
   }
 }
 
