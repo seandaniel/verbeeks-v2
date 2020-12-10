@@ -20,7 +20,7 @@
           <p class="sale">Sale <br> <span>{{ product.compare_at_price_max | minus: product.price | money}}</span></p>
           {% endunless %}
           {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
-          <h2>{{ product.title }}</h2>
+          <h3>{{ product.title }}</h3>
           <div class="product-button-container">
             <p>{{ product.price | money}} CAD</p>
             <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
@@ -48,10 +48,10 @@
             <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
                 alt="{{ product.title}}"></a>
             {% unless product.compare_at_price_max < product.price %}
-            <p class="sale">Sale <br> <span>{{ product.compare_at_price_max | minus: product.price | money}}</span></p>
+            <p class="sale">Sale <br> <span>{{ product.compare_at_price_max | money }}</span></p>
             {% endunless %}
             {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
-            <h2>{{ product.title }}</h2>
+            <h3>{{ product.title }}</h3>
             <div class="product-button-container">
               <p>{{ product.price | money}} CAD</p>
               <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>

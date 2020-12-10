@@ -22,10 +22,10 @@
             <a class="product-img" href="{{ item.url }}"><img src="{{ item.featured_image | img_url: 'master'}}"
                 alt="{{ item.title}}"></a>
             {% unless item.compare_at_price_max < item.price %}
-            <p class="sale">Sale <br> <span>{{ item.compare_at_price_max | minus: product.price | money}}</span></p>
+            <p class="sale">Sale <br> <span>{{ item.compare_at_price_max | money }}</span></p>
             {% endunless %}
             {% unless item.available %}<p class="sold-out">Sold Out</p>{% endunless %}
-            <h2>{{ item.title }}</h2>
+            <h3>{{ item.title }}</h3>
             <div class="product-button-container">
               <p>{{ item.price | money}} CAD</p>
               <a href="{{ item.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
