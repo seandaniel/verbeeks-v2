@@ -16,12 +16,15 @@
       <div class="cart-container">
         {% for item in cart.items %}
         <div class="item">
-            <a class="product-img" href="{{ item.url | within: collections.all }}">
+            <a role="button" tabindex="0" class="product-img" href="{{ item.url | within: collections.all }}">
               <img src="{{ item | img_url: 'master' }}" alt="{{ item.title | escape }}">
+            {% unless item.compare_at_price_max < item.price %}
+            <p class="sale">Sale <br> <span>{{ item.compare_at_price_max | money }}</span></p>
+            {% endunless %}
             </a>
             <h3>{{ item.product.title }}</h3>
             <div class="total-remove-container">
-              <p class="total-price">{{ item.line_price | money }} CAD</p>
+              <p>{{ item.line_price | money }} CAD</p>
               <a class="button-reverse" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
             </div>
             <div class="quantity-update-container">
@@ -34,7 +37,7 @@
     </div>
     <div class="total-checkout-container">
       <p>Sub Total: {{ cart.total_price | money }} CAD</p>
-      <button class="button-reverse" type="submit" name="checkout">Checkout</button>
+      <button class="button-reverse" type="submit" name="checkout">Checkout<i class="far fa-credit-card"></i></button>
     </div>
   </form>
 {% else %}
