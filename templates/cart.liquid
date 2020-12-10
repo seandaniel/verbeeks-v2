@@ -4,44 +4,37 @@
     <p class="special-p">Your Cart</p>
   </div>
 </div>
+<div class="wrapper">
+  {% if cart.item_count == 1 %}
+  <h2 class="cart-h2">{{ cart.item_count }} Item</h2>
+  {% else %}
+  <h2 class="cart-h2">{{ cart.item_count }} Items</h2>
+  {% endif %}
+</div>
   <form action="/cart" method="post" novalidate>
-    <table>
-      <thead>
-        <th colspan="2">Prod</th>
-        <th>Price</th>
-        <th>Qty</th>
-        <th>total</th>
-      </thead>
-      <tbody>
+    <div class="wrapper">
+      <div class="cart-container">
         {% for item in cart.items %}
-          <tr>
-            <td>
-              <a href="{{ item.url | within: collections.all }}">
-                <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
-              </a>
-            </td>
-            <td>
-              <a href="{{ item.url }}">{{ item.product.title }}</a>
-              {{ item.variant.title }}
-              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
-            </td>
-            <td>{{ item.price | money }}</td>
-            <td>
+        <div class="item">
+            <a class="product-img" href="{{ item.url | within: collections.all }}">
+              <img src="{{ item | img_url: 'master' }}" alt="{{ item.title | escape }}">
+            </a>
+            <h3>{{ item.product.title }}</h3>
+            <div class="total-remove-container">
+              <p class="total-price">{{ item.line_price | money }} CAD</p>
+              <a class="button-reverse" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
+            </div>
+            <div class="quantity-update-container">
               <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
-            </td>
-            <td>
-              {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
-              {{ item.line_price | money }}
-              {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
-            </td>
-          </tr>
+              <button class="button-reverse" type="submit" name="update">Update</button>
+            </div>
+          </div>
         {% endfor %}
-      </tbody>
-    </table>
-    <div>
-      <p>sub total : {{ cart.total_price | money }}</p>
-      <button type="submit" name="update">Update</button>
-      <button type="submit" name="checkout">Checkout</button>
+      </div>
+    </div>
+    <div class="total-checkout-container">
+      <p>Sub Total: {{ cart.total_price | money }} CAD</p>
+      <button class="button-reverse" type="submit" name="checkout">Checkout</button>
     </div>
   </form>
 {% else %}
