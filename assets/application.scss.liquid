@@ -1881,8 +1881,13 @@ footer ul li:last-child a {
 
 @media (max-width: 1150px) {
   .banner .wrapper {
-    width: 600px;
+    width: 100%;
+    padding: 0 2.5%;
+    a {
+      width: 28%;
+    }
   }
+  
 
   .banner .wrapper a:nth-child(-n + 3) {
     margin-bottom: 80px;
@@ -1893,11 +1898,11 @@ footer ul li:last-child a {
   .banner .wrapper {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-  }
-
-  .banner .wrapper a {
-    margin-bottom: 40px;
+    padding: 0;
+    a {
+      margin-bottom: 40px;
+      width: auto;
+    }
   }
 
   .banner .wrapper a:nth-child(-n + 3) {
