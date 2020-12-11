@@ -10,17 +10,15 @@
   {% else %}
   <h2 class="cart-h2">{{ cart.item_count }} Items</h2>
   {% endif %}
-</div>
   <form action="/cart" method="post" novalidate>
-    <div class="wrapper">
       <div class="cart-container">
         {% for item in cart.items %}
         <div class="item">
             <a role="button" tabindex="0" class="product-img" href="{{ item.url | within: collections.all }}">
               <img src="{{ item | img_url: 'master' }}" alt="{{ item.title | escape }}">
-            {% unless item.compare_at_price_max < item.price %}
-            <p class="sale">Sale <br> <span>{{ item.compare_at_price_max | money }}</span></p>
-            {% endunless %}
+            <!-- {% unless line_item.original_price != line_item.final_price %}
+            <p class="sale">Sale <br> <span>{{ line_item.original_price | money }}</span></p>
+            {% endunless %} -->
             </a>
             <h3>{{ item.product.title }}</h3>
             <div class="total-remove-container">
@@ -33,12 +31,13 @@
             </div>
           </div>
         {% endfor %}
+        <div class="item item-checkout">
+          <div class="checkout-content">
+            <p>Sub Total: {{ cart.total_price | money }} CAD</p>
+            <button class="button-reverse" type="submit" name="checkout">Checkout<i class="far fa-credit-card"></i></button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="total-checkout-container">
-      <p>Sub Total: {{ cart.total_price | money }} CAD</p>
-      <button class="button-reverse" type="submit" name="checkout">Checkout<i class="far fa-credit-card"></i></button>
-    </div>
   </form>
 {% else %}
   <div class="h1-container">
