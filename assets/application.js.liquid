@@ -142,6 +142,22 @@ $(function() {
     })
   }
 
+  // product.liquid
+  const featuredImage = document.querySelector('.featured-image')
+  const secondaryImage = document.querySelectorAll('.secondary-image');
+
+  if (secondaryImage !== null) {
+
+    const swapImage = function() {
+      const src = this.src;
+      featuredImage.src = src;
+    }
+
+    secondaryImage.forEach(image => image.addEventListener('click', swapImage));
+    secondaryImage.forEach(image => image.addEventListener('keydown', swapImage));
+    
+  }
+
 });
 
 // trying to grab dropdown-ul with and applying it to dropdown-ul-2 width

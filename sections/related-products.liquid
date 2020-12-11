@@ -1,0 +1,44 @@
+{% assign break_at = 4 %}
+
+{% assign product_id = product.id %}
+
+{% if product.collections %}
+   <h2>{{ section.settings.related_title }}</h2>
+   <div class="home-products-container">
+   {% for collection in product.collections %}
+      {% for product in collection.products %}
+         {% unless product.id == product_id %}
+          <div class="product-container">
+            <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
+                alt="{{ product.title}}"></a>
+            {% unless product.compare_at_price_max < product.price %} <p class="sale">Sale <br> <span>{{
+                product.compare_at_price_max | money }}</span></p>
+              {% endunless %}
+              {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
+              <h3>{{ product.title }}</h3>
+              <div class="product-button-container">
+                <p>{{ product.price | money}} CAD</p>
+                <a href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+         {% endunless %}
+
+
+      {% endfor %}
+   {% endfor %}
+   </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Related products",
+  "settings": [
+      {
+         "id": "related_title",
+         "type": "text",
+         "label": "Section title",
+         "default": "Related Products"
+      }
+   ]
+}
+{% endschema %}

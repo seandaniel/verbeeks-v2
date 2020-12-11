@@ -2579,21 +2579,15 @@ footer ul li:last-child a {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   input {
-    // font-family: {{ settings.font_body.family }};
-    // background: url({{ 'down-arrow.svg' | asset-url }});
-    // background-repeat: no-repeat;
-    // background-position: right 10px top 60%, 0 0;
-    // background-size: 20px;
-    // appearance: none;
     background-color: $secondaryColor;
     border: none;
     padding: 10px;
     width: 75px;
     font-size: 20px;
     @include border-radius-box-shadow;
+    font-family: sans-serif;
   }
 }
-
 
 .item-checkout {
   display: flex;
@@ -2622,4 +2616,101 @@ footer ul li:last-child a {
       margin-left: 10px;
     }
   }
+}
+
+//page.product.liquid
+.individual-product-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.images-container .featured-image {
+  height: 500px;
+  width: 500px;
+  @include border-radius-box-shadow;
+}
+
+.secondary-images-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  img {
+    cursor: pointer;
+    height: 100px;
+    width: 24%;
+    @include border-radius-box-shadow;
+    margin-right: 2%;
+    opacity: 1;
+    transition: opacity .35s;
+    &:hover,
+    &:focus {
+      opacity: 0.3;
+    }
+  }
+}
+
+.secondary-images-container img:last-child {
+  margin-right: 0;
+}
+
+.product-content-container {
+  margin-top: 80px;
+  flex-direction: column;
+  width: 600px;
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+
+.price-container {
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 40px;
+  .sale-price {
+    margin-left: 10px;
+    color: $tertiaryColor;
+    text-decoration: line-through;
+  }
+}
+
+.product-form {
+  width: max-content;
+  .variant-quantity-container {
+    margin-bottom: 20px;
+    select {
+      background: url({{ 'down-arrow.svg' | asset-url }});
+      background-repeat: no-repeat;
+      background-position: right 10px top 60%, 0 0;
+      background-size: 20px;
+      background-color: $secondaryColor;
+      appearance: none;
+      border: none;
+      padding: 10px;
+      width: 300px;
+      font-size: 17px;
+      margin-right: 10px;
+      @include border-radius-box-shadow;
+    }
+    input {
+      background-color: $secondaryColor;
+      border: none;
+      padding: 10px;
+      width: 75px;
+      font-size: 17px;
+      font-family: sans-serif;
+      @include border-radius-box-shadow;
+    }
+  }
+}
+
+.product-form .button-reverse {
+  margin-bottom: 40px;
+  width: 100%;
+  width: 388.667px;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.5;
 }
