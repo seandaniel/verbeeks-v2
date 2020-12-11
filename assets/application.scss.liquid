@@ -2183,9 +2183,6 @@ footer ul li:last-child a {
       color: $tertiaryColor;
       border: 3px solid $tertiaryColor;
     }
-    i {
-      margin-right: 0;
-    }
   }
 }
 // sidebar-nav.liquid
@@ -2470,9 +2467,9 @@ footer ul li:last-child a {
     width: 31%;
     margin: 0 3.5% 3.5% 0;
     @include border-radius-box-shadow;
+    position: relative;
     .product-img {
       display: block;
-      position: relative;
       height: 300px;
       opacity: 1;
       transition: opacity .35s;
@@ -2494,9 +2491,28 @@ footer ul li:last-child a {
   margin-right: 0;
 }
 
+.item .sold-out {
+  text-transform: none;
+}
+
+.cart-container .product-button {
+  border-radius: 50%;
+  padding: 7px;
+  text-align: center;
+  border: 3px solid $primaryColor;
+  transition: color .35s, border .35s, background .35s;
+  width: 38px;
+  &:hover,
+  &:focus {
+    color: $tertiaryColor;
+    border: 3px solid $tertiaryColor;
+  }
+}
+
+
 @media (max-width: 1120px) {
   .cart-container {
-    margin-bottom: calc(80px - 5%);
+    margin-bottom: calc(80px - 10%);
     .item {
       width: 45%;
       margin: 0 10% 10% 0;
@@ -2521,6 +2537,7 @@ footer ul li:last-child a {
   .cart-container {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
     .item {
       width: 400px;
       margin: 0 0 40px 0;
