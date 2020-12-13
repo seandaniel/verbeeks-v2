@@ -4,7 +4,24 @@
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="{{ page_description | escape }}">
+  <meta name="description" content="Dating back to 1970, Verbeek's has grown to service everyone from the home gardener to the largest farm properties across the county">
+
+  <!-- Facebook meta tags -->
+  <meta property="og:title" content="Verbeek's Farm & Garden Centre">
+  <meta property="og:description"
+    content="Dating back to 1970, Verbeek's has grown to service everyone from the home gardener to the largest farm properties across the county.">
+  <meta property="og:image" content="{{ 'store-front.jpeg' | asset_url }}">
+  <meta property="og:url" content="https://verbeekslandscaping.com/">
+  
+  <!-- Twitter meta tags -->
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:title" content="Verbeek's Farm & Garden Centre">
+  <meta property="twitter:description"
+    content="Dating back to 1970, Verbeek's has grown to service everyone from the home gardener to the largest farm properties across the county.">
+  <meta property="twitter:image" content="{{ 'store-front.jpeg' | asset_url }}">
+  <meta property="twitter:url" content="https://verbeekslandscaping.com/">
+
+
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
@@ -12,7 +29,6 @@
   <link type="image/png" href="{{ 'favicon.png' | asset_url }}" rel="icon">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/d9461c25c6.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@900&display=swap" rel="stylesheet">
   <!-- Flickity -->
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <!-- CSS -->

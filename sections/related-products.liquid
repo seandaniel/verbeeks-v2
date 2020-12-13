@@ -3,7 +3,7 @@
 {% assign product_id = product.id %}
 
 {% if product.collections %}
-   <h2>{{ section.settings.related_title }}</h2>
+   <h2 class="related-h2">{{ section.settings.related_title }}</h2>
    <div class="home-products-container">
    {% for collection in product.collections %}
       {% for product in collection.products %}
@@ -23,6 +23,10 @@
           </div>
          {% endunless %}
 
+          {% assign counter = counter | plus: 1 %}
+         {% if counter == break_at %}
+            {% break %}
+         {% endif %}
 
       {% endfor %}
    {% endfor %}

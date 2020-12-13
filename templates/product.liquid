@@ -25,8 +25,8 @@
       </div>
       <form class="product-form" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
         <div class="variant-quantity-container">
-          {% if product.has_only_default_variant %}
-          <!-- null -->
+          {% if product.variants.lenght == 1 && product.variants[0].title == 'Default Title' %}
+          <p>Default Title</p>
           {% else %}
           <select name="id" id="productSelect">
           {% for variant in product.variants %}
@@ -44,7 +44,11 @@
           </select>
           <input type="number" id="Quantity" name="quantity" value="1" min="1" max="100">
         </div>
+        {% if product.available %}
         <button class="button-reverse" type="submit" name="add" id="AddToCart">Add To Cart</button>
+        {% else %}
+        <button disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Sold Out</button>
+        {% endif %}
       </form>
       <p class="description">{{ product.description }}</p>
     </div>
