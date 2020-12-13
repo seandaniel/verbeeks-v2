@@ -1,5 +1,14 @@
 $(function() {
 
+  // target="_blank"
+  let links = document.links;
+  for (let i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname !== window.location.hostname) {
+      links[i].target = '_blank';
+      links[i].rel = 'noreferrer noopener';
+    }
+  }
+
   //opens mobile-nav
   $('.open-nav').on('click', () => {
     $('.mobile-nav').fadeIn().css('display', 'block');
