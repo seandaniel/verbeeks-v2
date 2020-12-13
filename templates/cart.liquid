@@ -19,13 +19,13 @@
             </a>
             <!-- <p>{{ item.original_price }}</p>
             <p>{{ item.final_price }}</p> -->
-            {% if item.product.variants.size > 1 %}
-            <p class="sold-out">{{ item.variant.title }}</p>
-            {% endif %}
+            <a class="button-reverse product-button sold-out" href="/cart/change?line={{ forloop.index }}&amp;quantity=0"><i class="fas fa-times"></i></a>
             <h3>{{ item.product.title }}</h3>
-            <div class="total-remove-container">
+            <div class="total-variant-container">
               <p>{{ item.line_price | money }} CAD</p>
-              <a class="button-reverse product-button" href="/cart/change?line={{ forloop.index }}&amp;quantity=0"><i class="fas fa-times"></i></a>
+              {% if item.product.variants.size > 1 %}
+              <p>{{ item.variant.title }}</p>
+              {% endif %}
             </div>
             <div class="quantity-update-container">
               <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" max="100">

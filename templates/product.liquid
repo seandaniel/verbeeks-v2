@@ -25,8 +25,14 @@
       </div>
       <form class="product-form" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
         <div class="variant-quantity-container">
-          {% if product.variants.lenght == 1 && product.variants[0].title == 'Default Title' %}
-          <p>Default Title</p>
+          {% if product.variants[0].title == 'Default Title' and product.variants.size == 1 %}
+          <select class="sr-only" name="id" id="productSelect">
+            {% for variant in product.variants %}
+            <option select="selected" value="{{ variant.id }}">
+              {{ variant.title }} - {{ variant.price | money_with_currency }}
+            </option>
+            {% endfor %}
+          </select>
           {% else %}
           <select name="id" id="productSelect">
           {% for variant in product.variants %}
@@ -40,8 +46,8 @@
               </option>
             {% endif %}
           {% endfor %}
-          {% endif %}
           </select>
+          {% endif %}
           <input type="number" id="Quantity" name="quantity" value="1" min="1" max="100">
         </div>
         {% if product.available %}
