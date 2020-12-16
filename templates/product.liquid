@@ -56,7 +56,9 @@
         <button disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Sold Out</button>
         {% endif %}
       </form>
-      <p class="description">{{ product.description }}</p>
+      <div class="description-container">
+        {{ product.description }}
+      </div>
     </div>
 
   </section>

@@ -2638,9 +2638,31 @@ footer ul li:last-child a {
 
 //page.product.liquid
 .individual-product-container {
-  display: flex;
-  justify-content: space-between;
+  @include space-between;
   margin-bottom: 80px;
+  .description-container {
+    font-size: 17px;
+    line-height: 1.5;
+    p {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.description-container ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+.description-container p:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 1000px) {
@@ -2705,17 +2727,10 @@ footer ul li:last-child a {
 }
 
 .product-content-container {
-  margin-top: 80px;
   flex-direction: column;
   width: 45%;
   h2 {
     margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .product-content-container {
-    margin: 0;
   }
 }
 
