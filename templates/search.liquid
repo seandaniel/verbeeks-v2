@@ -19,7 +19,7 @@
       <section class="home-products-container">
         {% for item in search.results %}
           <div class="product-container">
-            <a class="product-img" href="{{ item.url }}"><img src="{{ item.featured_image | img_url: 'master'}}"
+            <a title="View {{ item.title }}" class="product-img" href="{{ item.url }}"><img src="{{ item.featured_image | img_url: 'master'}}"
                 alt="{{ item.title}}"></a>
             {% unless item.compare_at_price_max < item.price %}
             <p class="sale">Sale <br> <span>{{ item.compare_at_price_max | money }}</span></p>
@@ -28,7 +28,7 @@
             <h3>{{ item.title }}</h3>
             <div class="product-button-container">
               <p>{{ item.price | money}} CAD</p>
-              <a href="{{ item.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+              <a title="View {{ item.title }}" aria-label="View {{ item.title }}" href="{{ item.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         {% endfor %}

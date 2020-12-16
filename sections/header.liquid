@@ -14,7 +14,7 @@
 
   <nav class="mobile-nav">
     <ul>
-      <li><button class="exit-nav"><i class="fas fa-times-circle"></i></button></li>
+      <li><button title="Close Navigation" aria-label="Close Navigation" class="exit-nav"><i class="fas fa-times-circle"></i></butto></li>
     {%- for link in linklists.mobile-menu.links -%}
       <li>
         <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
@@ -39,9 +39,9 @@
           </form>
         </li>
           {% if cart.item_count != 0 %}
-          <li><a class="button" href="/cart"><i class="fas fa-shopping-cart"></i>{{ cart.item_count}}</a></li>
+          <li><a title="View Cart" aria-label="View Cart" class="button" href="/cart"><i class="fas fa-shopping-cart"></i>{{ cart.item_count}}</a></li>
          {% else %}
-          <li><a class="button" href="/cart"><i class="fas fa-shopping-cart no-right"></i></a></li>
+          <li><a title="View Cart" aria-label="View Cart" class="button" href="/cart"><i class="fas fa-shopping-cart no-right"></i></a></li>
          {% endif %}
       </ul>  
     </nav>
@@ -51,18 +51,18 @@
         <ul class="primary-ul">
           <li class="desktop-h1">
             <h1>
-              <a href="/">
+              <a title="Home" aria-label="Home" href="/">
                 <img src="{{ 'logo.png' | asset_url }}" alt="Verbeek's Farm & Garden Centre">
               </a>
             </h1>
           </li>
           <li class="mobile-h1">
-            <a href="/">
+            <a title="Home" aria-label="Home" href="/">
               <h1>Verbeek's<i class="fab fa-envira"></i></h1>
             </a>
           </li>
           <li class="align-right">
-            <button class="open-nav">
+            <button title="Open Navigation" aria-label="Close Navigation" class="open-nav">
               <i class="fas fa-align-right"></i>
             </button>
           </li>
