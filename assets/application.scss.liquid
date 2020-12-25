@@ -48,6 +48,12 @@ $quinaryColor: #f0f5dc;
   box-shadow: 0 2px 4px rgba(0,0,0,0.21);
 }
 
+::selection {
+  color: $primaryColor;
+  background: $tertiaryColor;
+  transition: .35s;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -2769,6 +2775,12 @@ footer ul li:last-child a {
       @include border-radius-box-shadow;
     }
   }
+}
+
+input[type=number]::-webkit-outer-spin-button, 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: inner-spin-button !important;
+    opacity: 1;
 }
 
 @media (max-width: 950px) {
