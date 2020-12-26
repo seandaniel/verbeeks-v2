@@ -1999,34 +1999,47 @@ footer ul li:last-child a {
 .paginate-container {
   margin-bottom: 80px;
   text-align: center;
-  .page a, .next a, .prev a {
+  font-size: 20px;
+  .page a {
     cursor: pointer;
-    display: inline-block;
-    color: $quaternaryColor;
-    background-color: $primaryColor;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.21);
-    border-radius: 6px;
-    transition: color .35s, background-color .35s;
+    transition: color .35s;
     &:hover,
     &:focus {
-      background-color: $secondaryColor;
-      color: $primaryColor;
+      color: $tertiaryColor;
     }
   }
-  .current, .deco {
+  .current {
     cursor: auto;
     display: inline-block;
     color: $primaryColor;
-    background-color: $secondaryColor;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.21);
-    border-radius: 6px;
-    transition: color .35s, background-color .35s;
-    &:hover {
-      background-color: $secondaryColor;
-    }
+    border-bottom: 3px solid $tertiaryColor;
+    transition: color .35s;
   }
+}
+
+.paginate-container .next a,
+.paginate-container .prev a {
+  font-size: 16px;
+  display: inline-block;
+  color: $quaternaryColor;
+  background-color: $primaryColor;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.21);
+  border-radius: 6px;
+  transition: color .35s, background-color .35s;
+  &:hover,
+  &:focus {
+    background-color: $secondaryColor;
+    color: $primaryColor;
+  }
+}
+
+.paginate-container .next a {
+  margin-left: 2.5px;
+}
+
+.paginate-container .prev a {
+  margin-right: 2.5px;
 }
 
 // breadcrumbs.liquid
