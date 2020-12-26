@@ -49,7 +49,6 @@ $quinaryColor: #f0f5dc;
 }
 
 ::selection {
-  color: $primaryColor;
   background: $tertiaryColor;
   transition: .35s;
 }
@@ -375,7 +374,7 @@ button {
   }
   i {
     color: $tertiaryColor;
-    margin-left: 5px;
+    margin-left: 10px;
   }
 }
 
@@ -2080,7 +2079,6 @@ footer ul li:last-child a {
   right: 10px;
   font-size: 17px;
   line-height: 1.4;
-  text-transform: uppercase;
   background: $primaryColor;
   color: $quaternaryColor;
   padding: 10px;
@@ -2094,13 +2092,22 @@ footer ul li:last-child a {
   left: 10px;
   font-size: 17px;
   line-height: 1.4;
-  text-transform: uppercase;
   background: $tertiaryColor;
   color: $primaryColor;
   padding: 10px;
   @include border-radius-box-shadow;
   span {
     text-decoration: line-through;
+  }
+}
+
+@media (max-width: 710px) {
+  .sold-out {
+    right: 5px;
+  }
+
+  .sale {
+    left: 5px;
   }
 }
 
@@ -2134,8 +2141,9 @@ footer ul li:last-child a {
     }
     h3 {
       font-size: 20px;
+      border: 1px solid $tertiaryColor;
+      border-radius: 3px;
       line-height: 1.2;
-      border-bottom: none;
       padding: 20px 20px;
       background: $secondaryColor;
     }
@@ -2175,13 +2183,21 @@ footer ul li:last-child a {
 
 @media (max-width: 710px) {
   .home-products-container {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: calc(80px - 4%);
     .product-container {
-      width: 400px;
-      margin: 0 0 40px 0;
+      width: 48%;
+      margin-bottom: 4%;
+      h3 {
+        text-transform: capitalize;
+      }
     }
+  }
+
+  .home-products-container .product-container:nth-child(2n) {
+    margin-right: 0;
   }
 
   .home-products-container .product-container:nth-child(4n) {
@@ -2189,9 +2205,15 @@ footer ul li:last-child a {
   }
 }
 
-@media (max-width: 500px) {
-  .home-products-container .product-container {
-    width: 100%;
+@media (max-width: 360px) {
+  .home-products-container {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    .product-container {
+      width: 100%;
+      margin: 0 0 40px 0;
+    }
   }
 }
 
@@ -2199,21 +2221,30 @@ footer ul li:last-child a {
   @include space-between;
   padding: 20px;
   p {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.4px;
   }
   .product-button {
+    @include center;
     border-radius: 50%;
     padding: 7px;
-    text-align: center;
     border: 3px solid $primaryColor;
     transition: color .35s, border .35s, background .35s;
-    width: 38px;
+    width: 36px;
+    font-size: 15px;
     &:hover,
     &:focus {
       color: $tertiaryColor;
       border: 3px solid $tertiaryColor;
     }
+  }
+}
+
+@media (max-width: 710px) {
+  .product-button-container .product-button {
+    padding: 5px;
+    font-size: 13px;
+    width: 30px;
   }
 }
 // sidebar-nav.liquid
@@ -2296,7 +2327,8 @@ footer ul li:last-child a {
     h3 {
       font-size: 20px;
       line-height: 1.2;
-      border-bottom: none;
+      border: 1px solid $tertiaryColor;
+      border-radius: 3px;
       padding: 20px 20px;
       background: $secondaryColor;
     }
@@ -2316,17 +2348,39 @@ footer ul li:last-child a {
 
 @media (max-width: 710px) {
   .three-products-container {
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: calc(80px - 4%);
     .product-container {
-      width: 400px;
-      margin: 0 0 40px 0;
+      width: 48%;
+      margin-bottom: 4%;
     }
+  }
+
+  .three-products-container .product-container:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .three-products-container .product-container:nth-child(3n) {
+    margin-right: 4%;
+  }
+
+  
+  .three-products-container .product-container:nth-child(6n) {
+    margin-right: 0;
   }
 }
 
-@media (max-width: 500px) {
-  .three-products-container .product-container {
-    width: 100%;
+@media (max-width: 360px) {
+  .three-products-container {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    .product-container {
+      width: 100%;
+      margin: 0 0 40px 0;
+    }
   }
 }
 
@@ -2598,7 +2652,8 @@ footer ul li:last-child a {
   @include space-between;
   padding: 20px 40px;
   p {
-    font-size: 20px;
+    font-size: 17px;
+    line-height: 1.4;
   }
 }
 
