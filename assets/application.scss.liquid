@@ -709,6 +709,10 @@ button {
   margin-bottom: 2%;
 }
 
+.Lawns .landscape-img-container figure {
+  margin-bottom: 0;
+}
+
 @media (max-width: 900px) {
   .landscape-img-container figure {
     width: 49%;
@@ -719,7 +723,12 @@ button {
     margin-bottom: 0;
   }
 
-  .lawn .landscape-img-container figure:last-child {
+  .Lawns .landscape-img-container figure:first-child,
+  .Lawns .landscape-img-container figure:nth-child(2) {
+    margin-bottom: 2%;
+  }
+
+  .Lawns .landscape-img-container figure:last-child {
     margin: 0 auto;
   }
 }
@@ -745,6 +754,15 @@ button {
   .landscape-img-container figure:last-child {
     margin-bottom: 0;
   }
+
+  .Lawns .landscape-img-container figure:first-child,
+  .Lawns .landscape-img-container figure:nth-child(2) {
+    margin-bottom: 40px;
+  }
+
+  // .Lawns .landscape-img-container figure:last-child {
+  //   margin: 0 auto;
+  // }
 }
 
 .landscape-img-container figcaption {
