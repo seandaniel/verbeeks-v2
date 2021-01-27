@@ -595,12 +595,13 @@ button {
 
 .landscape-nav {
   padding: 40px 0;
-  margin-bottom: 2%;
+  margin-bottom: 0;
   background-color: $secondaryColor;
   ul {
     @include space-between;
+    flex-wrap: wrap;
     margin: 0 auto;
-    width: 400px;
+    width: 500px;
     background-color: $secondaryColor;
     li {
       display: flex;
@@ -608,14 +609,21 @@ button {
       align-items: center;
       button {
         font-size: 17px;
-        text-transform: uppercase;
-        transition: .35s color;
+        line-height: 1.4;
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,.21);
+        border: 2px solid $secondaryColor;
+        border-radius: 6px;
+        padding: 10px;
+        transition: .35s color, border .35s, background-color .35s;
+        background-color: $secondaryColor;
         &:hover,
         &:focus {
           color: $tertiaryColor;
+          border: 2px solid $tertiaryColor;
+          background-color: $primaryColor;
         }
       }
     }
@@ -626,7 +634,32 @@ button {
   .landscape-nav {
     margin-bottom: 40px;
     ul {
-      width: 280px;
+      width: 340px;
+      justify-content: center;
+      flex-wrap: wrap;
+      li:first-child button {
+        margin-right: 10px;
+      }
+
+      li:last-child button {
+        margin: 10px 0 0 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .landscape-nav ul {
+    flex-direction: column;
+    width: 100%;
+    li:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    li:first-child button {
+      margin-right: 0;
+    }
+    li:last-child button {
+      margin: 0;
     }
   }
 }
@@ -636,8 +669,21 @@ button {
   margin-top: 10px;
 }
 
-.active {
+.landscape-nav ul li .active {
   color: $tertiaryColor;
+  border: 2px solid $tertiaryColor;
+  border-radius: 6px;
+  background-color: $primaryColor;
+}
+
+.changing-text-container {
+  margin-bottom: 2%;
+}
+
+@media (max-width: 600px) {
+  .changing-text-container {
+    margin-bottom: 40px;
+  }
 }
 
 // landscaping-pictures.liquid

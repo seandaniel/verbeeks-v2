@@ -56,25 +56,30 @@ $(function() {
   // page.landscaping.liquid
   const landscapeSections = document.querySelectorAll('.landscape');
   const landscapeButtons = document.querySelectorAll('.landscape-nav button');
-  
-  const handleClick = function(e) {
-  
-   landscapeButtons.forEach(button => button.classList.remove('active'));
-  
-   e.currentTarget.classList.toggle('active');
-  
-   landscapeSections.forEach(section => {
-     if (section.classList.contains(e.currentTarget.id)) {
-       section.hidden = false;
-     } else {
-       section.hidden = true;
-     }
-   })
-  
-  }
-  
-  landscapeButtons.forEach(button => button.addEventListener('click', handleClick));
+  const changingh1 = document.querySelector('.changing-text-container .wrapper h1');
 
+  const handleClick = function(e) {
+
+    landscapeButtons.forEach(button => button.classList.remove('active'));
+
+    e.currentTarget.classList.toggle('active');
+
+    const text = e.currentTarget.id;
+    
+    changingh1.textContent = text;
+
+    landscapeSections.forEach(section => {
+      if (section.classList.contains(e.currentTarget.id)) {
+        section.hidden = false;
+      } else {
+        section.hidden = true;
+      }
+    })
+
+  }
+
+  landscapeButtons.forEach(button => button.addEventListener('click', handleClick));
+  
   // landscape home icon animation
   const backgroundIcon = document.querySelector('.background-icon');
   const category = document.querySelector('.category');
