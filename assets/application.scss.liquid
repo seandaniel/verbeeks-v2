@@ -619,6 +619,7 @@ button {
         padding: 10px;
         transition: .35s color, border .35s, background-color .35s;
         background-color: $secondaryColor;
+        width: 160px;
         &:hover,
         &:focus {
           color: $tertiaryColor;
@@ -648,7 +649,7 @@ button {
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 350px) {
   .landscape-nav ul {
     flex-direction: column;
     width: 100%;
@@ -678,6 +679,9 @@ button {
 
 .changing-text-container {
   margin-bottom: 2%;
+  h1 {
+    text-transform: capitalize;
+  }
 }
 
 @media (max-width: 600px) {
@@ -709,7 +713,7 @@ button {
   margin-bottom: 2%;
 }
 
-.Lawns .landscape-img-container figure {
+.lawns .landscape-img-container figure {
   margin-bottom: 0;
 }
 
@@ -723,12 +727,12 @@ button {
     margin-bottom: 0;
   }
 
-  .Lawns .landscape-img-container figure:first-child,
-  .Lawns .landscape-img-container figure:nth-child(2) {
+  .lawns .landscape-img-container figure:first-child,
+  .lawns .landscape-img-container figure:nth-child(2) {
     margin-bottom: 2%;
   }
 
-  .Lawns .landscape-img-container figure:last-child {
+  .lawns .landscape-img-container figure:last-child {
     margin: 0 auto;
   }
 }
@@ -755,14 +759,11 @@ button {
     margin-bottom: 0;
   }
 
-  .Lawns .landscape-img-container figure:first-child,
-  .Lawns .landscape-img-container figure:nth-child(2) {
+  .lawns .landscape-img-container figure:first-child,
+  .lawns .landscape-img-container figure:nth-child(2) {
     margin-bottom: 40px;
   }
 
-  // .Lawns .landscape-img-container figure:last-child {
-  //   margin: 0 auto;
-  // }
 }
 
 .landscape-img-container figcaption {
