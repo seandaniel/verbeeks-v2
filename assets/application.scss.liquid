@@ -149,6 +149,7 @@ button {
 }
 
 .button {
+  font-size: 17px;
   text-transform: capitalize;
   display: inline-block;
   background-color: $secondaryColor;
@@ -165,6 +166,7 @@ button {
 }
 
 .button-reverse {
+  font-size: 17px;
   text-transform: capitalize;
   display: inline-block;
   color: $quaternaryColor;
@@ -796,9 +798,9 @@ button {
   }
 }
 
-iframe {
+.map-container iframe {
   max-width: 500px;
-  height: 300px;
+  height: 500px;
   @include border-radius-box-shadow;
 }
 
@@ -807,7 +809,7 @@ iframe {
     width: 100%;
   }
 
-  iframe {
+  .map-container iframe {
     width: 100%;
   }
 }
@@ -2773,7 +2775,7 @@ footer ul li:last-child a {
     border: none;
     padding: 10px;
     width: 75px;
-    font-size: 20px;
+    font-size: 17px;
     @include border-radius-box-shadow;
     font-family: sans-serif;
   }
@@ -3036,50 +3038,22 @@ ul li:last-child {
 
 .video-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 80px;
+  justify-content: center;
+  margin: 2% 0 80px 0;
   iframe {
+    height: 400px;
     box-shadow: 0 2px 4px rgba(0,0,0,.21);
     border-radius: 6px;
     border: none;
   }
 }
 
-@media (max-width: 760px) {
-  .video-container iframe {
-    width: 48%;
-  }
-  .video-container iframe:first-child {
-    margin-right: auto;
-  }
-
-  .video-container iframe:nth-child(2) {
-    margin-right: 0;
-  }
-
-  .video-container iframe:last-child {
-    margin: 4% auto 0 auto;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .video-container {
-    flex-direction: column;
-    align-items: center;
+    margin: 40px 0 80px 0;
     iframe {
-      // not working?
       width: 100%;
-      margin-bottom: 40px;
+      height: 400px;
     }
-  }
-
-  .video-container iframe:first-child {
-    margin-right: 0;
-  }
-
-  .video-container iframe:last-child {
-    margin: 0;
   }
 }
