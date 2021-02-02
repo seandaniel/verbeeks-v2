@@ -456,6 +456,10 @@ button {
   }
 }
 
+.primary-nav .primary-ul .primary:first-child {
+  margin-left: 0;
+}
+
 @media (max-width: 900px) {
   // primary li's except for the first child
   .primary {
@@ -518,7 +522,7 @@ button {
   @include border-radius-box-shadow;
   border-top: 5px solid $tertiaryColor;
   background-color: $quaternaryColor;
-  width: 180px;
+  width: 190px;
   padding: 20px 0 0 20px;
   z-index: 90;
   transition: opacity .35s;
@@ -553,13 +557,13 @@ button {
 .dropdown-ul-2 {
   visibility: hidden;
   top: 0;
-  right: -160px;
+  right: -180px;
   position: absolute;
   padding: 20px 0 0 20px;
   @include border-radius-box-shadow;
   border-top: 5px solid $tertiaryColor;
   background-color: $quaternaryColor;
-  width: 100%;
+  width: 180px;
   opacity: 0;
   z-index: 90;
   transition: opacity .35s;
