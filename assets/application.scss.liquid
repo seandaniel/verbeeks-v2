@@ -1911,6 +1911,13 @@ footer ul li:last-child a {
 
 .cell-content-container .button-reverse {
   border: 2px solid $tertiaryColor;
+  transition: border .35s, color .35s, background-color .35s;
+  &:hover,
+  &:focus {
+    color: $primaryColor;
+    background-color: $quaternaryColor;
+    border: 2px solid $primaryColor;
+  }
 }
 
 .flickity-prev-next-button {
@@ -1989,6 +1996,18 @@ footer ul li:last-child a {
   }
 }
 
+.cell-button-container a {
+  border: 3px solid $tertiaryColor;
+  font-size: 20px;
+  transition: border .35s, color .35s, background-color .35s;
+  box-shadow: none;
+  &:hover,
+  &:focus {
+    color: $primaryColor;
+    background-color: $quaternaryColor;
+    border: 3px solid $primaryColor;
+  }
+}
 
 .cell-button-container a:first-child {
   margin-right: 40px;
@@ -1999,7 +2018,6 @@ footer ul li:last-child a {
 //   color: $tertiaryColor;
 //   border: 3px solid $tertiaryColor;
 // }
-
 
 // banner-collection.liquid
 .banner {
