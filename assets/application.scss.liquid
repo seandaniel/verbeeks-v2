@@ -150,6 +150,7 @@ button {
 
 .button {
   font-size: 17px;
+  line-height: 1.4;
   text-transform: capitalize;
   display: inline-block;
   background-color: $secondaryColor;
@@ -167,6 +168,7 @@ button {
 
 .button-reverse {
   font-size: 17px;
+  line-height: 1.4;
   text-transform: capitalize;
   display: inline-block;
   color: $quaternaryColor;
@@ -254,6 +256,7 @@ button {
     align-items: center;
     justify-content: center;
     height: 40px;
+    font-size: 16px;
     i {
       margin-right: 10px;
     }
@@ -2521,9 +2524,9 @@ footer ul li:last-child a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 23%;
+  width: 50%;
   height: 400px;
-  margin: 0 0 2.66666666667% 0;
+  margin: 0 auto;
   position: relative;
   @include border-radius-box-shadow;
   img {
@@ -2546,21 +2549,7 @@ footer ul li:last-child a {
   }
 }
 
-@media (max-width: 1120px) {
-  .view-more {
-    margin: 0 auto;
-    width: 62%;
-  }
-}
-
 @media (max-width: 740px) {
-  .view-more {
-    width: 48%;
-    margin: 0;
-  }
-}
-
-@media (max-width: 355px) {
   .view-more {
     width: 100%;
   }
@@ -2749,7 +2738,7 @@ footer ul li:last-child a {
 
 .item h3 {
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1.4;
   border-bottom: none;
   padding: 20px;
   background: $secondaryColor;
@@ -2779,6 +2768,10 @@ footer ul li:last-child a {
     @include border-radius-box-shadow;
     font-family: sans-serif;
   }
+}
+
+.quantity {
+  border-bottom: 3px solid $tertiaryColor;
 }
 
 .item-checkout {
@@ -2812,14 +2805,10 @@ footer ul li:last-child a {
 
 //page.product.liquid
 .individual-product-container {
-  @include space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 80px;
-}
-
-@media (max-width: 1000px) {
-  .individual-product-container {
-    align-items: center;
-  }
 }
 
 @media (max-width: 720px) {

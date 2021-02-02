@@ -1,13 +1,13 @@
 {%- assign collection = collections[section.settings.home_collection] -%}
 
-{% if collection.products_count > 3 %} 
+{% if collection.products_count > 4 %} 
   <div class="background">
 
     <div class="wrapper">
       <h2 class="collection-h2">{{ section.settings.collection_heading }}</h2>
       <section class="home-products-container">
 
-        {% for product in collection.products limit: 3 %}
+        {% for product in collection.products limit: 4 %}
           <div class="product-container">
             <a title="View {{ product.title }}" class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
                 alt="{{ product.title}}"></a>
@@ -33,12 +33,12 @@
     </div>
   </div>
 
-  {% elsif collection.products_count == 1  or collection.products_count <= 3 and collection.products_count != 0 %}
+  {% elsif collection.products_count == 1  or collection.products_count <= 4 and collection.products_count != 0 %}
   <div class="background">
     <div class="wrapper">
     <h2 class="collection-h2">{{ section.settings.collection_heading }}</h2>
       <section class="home-products-container">
-        {% for product in collection.products limit: 3 %}
+        {% for product in collection.products limit: 4 %}
           <div class="product-container">
             <a title="View {{ product.title }}" class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
                 alt="{{ product.title}}"></a>
