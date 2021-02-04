@@ -26,7 +26,7 @@
             <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}"/>
             <div class="view-more-content">
               <h2>{{ collection.all_products_count }} Total</h2>
-              <a title="View {{ product.title }}" aria-label="View {{ product.title }}" href="{{ product.url }}" class="button-reverse product-button">View More</a>
+              <a href="{{ section.settings.collection_link }}" class="button-reverse product-button">View More</a>
             </div>
           </div>
       </section>
@@ -84,6 +84,11 @@
         "id": "collection_heading",
         "label": "Collections Heading",
         "default": "Collection Name"
+      },
+      {
+        "type": "url",
+        "id": "collection_link",
+        "label": "Collections Link"
       },
       {
         "id": "home_collection",
