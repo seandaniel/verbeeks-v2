@@ -174,16 +174,15 @@ button {
   color: $quaternaryColor;
   background-color: $primaryColor;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.21);
   border-radius: 6px;
   text-align: center;
-  border: 2px solid $tertiaryColor;
+  border: 3px solid $tertiaryColor;
   transition: border .35s, color .35s, background-color .35s;
   &:hover,
   &:focus {
     color: $primaryColor;
     background-color: $quaternaryColor;
-    border: 2px solid $primaryColor;
+    border: 3px solid $primaryColor;
   }
 }
 
@@ -628,17 +627,16 @@ button {
         display: flex;
         flex-direction: column;
         align-items: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,.21);
-        border: 2px solid $primaryColor;
+        border: 3px solid $primaryColor;
         border-radius: 6px;
         padding: 10px;
         transition: .35s color, border .35s, background-color .35s;
         background-color: $secondaryColor;
-        width: 160px;
+        width: 163px;
         &:hover,
         &:focus {
           color: $tertiaryColor;
-          border: 2px solid $tertiaryColor;
+          border: 3px solid $tertiaryColor;
           background-color: $primaryColor;
         }
       }
@@ -872,6 +870,7 @@ button {
   text-transform: lowercase;
   width: max-content;
   i {
+    font-size: 24px;
     margin-right: 10px;
   }
 }
@@ -1372,15 +1371,14 @@ footer {
     border-radius: 50%;
     margin-right: 20px;
     text-align: center;
-    width: 64px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.21);
-    border: 2px solid $tertiaryColor;
+    width: 66px;
+    border: 3px solid $tertiaryColor;
     transition: color .35s, background-color .35s, border .35s;
     &:hover,
     &:focus {
       color: $primaryColor;
       background-color: $quaternaryColor;
-      border: 2px solid $primaryColor;
+      border: 3px solid $primaryColor;
     }
   }
 }
@@ -1570,9 +1568,7 @@ footer ul li:last-child a {
 .landscape-image-container figure h2,
 .landscape-image-container-2 figure h2 {
   background: $secondaryColor;
-  @include border-radius-box-shadow;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 6px;
   text-align: center;
   position: absolute;
   padding: 10px;
@@ -1870,9 +1866,7 @@ footer ul li:last-child a {
 
 .four-bricks-container h2 {
   background: $secondaryColor;
-  @include border-radius-box-shadow;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 6px;
   text-align: center;
   position: absolute;
   padding: 10px;
@@ -1904,9 +1898,7 @@ footer ul li:last-child a {
     h2 {
       margin-bottom: 10px;
       padding: 10px;
-      @include border-radius-box-shadow;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
+      border-radius: 6px;
       background: $secondaryColor;
     }
     p {
@@ -2011,27 +2003,12 @@ footer ul li:last-child a {
 }
 
 .cell-button-container a {
-  border: 3px solid $tertiaryColor;
   font-size: 20px;
-  transition: border .35s, color .35s, background-color .35s;
-  box-shadow: none;
-  &:hover,
-  &:focus {
-    color: $primaryColor;
-    background-color: $quaternaryColor;
-    border: 3px solid $primaryColor;
-  }
 }
 
 .cell-button-container a:first-child {
   margin-right: 40px;
 }
-
-// .button-toggle {
-//   background: $quaternaryColor;
-//   color: $tertiaryColor;
-//   border: 3px solid $tertiaryColor;
-// }
 
 // banner-collection.liquid
 .banner {
@@ -2232,7 +2209,7 @@ footer ul li:last-child a {
   background: $primaryColor;
   color: $quaternaryColor;
   padding: 10px;
-  @include border-radius-box-shadow;
+  border-radius: 6px;
 }
 
 .sale {
@@ -2245,7 +2222,7 @@ footer ul li:last-child a {
   background: $tertiaryColor;
   color: $primaryColor;
   padding: 10px;
-  @include border-radius-box-shadow;
+  border-radius: 6px;
   span {
     text-decoration: line-through;
   }
@@ -2574,7 +2551,7 @@ footer ul li:last-child a {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform:translate(-50%, -50%); 
+    transform: translate(-50%, -50%); 
     h2 {
       margin-bottom: 20px;
     }
