@@ -177,11 +177,13 @@ button {
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
   border-radius: 6px;
   text-align: center;
-  transition: color .35s, background-color .35s;
+  border: 2px solid $tertiaryColor;
+  transition: border .35s, color .35s, background-color .35s;
   &:hover,
   &:focus {
-    background-color: $secondaryColor;
     color: $primaryColor;
+    background-color: $quaternaryColor;
+    border: 2px solid $primaryColor;
   }
 }
 
@@ -627,7 +629,7 @@ button {
         flex-direction: column;
         align-items: center;
         box-shadow: 0 2px 4px rgba(0,0,0,.21);
-        border: 2px solid $secondaryColor;
+        border: 2px solid $primaryColor;
         border-radius: 6px;
         padding: 10px;
         transition: .35s color, border .35s, background-color .35s;
@@ -834,7 +836,7 @@ button {
   margin: 0 auto 80px auto;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1120px) {
   .contact-secondary {
     flex-direction: column;
     align-items: center;
@@ -865,14 +867,17 @@ button {
 }
 
 .hours-number-container a {
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  text-transform: lowercase;
+  width: max-content;
   i {
     margin-right: 10px;
   }
 }
-.hours-number-container a:hover,
-.hours-number-container a:focus {
-  color: $tertiaryColor;
+
+.hours-number-container a:nth-child(4) {
+  margin-bottom: 10px;
 }
 
 .contact-menu ul {
@@ -1257,7 +1262,7 @@ footer {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1120px) {
   footer .wrapper {
     flex-direction: column;
     padding: 0 100px;
@@ -1283,7 +1288,7 @@ footer {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1120px) {
   .nav-container {
     margin-bottom: 40px;
     nav:first-child {
@@ -1320,9 +1325,22 @@ footer {
 
 .hours-logo-container {
   display: flex;
-  align-items: center;
-  .hours-number-container {
+  align-items: flex-start;
+  .hours-number-container-footer {
     margin-right: 80px;
+    a {
+      transition: color .35s;
+      &:hover,
+      &:focus {
+        color: $tertiaryColor;
+      }
+      i {
+        font-size: 24px;
+      }
+    }
+    a:nth-child(4) {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -1330,7 +1348,7 @@ footer {
   .hours-logo-container {
     flex-direction: column;
     align-items: flex-start;
-    .hours-number-container {
+    .hours-number-container-footer {
       margin: 0 0 40px 0;
     }
   }
@@ -1354,13 +1372,15 @@ footer {
     border-radius: 50%;
     margin-right: 20px;
     text-align: center;
-    width: 60px;
+    width: 64px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.21);
-    transition: color .35s, background-color .35s;
+    border: 2px solid $tertiaryColor;
+    transition: color .35s, background-color .35s, border .35s;
     &:hover,
     &:focus {
       color: $primaryColor;
       background-color: $quaternaryColor;
+      border: 2px solid $primaryColor;
     }
   }
 }
@@ -1912,17 +1932,6 @@ footer ul li:last-child a {
 
   .carousel-cell:first-child {
     display: none;
-  }
-}
-
-.cell-content-container .button-reverse {
-  border: 2px solid $tertiaryColor;
-  transition: border .35s, color .35s, background-color .35s;
-  &:hover,
-  &:focus {
-    color: $primaryColor;
-    background-color: $quaternaryColor;
-    border: 2px solid $primaryColor;
   }
 }
 
@@ -2820,6 +2829,12 @@ footer ul li:last-child a {
   }
   button {
     font-size: 20px;
+    border: 3px solid $tertiaryColor;
+    transition: border .35s, color .35s, background .35s;
+    &:hover,
+    &:focus {
+      border: 3px solid $primaryColor;
+    }
     i {
       margin-left: 10px;
     }

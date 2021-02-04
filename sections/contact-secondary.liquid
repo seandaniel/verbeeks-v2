@@ -4,7 +4,9 @@
       <h2>{{ section.settings.hours_heading }}</h2>
       <p>{{ section.settings.company_hours_1 }}</p>
       <p>{{ section.settings.company_hours_2 }}</p>
-      <a href="{{ section.settings.company_number }}"><i class="fas fa-phone"></i>{{ section.settings.company_number_text }}</a>
+      <a title="Call us" class="button-reverse" href="{{ section.settings.company_number }}"><i class="fas fa-phone"></i>{{ section.settings.company_number_text }}</a>
+      <a title="E-mail us" class="button-reverse" href="{{ section.settings.company_email }}"><i class="fas fa-envelope"></i>{{ section.settings.company_email_text
+        }}</a>
     </div>
     <nav class="contact-menu">
       {%- assign contact_linklist = section.settings.contact_linklist -%}
@@ -44,14 +46,24 @@
         "label": "Company's hours"
       },
       {
-      "type": "url",
-      "id": "company_number",
-      "label": "Company's phone number"
+        "type": "url",
+        "id": "company_number",
+        "label": "Company's phone number"
       },
       {
-      "type": "text",
-      "id": "company_number_text",
-      "label": "Company's phone number text"
+        "type": "text",
+        "id": "company_number_text",
+        "label": "Company's phone number text"
+      },
+      {
+        "type": "url",
+        "id": "company_email",
+        "label": "Company's email"
+      },
+      {
+        "type": "text",
+        "id": "company_email_text",
+        "label": "Company's email text"
       }
     ]
   }

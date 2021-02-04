@@ -21,11 +21,12 @@
       </nav>
     </div>
     <div class="hours-logo-container">
-      <div class="hours-number-container">
+      <div class="hours-number-container hours-number-container-footer">
         <h2>{{ section.settings.hours_heading }}</h2>
         <p>{{ section.settings.company_hours_1 }}</p>
         <p>{{ section.settings.company_hours_2 }}</p>
-        <a href="{{ section.settings.company_number }}"><i class="fas fa-phone"></i>{{ section.settings.company_number_text }}</a>
+        <a title="Call us" href="{{ section.settings.company_number }}"><i class="fas fa-phone"></i>{{ section.settings.company_number_text }}</a>
+        <a title="E-mail us" href="{{ section.settings.company_email }}"><i class="fas fa-envelope"></i>{{ section.settings.company_email_text }}</a>
       </div>
       <div class="img-copyright-container">
         <img src="{{ 'logo.png' | asset_url }}" alt="Verbeeks' Farm and Garden Centre">
@@ -95,6 +96,16 @@
           "type": "text",
           "id": "company_number_text",
           "label": "Company's Phone Number Text"
+        },
+        {
+          "type": "url",
+          "id": "company_email",
+          "label": "Company's E-mail"
+        },
+        {
+          "type": "text",
+          "id": "company_email_text",
+          "label": "Company's E-mail Text"
         },
         {
           "type": "text",
