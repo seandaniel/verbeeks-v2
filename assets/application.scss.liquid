@@ -3031,8 +3031,19 @@ ul li:last-child {
 .returns-warranty-section .content,
 .shipping-pickups-section .content,
 .terms-service-section .content {
+  font-size: 17px;
+  line-height: 1.4;
   max-width: 800px;
   margin: 0 auto 80px auto;
+  a {
+    text-decoration: underline;
+    color: $tertiaryColor;
+    transition: color .35s;
+    &:hover,
+    &:focus {
+      color: $primaryColor;
+    }
+  }
 }
 
 // design-videos.liquid
