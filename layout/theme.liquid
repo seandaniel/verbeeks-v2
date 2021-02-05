@@ -7,6 +7,11 @@
   {% render 'social-meta-tags.liquid' %}
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
+  <!-- og meta tags -->
+  <meta property="og:title" content="Verbeek's Farm & Garden Centre" />
+  <meta name="description" property="og:description" content="Verbeek's dates back to the year 1970. We have grown to service everyone from the home gardener to the largest farm properties across the county." />
+  <meta property="og:url" content="https//www.verbeekslandscaping.com" />
+  <meta name="image" property="og:image" content="{{ 'favicon.png' | asset_url }}" />
   <!-- Favicon -->
   <link type="image/png" href="{{ 'favicon.png' | asset_url }}" rel="icon">
   <!-- Font Awesome -->

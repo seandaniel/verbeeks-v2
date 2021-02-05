@@ -71,7 +71,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .h1-container {
@@ -86,7 +85,6 @@ h1 {
 .special-p {
   font-size: 50px;
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .secondary-h1-container {
@@ -118,6 +116,9 @@ ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
+  li:last-child {
+    margin-bottom: 0;
+  }
 }
 
 a {
@@ -151,7 +152,6 @@ button {
 .button {
   font-size: 17px;
   line-height: 1.4;
-  text-transform: capitalize;
   display: inline-block;
   background-color: $secondaryColor;
   padding: 10px;
@@ -169,7 +169,6 @@ button {
 .button-reverse {
   font-size: 17px;
   line-height: 1.4;
-  text-transform: capitalize;
   display: inline-block;
   color: $quaternaryColor;
   background-color: $primaryColor;
@@ -209,7 +208,23 @@ button {
     line-height: 1.4;
     margin-bottom: 20px;
   }
-  p:last-of-type {
+  p:last-child {
+    margin-bottom: 0;
+  }
+  ul {
+    margin-bottom: 20px;
+    list-style-type: disc;
+    list-style-position: inside;
+    li {
+      margin-bottom: 10px;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+  }
+  ul:last-child {
+    margin-bottom: 0;
+  }
+  ul li:last-child {
     margin-bottom: 0;
   }
 }
@@ -692,9 +707,6 @@ button {
 
 .changing-text-container {
   margin-bottom: 2%;
-  h1 {
-    text-transform: capitalize;
-  }
 }
 
 @media (max-width: 600px) {
@@ -2096,11 +2108,6 @@ footer ul li:last-child a {
 }
 
 // search.liquid
-
-.search-terms {
-  text-transform: capitalize;
-}
-
 .search-h2 {
   margin-bottom: 40px;
 }
@@ -2574,6 +2581,11 @@ footer ul li:last-child a {
 }
 
 // recaptcha
+.shopify-challenge__container {
+  font-size: 17px;
+  line-height: 1.4;
+}
+
 .shopify-challenge__container .shopify-challenge__button {
   margin-bottom: 80px;
 }
@@ -2586,13 +2598,14 @@ footer ul li:last-child a {
   background-color: $primaryColor;
   padding: 10px;
   margin-bottom: 80px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.21);
   border-radius: 6px;
-  transition: color .35s, background-color .35s;
+  border: 3px solid $tertiaryColor;
+  transition: color .35s, background-color .35s, border .35s;
   &:hover,
   &:focus {
     background-color: $secondaryColor;
     color: $primaryColor;
+    border: 3px solid $primaryColor;
   }
 }
 
@@ -2967,14 +2980,16 @@ input[type=number]::-webkit-inner-spin-button {
 .description-container p {
   font-size: 17px;
   line-height: 1.4;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.description-container p:last-child {
+.description-container p:last-child,
+.description-container ul:last-child {
   margin-bottom: 0;
 }
 
 .description-container ul {
+  margin-bottom: 20px;
   list-style-type: disc;
   list-style-position: inside;
   li {
@@ -2984,18 +2999,18 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 
-ul li:last-child {
+.description-container ul li:last-child {
   margin-bottom: 0;
 }
-
 
 .button-sold {
   cursor: auto;
   text-transform: uppercase;
   &:hover,
   &:focus {
-    background: $primaryColor;
+    border: 3px solid $tertiaryColor;
     color: $quaternaryColor;
+    background-color: $primaryColor;
   }
 }
 
@@ -3004,10 +3019,7 @@ ul li:last-child {
   margin-bottom: 40px;
 }
 
-.privacy-policy-section .content,
-.returns-warranty-section .content,
-.shipping-pickups-section .content,
-.terms-service-section .content {
+.content-section .content {
   font-size: 17px;
   line-height: 1.4;
   max-width: 800px;
@@ -3022,6 +3034,28 @@ ul li:last-child {
     }
   }
 }
+
+
+// .content-section .content p:last-child,
+// .content-section .content ul:last-child {
+//   margin-bottom: 0;
+// }
+
+// .content-section .content ul {
+//   margin-bottom: 20px;
+//   list-style-type: disc;
+//   list-style-position: inside;
+//   li {
+//     margin-bottom: 10px;
+//     font-size: 17px;
+//     line-height: 1.4;
+//   }
+// }
+
+// .content-section .content ul li:last-child {
+//   margin-bottom: 0;
+// }
+
 
 // design-videos.liquid
 
