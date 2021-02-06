@@ -1,0 +1,15 @@
+<img src="{{ section.settings.img_store | img_url: 'master' }}" alt={{ img.alt }}>
+
+{% schema %}
+{
+  "name": "Storefront Photo",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img_store",
+      "label": "Storefront Photo"
+    }
+  ]
+}
+
+{% endschema %}
