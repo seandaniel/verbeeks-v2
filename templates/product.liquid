@@ -23,13 +23,18 @@
         <p class="sale-price">{{ product.compare_at_price_min | money}}</p>
         {% endif %}
       </div>
+      <!-- if there are no variants -->
+      {% if product.variants[0].title == 'Default Title' and product.variants.size == 1 %}
+        <p class="stock-p">{{ current_variant.inventory_quantity }} left in stock</p>
+      {% endif %}
       <form class="product-form" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
         <div class="variant-quantity-container">
+          <!-- if there are no variants -->
           {% if product.variants[0].title == 'Default Title' and product.variants.size == 1 %}
           <select class="sr-only" name="id" id="productSelect">
             {% for variant in product.variants %}
             <option select="selected" value="{{ variant.id }}">
-              {{ variant.title }} - {{ variant.price | money_with_currency }}
+              {{ variant.title }} - {{ variant.price | money_with_currency }} 
             </option>
             {% endfor %}
           </select>
@@ -51,7 +56,7 @@
           <input type="number" id="Quantity" name="quantity" value="1" min="1" max="100">
         </div>
         {% if product.available %}
-        <button class="button-reverse" type="submit" name="add" id="AddToCart">Add To Cart</button>
+        <button class="button-reverse" type="submit" name="add" id="AddToCart">Add to Cart</button>
         {% else %}
         <button disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Sold Out</button>
         {% endif %}

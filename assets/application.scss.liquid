@@ -732,6 +732,10 @@ button {
       width: 100%;
       height: 500px;
     }
+    figcaption {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
   }
 }
 
@@ -2218,6 +2222,7 @@ footer ul li:last-child a {
   color: $quaternaryColor;
   padding: 10px;
   border-radius: 6px;
+  text-transform: uppercase;
 }
 
 .sale {
@@ -2231,6 +2236,7 @@ footer ul li:last-child a {
   color: $primaryColor;
   padding: 10px;
   border-radius: 6px;
+  text-transform: uppercase;
   span {
     text-decoration: line-through;
   }
@@ -2238,11 +2244,37 @@ footer ul li:last-child a {
 
 @media (max-width: 710px) {
   .sold-out {
+    top: 5px;
     right: 5px;
   }
 
   .sale {
+    top: 5px;
     left: 5px;
+  }
+}
+
+@media (max-width: 380px) {
+  .sold-out {
+    top: 2.5px;
+    right: 2.5px;
+  }
+
+  .sale {
+    top: 2.5px;
+    left: 2.5px;
+  }
+}
+
+@media (max-width: 355px) {
+  .sold-out {
+    top: 10px;
+    right: 10px;
+  }
+
+  .sale {
+    top: 10px;
+    left: 10px;
   }
 }
 
@@ -2925,6 +2957,14 @@ footer ul li:last-child a {
     color: $tertiaryColor;
     text-decoration: line-through;
   }
+}
+
+.stock-p {
+  display: inline-block;
+  border-bottom: 3px solid $tertiaryColor;
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 20px;
 }
 
 .product-form {
