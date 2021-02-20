@@ -98,6 +98,7 @@ h1 {
 
 h2 {
   display: inline-block;
+  line-height: 1.2;
   border-bottom: 3px solid $tertiaryColor;
   text-align: center;
 }
@@ -1264,7 +1265,28 @@ button {
   p {
     font-size: 17px;
     line-height: 1.4;
+    margin-bottom: 20px;
   }
+  ul {
+    margin-bottom: 20px;
+    list-style-type: disc;
+    list-style-position: inside;
+    li {
+      margin-bottom: 10px;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+  }
+  ul:last-child {
+    margin-bottom: 0;
+  }
+  ul li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.rich-text p:last-child {
+  margin-bottom: 0;
 }
 
 // footer.liquid
@@ -2875,6 +2897,7 @@ footer ul li:last-child a {
 @media (max-width: 720px) {
   .individual-product-container {
     flex-direction: column-reverse;
+    align-items: center;
     .images-container {
       display: flex;
       flex-direction: column;
