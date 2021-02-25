@@ -35,9 +35,10 @@
             <i class="fas fa-search"></i>
             <input type="hidden" name="type" value="product" />
             <input type="hidden" name="options[prefix]" value="last">
-            <input class="search" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search products...">
+            <input class="search" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search products">
           </form>
         </li>
+        <li><a title="Home" aria-label="Home" href="/" class="button"><i class="fas fa-home"></i></a></li>
           {% if cart.item_count != 0 %}
           <li><a title="View Cart" aria-label="View Cart" class="button" href="/cart"><i class="fas fa-shopping-cart"></i>{{ cart.item_count}}</a></li>
          {% else %}

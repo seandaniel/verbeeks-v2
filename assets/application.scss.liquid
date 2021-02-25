@@ -105,6 +105,7 @@ h2 {
 
 h3 {
   font-size: 20px;
+  word-wrap: break-word;
 }
 
 p {
@@ -268,6 +269,10 @@ button {
       }
     }
   }
+  li:nth-child(3) a {
+    height: 40px;
+    margin-right: 20px;
+  }
   li:last-child a {
     display: flex;
     align-items: center;
@@ -291,7 +296,8 @@ button {
     margin-right: 0;
   }
 
-  .secondary-nav ul li:first-child a {
+  .secondary-nav ul li:first-child a,
+  .secondary-nav ul li:nth-child(3) {
     display: none;
   }
 }
@@ -354,16 +360,18 @@ button {
     padding: 0 100px;
     display: flex;
     align-items: flex-end;
-    li img {
+    li:first-child a {
+      &:hover img,
+      &:focus img {
+        opacity: 0.3;
+      }
+    } 
+    img {
       display: inline-block;
       width: 200px;
       height: auto;
       opacity: 1;
       transition: opacity .35s;
-      &:hover,
-      &:focus {
-        opacity: 0.3;
-      }
     }
   }
 }
@@ -525,7 +533,6 @@ button {
     color: $tertiaryColor;
   }
 } 
-
 
 .mobile-nav img {
   height: 94.5px;
