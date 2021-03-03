@@ -31,7 +31,7 @@
       <p class="stock-p">{{ current_variant.inventory_quantity }} left in stock</p>
       {% endif %}
 
-      {% if product.variants.size > 1 %}
+      {% if product.variants[0].title != 'Default Title' and product.variants.size >= 1 %}
       <form class="product-form" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
         <div class="variant-quantity-container variant-quantity-container-pickup-only">
           <!-- if there are no variants -->
@@ -67,8 +67,7 @@
         <button disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Pickup Only</button>
         <a class="button-reverse" href="/pages/contact">Message to Reserve</a>
         {% else %}
-        <button class="button-reverse" disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Sold Out</button>
-        <a class="button-reverse" href="/pages/contact">Message to Reserve</a>
+        <button disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Sold Out</button>
         {% endif %}
       </div>
       <div class="description-container">
