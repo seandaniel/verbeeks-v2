@@ -1,0 +1,80 @@
+<div class="wrapper">
+  <section class="individual-product-container">
+
+    <!-- {% assign current_variant = product.selected_or_first_available_variant %}
+    {% assign featured_image = current_variant.featured_image | default: product.featured_image %} -->
+
+    <div class="images-container">
+      <img class="featured-image" src="{{ featured_image | img_url: 'master' }}" alt="{{ featured_image.alt | escape }}"
+        id="ProductPhotoImg">
+      {% if product.images.size > 1 %}
+      <div class="secondary-images-container">
+        {% for image in product.images reversed %}
+        <img role="button" tabindex="0" class="secondary-image" src="{{ image.src | img_url: 'master' }}"
+          alt="{{ image.alt}}">
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="product-content-container">
+      <h2>{{ product.title }}</h2>
+      <div class="price-container">
+        <p class="price">{{ product.price | money }} CAD</p>
+        {% if product.compare_at_price_max > product.price %}
+        <p class="sale-price">{{ product.compare_at_price_min | money}}</p>
+        {% endif %}
+      </div>
+
+      <!-- if there are no variants -->
+      {% if product.variants[0].title == 'Default Title' and product.variants.size == 1 %}
+      <p class="stock-p">{{ current_variant.inventory_quantity }} left in stock</p>
+      {% endif %}
+
+      {% if product.variants.size > 1 %}
+      <form class="product-form" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+        <div class="variant-quantity-container variant-quantity-container-pickup-only">
+          <!-- if there are no variants -->
+          {% if product.variants[0].title == 'Default Title' and product.variants.size == 1 %}
+          <select class="sr-only" name="id" id="productSelect">
+            {% for variant in product.variants %}
+            <option select="selected" value="{{ variant.id }}">
+              {{ variant.title }} - {{ variant.price | money_with_currency }}
+            </option>
+            {% endfor %}
+          </select>
+          {% else %}
+          <select name="id" id="productSelect">
+            {% for variant in product.variants %}
+            {% if variant.available %}
+            <option value="{{ variant.id }}">
+              {{ variant.title }} - {{ variant.price | money_with_currency }}
+            </option>
+            {% else %}
+            <option disabled="disabled">
+              {{ variant.title }} - Sold Out
+            </option>
+            {% endif %}
+            {% endfor %}
+          </select>
+          {% endif %}
+          <!-- <input type="number" id="Quantity" name="quantity" value="1" min="1" max="100"> -->
+        </div>
+      </form>
+      {% endif %}
+      <div class="pickup-reserve-container">
+        {% if product.available %}
+        <button disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Pickup Only</button>
+        <a class="button-reverse" href="/pages/contact">Message to Reserve</a>
+        {% else %}
+        <button class="button-reverse" disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Sold Out</button>
+        <a class="button-reverse" href="/pages/contact">Message to Reserve</a>
+        {% endif %}
+      </div>
+      <div class="description-container">
+        {{ product.description }}
+      </div>
+    </div>
+  </section>
+  {% section 'product-recommendations' %}
+</div>

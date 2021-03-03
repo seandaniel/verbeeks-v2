@@ -2036,17 +2036,37 @@ footer ul li:last-child a {
 .h1-img-container {
   margin-bottom: 40px;
   text-align: center;
-  img {
-    margin-bottom: 5px;
-    height: 120px;
-    width: 120px;
-  }
   h1 {
     font-weight: 400;
     font-size: 24px;
     border-bottom: 3px solid $tertiaryColor;
   }
 }
+
+.logo-desktop {
+  margin-bottom: 5px;
+  height: 120px;
+  width: 120px;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+
+  .logo-desktop {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: inline-block;
+    width: 200px;
+    height: 94.5px;
+  }
+  
+}
+
 
 .cell-button-container a {
   font-size: 20px;
@@ -3037,8 +3057,8 @@ input[type=number]::-webkit-inner-spin-button {
   .variant-quantity-container {
     display: flex;
     flex-direction: column;
-    select {
-      margin-bottom: 20px;
+    input {
+      margin-top: 20px;
     }
   }
 }
@@ -3084,6 +3104,12 @@ input[type=number]::-webkit-inner-spin-button {
     background-color: $primaryColor;
   }
 }
+
+//product.pickup-products.liquid 
+.pickup-reserve-container {
+  margin-bottom: 40px;
+}
+
 
 // product-recommendations.liquid
 .recommendations-h2 {
