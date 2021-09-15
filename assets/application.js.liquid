@@ -1,31 +1,30 @@
-$(function() {
-
+$(function () {
   // target="_blank"
   let links = document.links;
   for (let i = 0, linksLength = links.length; i < linksLength; i++) {
     if (links[i].hostname !== window.location.hostname) {
-      links[i].target = '_blank';
-      links[i].rel = 'noreferrer noopener';
+      links[i].target = "_blank";
+      links[i].rel = "noreferrer noopener";
     }
   }
 
   //opens mobile-nav
-  $('.open-nav').on('click', () => {
-    $('.mobile-nav').fadeIn().css('display', 'block');
-  })
+  $(".open-nav").on("click", () => {
+    $(".mobile-nav").fadeIn().css("display", "block");
+  });
 
   //exits mobile-nav
-  $('.exit-nav').on('click', () => {
-    $('.mobile-nav').fadeOut();
-  })
-  
+  $(".exit-nav").on("click", () => {
+    $(".mobile-nav").fadeOut();
+  });
+
   // flickity
-  let elem = document.querySelector('.main-carousel');
+  let elem = document.querySelector(".main-carousel");
 
   if (elem !== null) {
     let flkty = new Flickity(elem, {
       // options
-      cellAlign: 'left',
+      cellAlign: "left",
       contain: true,
       draggable: true,
       friction: 0.4,
@@ -34,144 +33,149 @@ $(function() {
       lazyLoad: true,
       groupCells: false,
       pageDots: false,
-
     });
   }
 
   // secondary-nav form
-  const secondaryForm = document.querySelector('.secondary-nav form');
-  const secondaryFormInput = document.querySelector('.secondary-nav form .search');
-  
+  const secondaryForm = document.querySelector(".secondary-nav form");
+  const secondaryFormInput = document.querySelector(
+    ".secondary-nav form .search"
+  );
+
   const highlight = () => {
-   secondaryForm.classList.toggle('toggle-border');
-  }
-  
+    secondaryForm.classList.toggle("toggle-border");
+  };
+
   const removeHighlight = () => {
-    secondaryForm.classList.toggle('toggle-border');
-  }
-  
-  secondaryFormInput.addEventListener('focus', highlight);
-  secondaryFormInput.addEventListener('focusout', removeHighlight);
-  
+    secondaryForm.classList.toggle("toggle-border");
+  };
+
+  secondaryFormInput.addEventListener("focus", highlight);
+  secondaryFormInput.addEventListener("focusout", removeHighlight);
+
   // page.landscaping.liquid
-  const landscapeSections = document.querySelectorAll('.landscape');
-  const landscapeButtons = document.querySelectorAll('.landscape-nav button');
-  const changingh1 = document.querySelector('.changing-text-container .wrapper h1');
+  const landscapeSections = document.querySelectorAll(".landscape");
+  const landscapeButtons = document.querySelectorAll(".landscape-nav button");
+  const changingh1 = document.querySelector(
+    ".changing-text-container .wrapper h1"
+  );
 
-  const handleClick = function(e) {
+  const handleClick = function (e) {
+    landscapeButtons.forEach((button) => button.classList.remove("active"));
 
-    landscapeButtons.forEach(button => button.classList.remove('active'));
-
-    e.currentTarget.classList.toggle('active');
+    e.currentTarget.classList.toggle("active");
 
     const text = e.currentTarget.id;
-    
+
     changingh1.textContent = text;
 
-    landscapeSections.forEach(section => {
+    landscapeSections.forEach((section) => {
       if (section.classList.contains(e.currentTarget.id)) {
         section.hidden = false;
       } else {
         section.hidden = true;
       }
-    })
+    });
+  };
 
-  }
+  landscapeButtons.forEach((button) =>
+    button.addEventListener("click", handleClick)
+  );
 
-  landscapeButtons.forEach(button => button.addEventListener('click', handleClick));
-  
   // landscape home icon animation
-  const backgroundIcon = document.querySelector('.background-icon');
-  const category = document.querySelector('.category');
-  
-  const wait = (ms) => new Promise(function(resolve) {
-    setTimeout(resolve, ms);
-  })
+  const backgroundIcon = document.querySelector(".background-icon");
+  const category = document.querySelector(".category");
+
+  const wait = (ms) =>
+    new Promise(function (resolve) {
+      setTimeout(resolve, ms);
+    });
 
   const animateArguments = (newIcon, oldIcon, textContent) => {
     backgroundIcon.classList.add(`${newIcon}`);
     backgroundIcon.classList.remove(`${oldIcon}`);
     category.textContent = `${textContent}`;
-  }
+  };
 
   const iconAnimate = async () => {
-    animateArguments('garden-background', 'design-background', 'Gardens');
+    animateArguments("garden-background", "design-background", "Gardens");
     await wait(2200);
 
-    animateArguments('lawn-background', 'garden-background', 'Lawn');
+    animateArguments("lawn-background", "garden-background", "Lawn");
     await wait(2200);
 
-    animateArguments('design-background', 'lawn-background', 'Design');
+    animateArguments("design-background", "lawn-background", "Design");
     await wait(2200);
-  }
+  };
 
   if (backgroundIcon !== null) {
     iconAnimate();
   }
 
   if (backgroundIcon !== null) {
-    setInterval(function() {
+    setInterval(function () {
       iconAnimate();
-    }, 6600)
+    }, 6600);
   }
 
   // banner collection animation
-  const bannerButton = document.querySelectorAll('.banner .wrapper a');
+  const bannerButton = document.querySelectorAll(".banner .wrapper a");
 
   if (bannerButton !== null) {
-
-    const buttonAnimateEnd = function() {
+    const buttonAnimateEnd = function () {
       if (this.nextElementSibling === null) {
-        this.classList.remove('pull');
-        this.parentElement.children[0].classList.add('pull');
+        this.classList.remove("pull");
+        this.parentElement.children[0].classList.add("pull");
       } else {
-        this.classList.remove('pull');
-        this.nextElementSibling.classList.add('pull');
+        this.classList.remove("pull");
+        this.nextElementSibling.classList.add("pull");
       }
-    }
+    };
 
-    bannerButton.forEach(button => button.addEventListener('animationend', buttonAnimateEnd));
+    bannerButton.forEach((button) =>
+      button.addEventListener("animationend", buttonAnimateEnd)
+    );
   }
 
   // about home icon animation
-  const container1 = document.querySelector('.container-1');
-  const container2 = document.querySelector('.container-2');
-  const container3 = document.querySelector('.container-3');
+  const container1 = document.querySelector(".container-1");
+  const container2 = document.querySelector(".container-2");
+  const container3 = document.querySelector(".container-3");
 
   if (container1 !== null) {
-    
-    container1.addEventListener('animationend', () => {
-      container1.classList.remove('jump');
-      container2.classList.add('jump');
-    })
+    container1.addEventListener("animationend", () => {
+      container1.classList.remove("jump");
+      container2.classList.add("jump");
+    });
 
-    container2.addEventListener('animationend', () => {
-      container2.classList.remove('jump');
-      container3.classList.add('jump');
-    })
+    container2.addEventListener("animationend", () => {
+      container2.classList.remove("jump");
+      container3.classList.add("jump");
+    });
 
-    container3.addEventListener('animationend', () => {
-      container3.classList.remove('jump');
-      container1.classList.add('jump');
-    })
+    container3.addEventListener("animationend", () => {
+      container3.classList.remove("jump");
+      container1.classList.add("jump");
+    });
   }
 
   // product.liquid
-  const featuredImage = document.querySelector('.featured-image')
-  const secondaryImage = document.querySelectorAll('.secondary-image');
+  const featuredImage = document.querySelector(".featured-image");
+  const secondaryImage = document.querySelectorAll(".secondary-image");
 
   if (secondaryImage !== null) {
-
-    const swapImage = function() {
+    const swapImage = function () {
       const src = this.src;
       featuredImage.src = src;
-    }
+    };
 
-    secondaryImage.forEach(image => image.addEventListener('click', swapImage));
-    secondaryImage.forEach(image => image.addEventListener('keydown', swapImage));
-    
+    secondaryImage.forEach((image) =>
+      image.addEventListener("click", swapImage)
+    );
+    secondaryImage.forEach((image) =>
+      image.addEventListener("keydown", swapImage)
+    );
   }
-
 });
 
 // trying to grab dropdown-ul with and applying it to dropdown-ul-2 width
@@ -190,21 +194,19 @@ $(function() {
 // dropdown2.style.width = `${newWidth}`;
 // console.log(dropdown2.style.width);
 
-  // product-button animate
-  // const productImg = document.querySelectorAll('.product-img');
+// product-button animate
+// const productImg = document.querySelectorAll('.product-img');
 
-  // const mouseEnter = function() {
-  //   const button = this.parentElement.children[2].children[1];
-  //   button.classList.toggle('button-toggle');
-  // }
+// const mouseEnter = function() {
+//   const button = this.parentElement.children[2].children[1];
+//   button.classList.toggle('button-toggle');
+// }
 
+// const mouseLeave = function() {
+//   const button = this.parentElement.children[2].children[1];
+//   button.classList.toggle('button-toggle');
+// }
 
-  // const mouseLeave = function() {
-  //   const button = this.parentElement.children[2].children[1];
-  //   button.classList.toggle('button-toggle');
-  // }
+// productImg.forEach(img => img.addEventListener('mouseenter', mouseEnter));
 
-
-  // productImg.forEach(img => img.addEventListener('mouseenter', mouseEnter));
-
-  // productImg.forEach(img => img.addEventListener('mouseleave', mouseLeave));
+// productImg.forEach(img => img.addEventListener('mouseleave', mouseLeave));

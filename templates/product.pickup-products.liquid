@@ -58,14 +58,12 @@
             {% endfor %}
           </select>
           {% endif %}
-          <!-- <input type="number" id="Quantity" name="quantity" value="1" min="1" max="100"> -->
         </div>
       </form>
       {% endif %}
       <div class="pickup-reserve-container">
         {% if product.available %}
         <button disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Pickup Only</button>
-        <a class="button-reverse" href="/pages/contact">Message to Reserve</a>
         {% else %}
         <button disabled class="button-reverse button-sold" type="submit" name="add" id="AddToCart">Sold Out</button>
         {% endif %}
