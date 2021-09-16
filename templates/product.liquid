@@ -46,7 +46,7 @@
             {% if variant.available %}
             <option value="{{ variant.id }}">
               {{ variant.title }} - {{ variant.price | money_with_currency }} (Qty: {{
-              current_variant.inventory_quantity }})
+              variant.inventory_quantity }})
             </option>
             {% else %}
             <option disabled="disabled">
