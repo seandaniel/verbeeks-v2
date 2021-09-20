@@ -2,25 +2,25 @@
   <section class="four-bricks-container">
     {%- assign collection = collections[section.settings.collection_1] -%}
       <a href="{{ section.settings.link_1 }}" class="brick">
-        <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}">
+        <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}" loading="lazy">
         <h2 class="featured-collection__title">{{ section.settings.title_1 | escape }}</h2>
       </a>
       
     {%- assign collection = collections[section.settings.collection_2] -%}
       <a href="{{ section.settings.link_2 }}" class="brick">
-          <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_2 }}">
+          <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_2 }}" loading="lazy">
         <h2 class="featured-collection__title">{{ section.settings.title_2 | escape }}</h2>
       </a>
     
       {%- assign collection = collections[section.settings.collection_3] -%}
       <a href="{{ section.settings.link_3 }}" class="brick">
-        <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}">
+        <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}" loading="lazy">
         <h2 class="featured-collection__title">{{ section.settings.title_3 | escape }}</h2>
       </a>
     
       {%- assign collection = collections[section.settings.collection_4] -%}
       <a href="{{ section.settings.link_4 }}" class="brick">
-          <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}">
+          <img src="{{ collection.image | img_url: 'master' }}" alt="{{ section.settings.title_1 }}" loading="lazy">
         <h2 class="featured-collection__title">{{ section.settings.title_4 | escape }}</h2>
       </a>
   </section>

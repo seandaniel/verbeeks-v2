@@ -5,7 +5,7 @@
 </div>
 
 {% for collection in collections %}
-{% if collection.products_count > 4 %} 
+{% if collection.products_count > 4 %}
 <div class="background">
 
   <div class="wrapper">
@@ -13,59 +13,61 @@
     <section class="home-products-container">
 
       {% for product in collection.products limit: 4 %}
-        <div class="product-container">
-          <a title="View {{ product.title }}" class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
-              alt="{{ product.title}}"></a>
-          {% unless product.compare_at_price_max < product.price %}
-          <p class="sale">Sale <br> <span>{{ product.compare_at_price_max | money}}</span></p>
+      <div class="product-container">
+        <a title="View {{ product.title }}" class="product-img" href="{{ product.url }}"><img
+            src="{{ product.featured_image | img_url: 'master'}}" alt="{{ product.title}}" loading="lazy"></a>
+        {% unless product.compare_at_price_max < product.price %} <p class="sale">Sale <br> <span>{{
+            product.compare_at_price_max | money}}</span></p>
           {% endunless %}
           {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
           <h3>{{ product.title }}</h3>
           <div class="product-button-container">
             <p>{{ product.price | money}} CAD</p>
-            <a title="View {{ product.title }}" aria-label="View {{ product.title }}" href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
+            <a title="View {{ product.title }}" aria-label="View {{ product.title }}" href="{{ product.url }}"
+              class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
           </div>
-        </div>
+      </div>
       {% endfor %}
-        <div class="view-more">
-          <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}"/>
-          <div class="view-more-content">
-            <h2>{{ collection.all_products_count }} Total</h2>
-            <a href="{{ collection.url }}" class="button-reverse product-button">View More</a>
-          </div>
+      <div class="view-more">
+        <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}" loading="lazy" />
+        <div class="view-more-content">
+          <h2>{{ collection.all_products_count }} Total</h2>
+          <a href="{{ collection.url }}" class="button-reverse product-button">View More</a>
         </div>
+      </div>
     </section>
   </div>
 </div>
 
-  {% elsif collection.products_count == 1  or collection.products_count <= 4 and collection.products_count != 0 %}
-  <div class="background">
-    <div class="wrapper">
+{% elsif collection.products_count == 1 or collection.products_count <= 4 and collection.products_count !=0 %} <div
+  class="background">
+  <div class="wrapper">
     <h2 class="collection-h2">{{ collection.title }}</h2>
-      <section class="home-products-container">
-        {% for product in collection.products limit: 4 %}
-          <div class="product-container">
-            <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
-                alt="{{ product.title}}"></a>
-            {% unless product.compare_at_price_max < product.price %}
-            <p class="sale">Sale <br> <span>{{ product.compare_at_price_max | money }}</span></p>
-            {% endunless %}
-            {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
-            <h3>{{ product.title }}</h3>
-            <div class="product-button-container">
-              <p>{{ product.price | money}} CAD</p>
-              <a title="View {{ product.title }}" aria-label="View {{ product.title }}" href="{{ product.url }}" class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
-            </div>
+    <section class="home-products-container">
+      {% for product in collection.products limit: 4 %}
+      <div class="product-container">
+        <a class="product-img" href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master'}}"
+            alt="{{ product.title}}" loading="lazy"></a>
+        {% unless product.compare_at_price_max < product.price %} <p class="sale">Sale <br> <span>{{
+            product.compare_at_price_max | money }}</span></p>
+          {% endunless %}
+          {% unless product.available %}<p class="sold-out">Sold Out</p>{% endunless %}
+          <h3>{{ product.title }}</h3>
+          <div class="product-button-container">
+            <p>{{ product.price | money}} CAD</p>
+            <a title="View {{ product.title }}" aria-label="View {{ product.title }}" href="{{ product.url }}"
+              class="button-reverse product-button"><i class="fas fa-arrow-right"></i></a>
           </div>
-        {% endfor %}
-        <div class="view-more">
-          <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}" />
-          <div class="view-more-content">
-            <h2 class="margin-bottom">{{ collection.all_products_count }} Total</h2>
-          </div>
+      </div>
+      {% endfor %}
+      <div class="view-more">
+        <img class="product-img" src="{{ collection.image | img_url: 'master'}}" alt="{{ img.alt }}" loading="lazy" />
+        <div class="view-more-content">
+          <h2 class="margin-bottom">{{ collection.all_products_count }} Total</h2>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
   </div>
 
   {% else %}
@@ -79,4 +81,4 @@
 
   {% endif %}
 
-{% endfor %}
+  {% endfor %}

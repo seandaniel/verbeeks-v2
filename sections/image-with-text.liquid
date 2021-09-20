@@ -21,7 +21,7 @@
         <p>{{ section.settings.text }}</p>
         <a class="button-reverse" href="{{ section.settings.button_link }} ">{{ section.settings.button_label }}</a>
       </div>
-      <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ img.alt }}">
+      <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ img.alt }}" loading="lazy">
     </div>
   </div>
 </section>

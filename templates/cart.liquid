@@ -15,7 +15,7 @@
         {% for item in cart.items %}
         <div class="item">
             <a title="View {{ item.title }}" class="product-img" href="{{ item.url | within: collections.all }}">
-              <img src="{{ item | img_url: 'master' }}" alt="{{ item.title | escape }}">
+              <img src="{{ item | img_url: 'master' }}" alt="{{ item.title | escape }}" loading="lazy">
             </a>
             <a title="Remove {{ item.title }}" aria-label="Remove {{ item.title }}"class="button-reverse product-button sold-out" href="/cart/change?line={{ forloop.index }}&amp;quantity=0"><i class="fas fa-times"></i></a>
             <h3> 

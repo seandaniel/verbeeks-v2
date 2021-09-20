@@ -11,7 +11,7 @@
     <div class="heading-img-container">
       <h2>{{ section.settings.landscape_heading }}</h2>
       <img src="{{ section.settings.landscape_header | img_url: 'master' }}"
-        alt="{{ img.alt }}">
+        alt="{{ img.alt }}" loading="lazy">
     </div>
   </section>
 </div>
@@ -24,21 +24,21 @@
   <section class="three-icon-container landscape-icon-container">
     <div class="icon-container">
       <div class="svg-container">
-        <img src="{{ 'brick-wall.svg' | asset_url }}" alt="Brick Wall">
+        <img src="{{ 'brick-wall.svg' | asset_url }}" alt="Brick Wall" loading="lazy">
       </div>
       <h2> {{section.settings.heading_1 }}</h2>
       <p class="landscape-p">{{ section.settings.landscape_design_header }}</p>
     </div>
     <div class="icon-container">
       <div class="svg-container">
-        <img src="{{ 'growth.svg' | asset_url }}" alt="Three Flowers">
+        <img src="{{ 'growth.svg' | asset_url }}" alt="Three Flowers" loading="lazy">
       </div>
       <h2> {{section.settings.heading_2 }}</h2>
       <p class="landscape-p">{{ section.settings.landscape_garden_header }}</p>
     </div>
     <div class="icon-container">
       <div class="svg-container">
-        <img src="{{ 'house.svg' | asset_url }}" alt="A Home">
+        <img src="{{ 'house.svg' | asset_url }}" alt="A Home" loading="lazy">
       </div>
       <h2> {{section.settings.heading_3 }}</h2>
       <p class="landscape-p">{{ section.settings.landscape_lawn_header }}</p>
