@@ -2951,14 +2951,15 @@ footer ul li:last-child a {
 .secondary-images-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 40px;
   width: 100%;
   img {
     cursor: pointer;
     height: 100px;
-    width: 24%;
+    width: 100px;
     @include border-radius-box-shadow;
-    margin-right: 2%;
+    margin: 2% 2% 0 0;
     opacity: 1;
     transition: opacity .35s;
     &:hover,
