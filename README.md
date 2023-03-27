@@ -1,1 +1,1 @@
-Built with the **Shopify**.
+Built with **Shopify**.
