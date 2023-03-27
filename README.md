@@ -1,2 +1,1 @@
-# verbeeks-v2
-An e-commerce website for a farm &amp; garden centre
+Built with the **Shopify**.
