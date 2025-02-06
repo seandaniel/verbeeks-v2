@@ -14,7 +14,7 @@
 
   <nav class="mobile-nav">
     <ul>
-      <li><button title="Close Navigation" aria-label="Close Navigation" class="exit-nav"><i class="fas fa-times-circle"></i></butto></li>
+      <li><button title="Close Navigation" aria-label="Close Navigation" class="exit-nav"><i class="fas fa-times-circle"></i></button></li>
     {%- for link in linklists.mobile-menu.links -%}
       <li>
         <a href="{{ link.url }}" {% if link.active %}aria-current="page" {% endif %}>
