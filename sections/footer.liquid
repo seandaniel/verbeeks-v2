@@ -30,7 +30,7 @@
       </div>
       <div class="img-copyright-container">
         <img src="{{ 'logo.png' | asset_url }}" alt="Verbeeks' Farm and Garden Centre" loading="lazy">
-        <p>{{ section.settings.company_copyright }} </p>
+        <p>© <script>document.write(new Date().getFullYear())</script> Verbeek's F&GC</p>
       </div>
     </div>
   </div>
@@ -106,11 +106,6 @@
           "type": "text",
           "id": "company_email_text",
           "label": "Company's E-mail Text"
-        },
-        {
-          "type": "text",
-          "id": "company_copyright",
-          "label": "Company's Copyright"
         },
         {
           "type": "link_list",
