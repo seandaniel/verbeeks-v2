@@ -71,11 +71,19 @@ h1 {
 }
 
 .h1-container {
-  padding: 40px 0;
-  margin: 0 auto 80px 0;
+  padding: 20px 0;
+  margin: 0 auto 40px 0;
   background-color: $quinaryColor;
   h1 {
-    font-size: 50px;
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .h1-container {
+    h1 {
+      font-size: 36px;
+    }
   }
 }
 
@@ -85,11 +93,19 @@ h1 {
 }
 
 .secondary-h1-container {
-  padding: 40px 0;
-  margin: 0 auto 80px 0;
+  padding: 20px 0;
+  margin: 0 auto 40px 0;
   background-color: $secondaryColor;
   h1 {
-    font-size: 50px;
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .secondary-h1-container {
+    h1 {
+      font-size: 36px;
+    }
   }
 }
 
@@ -350,11 +366,10 @@ button {
 .primary-nav {
   box-shadow: 0 2px 4px rgba(0,0,0,.21);
   background-color: $secondaryColor;
-  text-transform: uppercase;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   padding-top: 10px;
   .primary-ul {
-    padding: 0 100px;
+    padding: 0;
     display: flex;
     align-items: flex-end;
     li:first-child a {
@@ -370,14 +385,6 @@ button {
       opacity: 1;
       transition: opacity .35s;
     }
-  }
-}
-
-// to make room for third dropdown link
-@media (max-width: 1200px) {
-  .primary-nav .primary-ul {
-    // padding: 0 25px;
-    padding: 0;
   }
 }
 
@@ -401,41 +408,20 @@ button {
   }
 }
 
-.mobile-h1 {
-  display: none;
-  text-transform: capitalize;
-  h1 {
-    font-size: 28px;
-  }
-  i {
-    color: $tertiaryColor;
-    margin-left: 10px;
-  }
-}
-
 @media (max-width: 1000px) {
-  .desktop-h1 {
-    display: none;
-  }
-
-  .primary-ul .mobile-h1 {
-    display: inline-block;
-    // primary-nav padding-top
-    margin: 0 auto 10px 0;
+.primary-ul .desktop-h1 {
+  h1 {
+    height: 60px;
     a {
-      @include border-radius-box-shadow;
-      padding-bottom: 0;
-      padding: 10px;
-      background: $primaryColor;
-      color: $tertiaryColor;
-      transition: color .35s, background .35s;
-      &:hover,
-      &:focus {
-        color: $primaryColor;
-        background: $quaternaryColor;
+      display: inline-block;
+      margin: 0;
+      img {
+        height: 60px;
+        width: auto;
       }
     }
   }
+}
 }
 
 .primary-ul li {
@@ -443,6 +429,7 @@ button {
   position: relative;
   a {
     display: inline-block;
+    font-size: 16px;
     padding-bottom: 30px;
     transition: color .35s;
     &:hover,
@@ -600,7 +587,7 @@ button {
 // landscaping-header.liquid
 .content-img-container {
   @include space-around;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   p {
     max-width: 500px;
     font-size: 17px;
@@ -624,11 +611,11 @@ button {
 }
 
 .three-icon-container .icon-container .landscape-p {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .landscape-nav {
-  padding: 40px 0;
+  padding: 20px 0;
   margin-bottom: 0;
   background-color: $secondaryColor;
   ul {
@@ -723,7 +710,7 @@ button {
 
 // landscaping-pictures.liquid
 .landscape {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .landscape-img-container {
@@ -852,8 +839,8 @@ button {
   @include border-radius-box-shadow;
   width: 50%;
   border-top: 8px solid $tertiaryColor;
-  padding: 40px;
-  margin: 0 auto 80px auto;
+  padding: 20px;
+  margin: 0 auto 40px auto;
 }
 
 @media (max-width: 1120px) {
@@ -926,7 +913,7 @@ button {
 .about-text-img-container {
   @include space-around;
   flex-wrap: wrap;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   p {
     font-size: 17px;
     max-width: 500px;
@@ -962,7 +949,7 @@ button {
 .img-banner {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   figure {
     position: relative;
     width: 28%;
@@ -1024,22 +1011,19 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   .icon-container {
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
     @include border-radius-box-shadow;
-    padding: 40px;
+    padding: 20px;
     width: 32%;
     border-top: 8px solid $tertiaryColor;
     .svg-container {
       width: min-content;
       margin: 0 auto 20px auto;
-    }
-    h2 {
-      margin-bottom: 20px;
     }
     p {
       margin-bottom: 20px;
@@ -1047,6 +1031,10 @@ button {
       line-height: 1.4;
     }
   }
+}
+
+.landscape-icon-container .icon-container h2 {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1120px) {
@@ -1098,7 +1086,7 @@ button {
 // page.contact.liquid
 .form-map-container {
   @include space-between;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   form {
     display: flex;
     flex-direction: column;
@@ -1124,7 +1112,7 @@ button {
     flex-direction: column;
     align-items: center;
     form {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -1185,7 +1173,7 @@ button {
 // page.image-with-text.liquid
 .text-img-container {
   @include space-around;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   p {
     font-size: 17px;
     line-height: 1.4;
@@ -1198,7 +1186,7 @@ button {
     flex-direction: column;
     align-items: center;
     .text-container {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -1217,8 +1205,8 @@ button {
 
 // image-text-section.liquid
 .image-text-section {
-  padding: 40px 0;
-  margin: 0 auto 80px auto;
+  padding: 20px 0;
+  margin: 0 auto 40px auto;
   background: $secondaryColor;
   .image-text-container {
     @include space-around;
@@ -1263,8 +1251,8 @@ button {
 
 .rich-text {
   background: $secondaryColor;
-  padding: 40px 0;
-  margin-bottom: 80px;
+  padding: 20px 0;
+  margin-bottom: 40px;
   h2 {
     margin-bottom: 40px;
   }
@@ -1297,12 +1285,12 @@ button {
 
 // footer.liquid
 footer {
-  padding-top: 40px;
+  padding-top: 20px;
   background: $secondaryColor;
   .wrapper {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1402,7 +1390,7 @@ footer {
   @include center;
   background-color: $quinaryColor;
   width: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .social-footer-ul {
@@ -1458,7 +1446,7 @@ footer ul li:last-child a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   p {
     border-bottom: none;
     font-size: 24px;
@@ -1492,7 +1480,7 @@ footer ul li:last-child a {
 .about-header {
   @include space-around;
   flex-wrap: wrap;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   .p-button-container {
     max-width: 500px;
     p {
@@ -1508,7 +1496,7 @@ footer ul li:last-child a {
     flex-direction: column;
     align-items: center;
     .p-button-container {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -1553,7 +1541,7 @@ footer ul li:last-child a {
     top: 0;
   }
   12% {
-    top: -40px;
+    top: -20px;
   }
   24% {
     top: 0;
@@ -1574,7 +1562,7 @@ footer ul li:last-child a {
 .landscape-image-container-2 {
   @include space-between;
   flex-wrap: wrap;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .landscape-image-container figure:first-child,
@@ -1632,7 +1620,7 @@ footer ul li:last-child a {
 
 .landscaping-text-container {
   @include space-around;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   .p-button-container {
     max-width: 500px;
     p {
@@ -1646,7 +1634,7 @@ footer ul li:last-child a {
     flex-direction: column;
     align-items: center;
     @include border-radius-box-shadow;
-    padding: 40px;
+    padding: 20px;
     width: 300px;
     border-top: 8px solid $tertiaryColor;
     .svg-container {
@@ -1660,7 +1648,7 @@ footer ul li:last-child a {
     flex-direction: column;
     align-items: center;
     .p-button-container {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -1703,14 +1691,14 @@ footer ul li:last-child a {
 
 // quad-collections.liquid
 .quad-collections {
-  margin-bottom: 80px;
-  padding: 40px 0;
+  margin-bottom: 40px;
+  padding: 20px 0;
   background: $quaternaryColor;
 }
 
 @media (max-width: 700px) {
   .quad-collections {
-    padding: 40px 0 0 0;
+    padding: 20px 0 0 0;
   }
 }
 
@@ -1759,12 +1747,12 @@ footer ul li:last-child a {
     align-items: center;
     .quad-collection {
       width: 100%;
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
   }
 
   .quad-collections .quad-collections-container:first-child .quad-collection {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
   .quad-collection-3 {
@@ -1797,13 +1785,13 @@ footer ul li:last-child a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   .icon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     width: 32%;
     border-top: 8px solid $quaternaryColor;
     transition: border-radius .35s, box-shadow .35s, border-top .35s;
@@ -1866,10 +1854,10 @@ footer ul li:last-child a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   a {
     display: inline-block;
-    margin-bottom: 4%;
+    margin-bottom: 3%;
     position: relative;
     top: 0;
     opacity: 1;
@@ -1918,7 +1906,7 @@ footer ul li:last-child a {
 }
 
 .main-carousel {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   width: 100%;
   height: 500px;
 }
@@ -2055,8 +2043,8 @@ footer ul li:last-child a {
 // banner-collection.liquid
 .banner {
   background: $secondaryColor;
-  padding: 40px 0;
-  margin-bottom: 80px;
+  padding: 20px 0;
+  margin-bottom: 40px;
   .wrapper {
     @include space-between;
     flex-wrap: wrap;
@@ -2090,7 +2078,7 @@ footer ul li:last-child a {
   
 
   .banner .wrapper a:nth-child(-n + 3) {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 }
 
@@ -2143,7 +2131,7 @@ footer ul li:last-child a {
 }
 
 .no-search-container {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   p {
     margin: 0 auto;
     font-size: 24px;
@@ -2163,7 +2151,7 @@ footer ul li:last-child a {
 }
 
 .paginate-container {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   text-align: center;
   font-size: 20px;
   .page a {
@@ -2195,7 +2183,7 @@ footer ul li:last-child a {
 
 // breadcrumbs.liquid
 .breadcrumb {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   font-size: 24px;
   display: inline-block;
   a {
@@ -2307,7 +2295,7 @@ footer ul li:last-child a {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-bottom: calc(80px - 2.66666666667%);
+  margin-bottom: calc(40px -  2.66666666667%);
   .product-container {
     display: flex;
     flex-direction: column;
@@ -2329,6 +2317,9 @@ footer ul li:last-child a {
         height: 300px;
         border-top-right-radius: 6px;
         border-top-left-radius: 6px;
+        @media (max-width: 740px) {
+          height: 180px;
+        }
       }
     }
     h3 {
@@ -2336,7 +2327,7 @@ footer ul li:last-child a {
       border-top: 1px solid $tertiaryColor;
       border-bottom: 1px solid $tertiaryColor;
       line-height: 1.2;
-      padding: 20px;
+      padding: 10px 20px;
       background: $secondaryColor;
     }
   }
@@ -2349,7 +2340,7 @@ footer ul li:last-child a {
 @media (max-width: 1120px) {
 
   .home-products-container {
-    margin-bottom: calc(80px - 3.5%);
+    margin-bottom: calc(40px -  3.5%);
     .product-container {
       width: 31%;
       margin: 0 3.5% 3.5% 0;
@@ -2378,7 +2369,7 @@ footer ul li:last-child a {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: calc(80px - 4%);
+    margin-bottom: calc(40px -  4%);
     .product-container {
       width: 48%;
       margin-bottom: 4%;
@@ -2411,10 +2402,11 @@ footer ul li:last-child a {
 
 .product-button-container {
   @include space-between;
-  padding: 20px 40px;
+  padding: 10px 20px;
   p {
     font-size: 17px;
     line-height: 1.4px;
+    font-weight:  700;
   }
   .product-button {
     @include center;
@@ -2449,7 +2441,7 @@ footer ul li:last-child a {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   h2 {
     margin-bottom: 40px;
   }
@@ -2483,6 +2475,7 @@ footer ul li:last-child a {
     justify-content: center;
   }
 }
+
 .products-sort-container {
   width: calc(276px + 276px + 276px + 20px + 20px);
 }
@@ -2491,7 +2484,7 @@ footer ul li:last-child a {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   .product-container {
     display: flex;
     flex-direction: column;
@@ -2513,6 +2506,9 @@ footer ul li:last-child a {
         height: 300px;
         border-top-right-radius: 6px;
         border-top-left-radius: 6px;
+        @media (max-width: 740px) {
+          height: 180px;
+        }
       }
     }
     h3 {
@@ -2520,7 +2516,7 @@ footer ul li:last-child a {
       line-height: 1.2;
       border-top: 1px solid $tertiaryColor;
       border-bottom: 1px solid $tertiaryColor;
-      padding: 20px 20px;
+      padding: 10px 20px;
       background: $secondaryColor;
     }
   }
@@ -2541,7 +2537,7 @@ footer ul li:last-child a {
   .three-products-container {
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: calc(80px - 4%);
+    margin-bottom: calc(40px -  4%);
     .product-container {
       width: 48%;
       margin-bottom: 4%;
@@ -2583,13 +2579,13 @@ footer ul li:last-child a {
 @media (max-width: 1200px) {
   .paginate-container-three {
     width: 100%;
-    margin: 0 auto 80px auto;
+    margin: 0 auto 40px auto;
   }
 }
 
 // collection.list.liquid
 .collection-h2 {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .view-more {
@@ -2628,7 +2624,7 @@ footer ul li:last-child a {
 }
 
 .no-collection {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   p {
     font-size: 17px;
     line-height: 1.4;
@@ -2643,7 +2639,7 @@ footer ul li:last-child a {
 }
 
 .shopify-challenge__container .shopify-challenge__button {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .btn {
@@ -2653,7 +2649,7 @@ footer ul li:last-child a {
   color: $quaternaryColor;
   background-color: $primaryColor;
   padding: 10px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   border-radius: 6px;
   border: 3px solid $tertiaryColor;
   transition: color .35s, background-color .35s, border .35s;
@@ -2676,13 +2672,12 @@ footer ul li:last-child a {
 }
 
 // product-collection.liquid && list-collection.liquid
-
 .background {
   background: $secondaryColor;
-  padding-top: 40px;
+  padding-top: 20px;
   .home-products-container {
-    padding-bottom: calc(80px - 2.66666666667%);
-    margin-bottom: 80px;
+    padding-bottom: calc(60px -  2.66666666667%);
+    margin-bottom: 40px;
     .product-container {
       background: $quaternaryColor;
       h2 {
@@ -2697,7 +2692,7 @@ footer ul li:last-child a {
   text-align: center;
   font-size: 24px;
   line-height: 31px;
-  margin-bottom: 80px;
+  margin: 60px 0 80px 0;
   a {
     border-bottom: 3px solid $tertiaryColor;
     transition: color .35s, border-bottom .35s;
@@ -2717,7 +2712,6 @@ footer ul li:last-child a {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: calc(80px - 3.5%);
   display: flex;
   align-items: flex-start;
   .item {
@@ -2771,7 +2765,6 @@ footer ul li:last-child a {
 
 @media (max-width: 1120px) {
   .cart-container {
-    margin-bottom: calc(80px - 10%);
     .item {
       width: 45%;
       margin: 0 10% 10% 0;
@@ -2796,7 +2789,6 @@ footer ul li:last-child a {
   .cart-container {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
     .item {
       width: 400px;
       margin: 0 0 40px 0;
@@ -2818,16 +2810,17 @@ footer ul li:last-child a {
   font-size: 20px;
   line-height: 1.4;
   border-bottom: none;
-  padding: 20px;
+  padding: 10px 20px;
   background: $secondaryColor;
 }
 
 .total-variant-container {
   @include space-between;
-  padding: 20px 40px;
+  padding: 10px 20px;
   p {
     font-size: 17px;
     line-height: 1.4;
+    font-weight: 700;
   }
 }
 
@@ -2892,7 +2885,7 @@ footer ul li:last-child a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 720px) {
@@ -2931,7 +2924,7 @@ footer ul li:last-child a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
   img {
     cursor: pointer;
@@ -2976,7 +2969,10 @@ footer ul li:last-child a {
 .price-container {
   display: flex;
   font-size: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  .price {
+    font-weight: 700;
+  }
   .sale-price {
     margin-left: 10px;
     color: $tertiaryColor;
@@ -3040,7 +3036,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .product-form .button-reverse {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   // width: 100%;
 }
 
@@ -3083,19 +3079,19 @@ input[type=number]::-webkit-inner-spin-button {
 
 //product.pickup-products.liquid 
 .pickup-reserve-container {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 // product-recommendations.liquid
 .recommendations-h2 {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .content-section .content {
   font-size: 17px;
   line-height: 1.4;
   max-width: 800px;
-  margin: 0 auto 80px auto;
+  margin: 0 auto 40px auto;
   a {
     text-decoration: underline;
     color: $tertiaryColor;
@@ -3112,7 +3108,7 @@ input[type=number]::-webkit-inner-spin-button {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   p {
     max-width: 500px;
     font-size: 17px;
@@ -3129,7 +3125,7 @@ input[type=number]::-webkit-inner-spin-button {
     flex-direction: column;
     justify-content: center;
     p {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -3137,7 +3133,7 @@ input[type=number]::-webkit-inner-spin-button {
 .video-container {
   display: flex;
   justify-content: center;
-  margin: 2% 0 80px 0;
+  margin: 2% 0 40px 0;
   iframe {
     height: 400px;
     box-shadow: 0 2px 4px rgba(0,0,0,.21);
