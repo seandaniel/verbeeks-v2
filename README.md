@@ -5,44 +5,6 @@
 - Liquid
 - Shopify
 
-### 🛠️ Getting Started with This Shopify Theme
-
-This guide will help you set up, develop, and deploy a Shopify theme using the Shopify CLI.
-
-### 📦 Prerequisites
-
-Before you begin, make sure you have the following installed:
-
-- [Shopify CLI](https://shopify.dev/docs/themes/tools/cli) (version 3 or later)
-- Git
-- Node.js (if you plan to compile Sass or use build tools)
-- A Shopify Partner account
-- A development store
-
----
-
-### 📁 Set Up the Theme Locally
-
-Clone this repository to your local machine:
-
-```
-git clone https://github.com/seandaniel/verbeeks-v2
-cd verbeeks-v2
-```
-
-## 🛜 Connect to a Development Store
-
-With this comomand running, any edits you make to your files will be reflected in the store preview
-```
-shopify theme dev
-```
-
-## 🚀 Deploying Changes to a Live Store
-
-```
-shopify theme push --live
-```
-
 ## 🧩 Folder Structure
 
 ```
