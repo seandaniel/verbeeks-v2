@@ -30,7 +30,7 @@ Clone this repository to your local machine:
 ```
 git clone https://github.com/seandaniel/verbeeks-v2
 cd verbeeks-v2
-``
+```
 
 ## 🧩 Folder Structure
 
