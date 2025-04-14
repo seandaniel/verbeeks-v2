@@ -1,4 +1,4 @@
-### ⚙️ Tech Used
+## ⚙️ Tech Used
 
 - JavaScript
 - Sass
