@@ -1,15 +1,13 @@
-## ⚙️ Tech Used
+### ⚙️ Tech Used
 
 - JavaScript
 - Sass
 - Liquid
 - Shopify
 
-## 🛠️ Getting Started with This Shopify Theme
+### 🛠️ Getting Started with This Shopify Theme
 
 This guide will help you set up, develop, and deploy a Shopify theme using the Shopify CLI.
-
----
 
 ### 📦 Prerequisites
 
@@ -30,6 +28,19 @@ Clone this repository to your local machine:
 ```
 git clone https://github.com/seandaniel/verbeeks-v2
 cd verbeeks-v2
+```
+
+## 🛜 Connect to a Development Store
+
+With this comomand running, any edits you make to your files will be reflected in the store preview
+```
+shopify theme dev
+```
+
+## 🚀 Deploying Changes to a Live Store
+
+```
+shopify theme push --live
 ```
 
 ## 🧩 Folder Structure
