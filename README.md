@@ -5,7 +5,7 @@
 - Liquid
 - Shopify
 
-## 🧩 Folder Structure
+## 📁 Folder Structure
 
 ```
 src/
