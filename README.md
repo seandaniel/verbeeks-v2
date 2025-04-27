@@ -10,8 +10,8 @@
 ```
 src/
 ├── assets/
-│   ├── application.js.liquid
-│   ├── application.scss.liquid
+│   ├── application.js.liquid          # All JavaScript
+│   ├── application.scss.liquid        # All Sass
 │   ├── brick-wall.svg
 │   ├── canada.svg
 │   ├── clock.svg
