@@ -41,13 +41,10 @@
     <title>{{ page_title }}</title>
   </head>
   <body>
-
     {% section 'header' %}
-
     <main role="main">
       {{ content_for_layout }}
     </main>
-
     {% section 'footer' %}
   </body>
   <!-- jQuery -->
@@ -55,5 +52,5 @@
     crossorigin="anonymous"></script>
   <!-- JavaScript -->
   {{ 'application.js' | asset_url | script_tag }}
-  <script defer src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </html>
